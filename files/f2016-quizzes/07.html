@@ -1,0 +1,109 @@
+﻿<html>
+<head>
+    <title>Quiz Viewer</title>
+    <style>
+        ol.options { margin-top:-1em; }
+        ol.options li p { display: inline; }
+        ol.options li { list-style: upper-alpha; }
+        body { background:#ccc; padding-top:1em; }
+        .question { background: white; border-radius:1ex; padding:0ex 1ex; margin:2ex;  }
+        .directions { background: #eee; padding:1ex 1ex; margin:2ex;  }
+        .multiquestion { background: #eee; border-radius:1ex; padding:0.7ex 0.7ex; }
+        .multiquestion + .multiquestion { margin-top:1em; }
+        .submitting { background: #fe7; }
+        .submitted { background: #dfd; }
+        textarea { background-color: inherit; }
+        #clock { position:fixed; right:0px; top:0px; background:#ff7; padding-left:0.5ex; padding-bottom:0.5ex; border-bottom-left-radius:1ex; border-left: 1px solid black; border-bottom: 1px solid black;}
+        .correct { background-color: #bfb; padding: 0ex 1ex; }
+        .incorrect { background-color: #fbb; padding: 0ex 1ex; }
+        .hist { color:#777; min-width: 2em; text-align:right; display:inline-block; }
+    </style>
+<script>function onload() {}</script></head>
+<body onload="onload()">
+    <center><a href="../">Return to course page</a></center><div class="directions"><p>Pre-quiz on fifth week's material.</p>
+</div><div class="question" id="q1" slug="9005a42b"><div class="description" id="d1"><p><strong>Question 1</strong>: The book has a single wire named valE.  HCL2D splits it into which of the following?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o1"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans1" value="030a1aa4"></input> <p><code>reg_inputE</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans1" value="2a258eef"></input> <p><code>reg_dstE</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans1" value="3fc981a8"></input> <p><code>mem_input</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans1" value="97a45b95"></input> <p><code>mem_output</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans1" value="e5efb063"></input> <p><code>mem_addr</code></p>
+</li></ol></div></div><div class="question" id="q2" slug="2594cbbc"><div class="description" id="d2"><p><strong>Question 2</strong>: The book has a single wire named valM.  HCL2D splits it into which of the following?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o2"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans2" value="315f2b12"></input> <p><code>reg_inputM</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans2" value="6e012672"></input> <p><code>reg_dstM</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans2" value="3c65f217"></input> <p><code>mem_input</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans2" value="292fec06"></input> <p><code>mem_output</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans2" value="eddc391a"></input> <p><code>mem_addr</code></p>
+</li></ol></div></div><div class="question" id="q3" slug="725e91c3"><div class="description" id="d3"><p><strong>Question 3</strong>: Suppose the instruction memory returned an <code>addq</code> instruction.  Where would we find rA?</p>
+</div><div class="options" id="o3"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans3" value="cb45d92d"></input> <p><code>i10bytes[0..4]</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="60448189"></input> <p><code>i10bytes[4..8]</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="b55362e7"></input> <p><code>i10bytes[8..12]</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="52b7eb60"></input> <p><code>i10bytes[12..16]</code></p>
+</li></ol></div></div><div class="question" id="q4" slug="af2a41d3"><div class="description" id="d4"><p><strong>Question 4</strong>: Suppose that you are debugging your processor and discover that bytes 0 through 7 of memory are being changed and should not be changed.
+Which of the following could cause this bug?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o4"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans4" value="047abbc5"></input> <p><code>mem_writebit</code> is 1 when it should be 0</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans4" value="5a37e876"></input> <p><code>mem_addr</code> is 0 when it should be something else</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans4" value="a96ca74b"></input> <p><code>mem_input</code> has the wrong value</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans4" value="d6c1e11d"></input> <p><code>mem_output</code> has the wrong value</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans4" value="54701365"></input> <p><code>reg_inputM</code> has the wrong value</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans4" value="988bf9ca"></input> <p><code>reg_dstM</code> has the wrong value</p>
+</li></ol></div></div><div class="question" id="q5" slug="fb5b2b4c"><div class="description" id="d5"><p><strong>Question 5</strong>: Which of the following are illegal in HCL2D?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o5"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans5" value="aecea2d0"></input> <p><code>i10bytes = 3;</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans5" value="1eee6caf"></input> <p><code>reg_srcA = 3;</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans5" value="ebebec48"></input> <p><code>wire t:2; t = 0b0011;</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans5" value="3f7746ce"></input> <p><code>reg_inputE = reg_outputA; reg_inputM = reg_outputA;</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans5" value="af2d8bbe"></input> <p><code>reg_inputE = reg_outputA; reg_inputE = reg_outputB;</code></p>
+</li></ol></div></div><div class="question" id="q6" slug="657c4237"><div class="description" id="d6"><p><strong>Question 6</strong>: The following is legal HCL2D code:</p>
+
+<pre><code>wire a:8, b:8;
+a = b;
+b = 7;
+</code></pre>
+
+<p>When it is run, what will be the value of <code>a</code>?</p>
+</div><div class="options" id="o6"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans6" value="5254a14d"></input> <p>8</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans6" value="a77e3584"></input> <p>7</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans6" value="e8091c05"></input> <p>0</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans6" value="ddb1cd41"></input> <p>undefined</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans6" value="26892fa3"></input> <p>'b'</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans6" value="eded8b68"></input> <p>nothing at first; it will get a value on the second clock cycle</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans6" value="dd14cec1"></input> <p>none of the above</p>
+</li></ol></div></div><a href="." style="text-align:center; display:block;">Return to main page</a>
+<center><a href="../">Return to course page</a></center>
+</body>
+</html>

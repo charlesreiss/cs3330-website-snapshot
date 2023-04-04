@@ -1,0 +1,191 @@
+﻿<html>
+<head>
+    <title>Quiz Viewer</title>
+    <style>
+        ol.options { margin-top:-1em; }
+        ol.options li p { display: inline; }
+        ol.options li { list-style: upper-alpha; }
+        body { background:#ccc; padding-top:1em; }
+        .question { background: white; border-radius:1ex; padding:0ex 1ex; margin:2ex;  }
+        .directions { background: #eee; padding:1ex 1ex; margin:2ex;  }
+        .multiquestion { background: #eee; border-radius:1ex; padding:0.7ex 0.7ex; }
+        .multiquestion + .multiquestion { margin-top:1em; }
+        .submitting { background: #fe7; }
+        .submitted { background: #dfd; }
+        textarea { background-color: inherit; }
+        #clock { position:fixed; right:0px; top:0px; background:#ff7; padding-left:0.5ex; padding-bottom:0.5ex; border-bottom-left-radius:1ex; border-left: 1px solid black; border-bottom: 1px solid black;}
+        .correct { background-color: #bfb; padding: 0ex 1ex; }
+        .incorrect { background-color: #fbb; padding: 0ex 1ex; }
+        .hist { color:#777; min-width: 2em; text-align:right; display:inline-block; }
+    </style>
+<script>function onload() {}</script></head>
+<body onload="onload()">
+    <center><a href="../">Return to course page</a></center><div class="directions"><p>Unless we explicitly mention the compiler, assume the compiler performs few optimizations (it uses registers to store local variables, but not much else).</p>
+</div><div class="question" id="q1" slug="2bfc87d6"><div class="description" id="d1"><p><strong>Question 1</strong>: The textbook discusses how compilers cannot optimize this code</p>
+
+<pre><code>void twiddle1(long *xp, long *yp) { 
+    *xp += *yp;
+    *xp += *yp;
+}
+</code></pre>
+
+<p>into this code</p>
+
+<pre><code>void twiddle2(long *xp, long *yp) { 
+    *xp += 2 * (*yp);
+}
+</code></pre>
+
+<p>Which of the following changes to <em>would</em> allow the optimization?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o1"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans1" value="1c0026bc"></input> <p>making <code>yp</code> a <code>long **</code> instead of a <code>long *</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans1" value="b5a9bc21"></input> <p>making <code>yp</code> a <code>long</code> instead of a <code>long *</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans1" value="00ed30e2"></input> <p>making <code>xp</code> a <code>long</code> instead of a <code>long *</code> and returning a <code>long</code> instead of a <code>void</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans1" value="30b6c8ce"></input> <p>making <code>xp</code> a <code>long **</code> instead of a <code>long *</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans1" value="f51592fc"></input> <p>using <code>int</code> instead of <code>long</code> throughout</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans1" value="87d52029"></input> <p>making both <code>xp</code> and <code>yp</code> <code>long</code>s instead of <code>long *</code>s and returning a <code>long</code> instead of a <code>void</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans1" value="d69dfef4"></input> <p>making both <code>xp</code> and <code>yp</code> <code>long **</code>s instead of <code>long *</code>s</p>
+</li></ol></div></div><div class="question" id="q2" slug="0c31c376"><div class="description" id="d2"><p><strong>Question 2</strong>: If the runtime of a particular program given input size <em>n</em> is <em>f</em>(<em>n</em>),
+then the "cycles per element" number the textbook refers to is</p>
+</div><div class="options" id="o2"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans2" value="2f1a092f"></input> <p>the slope of <em>f</em></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="efb65bde"></input> <p>the asymptotic class of <em>f</em></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="eaba516f"></input> <p>the additive constant of <em>f</em></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="964ee633"></input> <p>a combination of the above</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="f2ae85ff"></input> <p>none of the above</p>
+</li></ol></div></div><div class="question" id="q3" slug="21f750ef"><div class="description" id="d3"><p><strong>Question 3</strong>: Consider the code</p>
+
+<pre><code>int rfind(const char *s, char c) {
+    int ans = -1;
+    for(int i = 0; i &lt; strlen(s); i += 1) {
+        if (s[i] == c) ans = i;
+    }
+    return ans;
+}
+</code></pre>
+
+<p>If we pull <code>strlen(s)</code> out of the loop, like so</p>
+
+<pre><code>    int N = strlen(s);
+    for(int i = 0; i &lt; N; i += 1) {
+</code></pre>
+
+<p>how will the runtime of the code change?</p>
+</div><div class="options" id="o3"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans3" value="5ad0d31b"></input> <p>it will be basically the same it was before</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="7e0fc4b0"></input> <p>it will be faster by an additive constant (e.g., 1 microsecond faster or the like)</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="e1e0ddf5"></input> <p>it will be faster by a multiplicative factor (e.g., 2&times; faster or the like)</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="7e6464d5"></input> <p>it will be slower by an additive constant (e.g., 1 microsecond slower or the like)</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="25a85cf9"></input> <p>it will be slower by a multiplicative factor (e.g., 2&times; slower or the like)</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="35ec5b67"></input> <p>it will change to a faster asymptotic complexity class (changing big-O)</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="cf5177f9"></input> <p>it will change to a slower asymptotic complexity class (changing big-O)</p>
+</li></ol></div></div><div class="question" id="q4" slug="0cc28d5d"><div class="description" id="d4"><p><strong>Question 4</strong>: Consider the code</p>
+
+<pre><code>struct foo {
+    int x,y,z;
+}
+int sum(foo x) {
+    return x.x + x.y + x.z;
+}
+int megasum(const foo *bits, const int N) {
+    int ans = 0;
+    for(int i = 0; i &lt; N; i += 1) {
+        ans += sum(bits[i]);
+    }
+    return ans;
+}
+</code></pre>
+
+<p>If we remove calls to <code>sum</code>, like so</p>
+
+<pre><code>        ans += bits[i].x + bits[i].y + bits[i].z;
+</code></pre>
+
+<p>how will the runtime of the code change?</p>
+</div><div class="options" id="o4"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans4" value="0fd55899"></input> <p>it will be basically the same it was before</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="a73b95fa"></input> <p>it will be faster by an additive constant (e.g., 1 microsecond faster or the like)</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="52a5046f"></input> <p>it will be faster by a multiplicative factor (e.g., 2&times; faster or the like)</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="8d9d6399"></input> <p>it will be slower by an additive constant (e.g., 1 microsecond slower or the like)</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="b3ea1632"></input> <p>it will be slower by a multiplicative factor (e.g., 2&times; slower or the like)</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="4c816fc3"></input> <p>it will change to a faster asymptotic complexity class (changing big-O)</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="a22d4b68"></input> <p>it will change to a slower asymptotic complexity class (changing big-O)</p>
+</li></ol></div></div><div class="question" id="q5" slug="c6b66659"><div class="description" id="d5"><p><strong>Question 5</strong>: Which of the following are sufficient indications to know that your code has unneeded memory references?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o5"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans5" value="d65d18f8"></input> <p>it reads every value of a large array, then reads them all again</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans5" value="b2915cc0"></input> <p>it writes every value of a large array, then writes them all again</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans5" value="15551bc1"></input> <p>it reads the same address in every pass of a loop</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans5" value="d3df30a8"></input> <p>it writes the same address in every pass of a loop</p>
+</li></ol></div></div><div class="question" id="q6" slug="5ae4f3e6"><div class="description" id="d6"><p><strong>Question 6</strong>: Consider loop 1:</p>
+
+<pre><code>for(int i = 0; i &lt; N; i += 1) {
+    baz(a[i]);
+}
+</code></pre>
+
+<p>and loop 2:</p>
+
+<pre><code>for(int i = 0; i &lt; N; i += 2) {
+    baz(a[i]);
+    baz(a[i+1]);
+}
+</code></pre>
+
+<p>Which of the following are true?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o6"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans6" value="88cc9b61"></input> <p>loop 1 computes fewer comparisons than loop 2</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans6" value="437e1b98"></input> <p>loop 1 computes more comparisons than loop 2</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans6" value="3280bf48"></input> <p>loop 1 executes fewer conditional jumps than loop 2</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans6" value="8c616fed"></input> <p>loop 1 executes more conditional jumps than loop 2</p>
+</li></ol></div></div><div class="question" id="q7" slug="72d2ea47"><div class="description" id="d7"><p><strong>Question 7</strong>: Figure 5.12 suggests integer multiplication has latency 3, issue 1.
+Assuming <code>x</code>, <code>y</code>, <code>z</code>, and <code>w</code> are integers,
+how many more cycles will it take to run <code>(x + y) + z + w</code> than to run <code>x + y + (z + w)</code>?
+Answer as a normal (possibly negative) base-10 integer.</p>
+</div><div class="options" id="o7">Answer: <input disabled="disabled" type="text" name="ans7"/></div></div><div class="question" id="q8" slug="df41078a"><div class="description" id="d8"><p><strong>Question 8</strong>: In general if I unroll a loop more I expect it to perform faster, but this is not always true in practice.
+Suppose I find that unrolling 50&times; is not faster than unrolling 15&times;.
+Which of the following hardware changes would be most likely to cause the more-unrolled version be faster?</p>
+</div><div class="options" id="o8"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans8" value="707bbddf"></input> <p>a bigger register file</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans8" value="1fb512eb"></input> <p>a bigger L1 cache</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans8" value="896d3d4f"></input> <p>a faster L1 cache</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans8" value="c6b5b968"></input> <p>using power-of-two size unrolling (e.g., 64 and 16 instead of 50 and 15)</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans8" value="ff0b8f0c"></input> <p>better branch prediction</p>
+</li></ol></div></div><a href="." style="text-align:center; display:block;">Return to main page</a>
+<center><a href="../">Return to course page</a></center>
+</body>
+</html>

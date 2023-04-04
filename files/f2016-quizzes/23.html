@@ -1,0 +1,88 @@
+﻿<html>
+<head>
+    <title>Quiz Viewer</title>
+    <style>
+        ol.options { margin-top:-1em; }
+        ol.options li p { display: inline; }
+        ol.options li { list-style: upper-alpha; }
+        body { background:#ccc; padding-top:1em; }
+        .question { background: white; border-radius:1ex; padding:0ex 1ex; margin:2ex;  }
+        .directions { background: #eee; padding:1ex 1ex; margin:2ex;  }
+        .multiquestion { background: #eee; border-radius:1ex; padding:0.7ex 0.7ex; }
+        .multiquestion + .multiquestion { margin-top:1em; }
+        .submitting { background: #fe7; }
+        .submitted { background: #dfd; }
+        textarea { background-color: inherit; }
+        #clock { position:fixed; right:0px; top:0px; background:#ff7; padding-left:0.5ex; padding-bottom:0.5ex; border-bottom-left-radius:1ex; border-left: 1px solid black; border-bottom: 1px solid black;}
+        .correct { background-color: #bfb; padding: 0ex 1ex; }
+        .incorrect { background-color: #fbb; padding: 0ex 1ex; }
+        .hist { color:#777; min-width: 2em; text-align:right; display:inline-block; }
+    </style>
+<script>function onload() {}</script></head>
+<body onload="onload()">
+    <center><a href="../">Return to course page</a></center><div class="multiquestion"><p>Caching and virtual memory both manipulate addresses and potentially retrieve values from a different physical location than the user's address would have suggested.</p>
+<div class="question" id="q1" slug="cfb190bd"><div class="description" id="d1"><p><strong>Question 1</strong>: (see above) The conversion from user address to hardware location is done by</p>
+</div><div class="options" id="o1"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans1" value="f9cb651a"></input> <p>hardware for virtual memory, software for caches</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="b0a2f87a"></input> <p>hardware for virtual memory, hardware for caches</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="bd77aebb"></input> <p>software for virtual memory, software for caches</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="175276a2"></input> <p>software for virtual memory, hardware for caches</p>
+</li></ol></div></div><div class="question" id="q2" slug="e124620d"><div class="description" id="d2"><p><strong>Question 2</strong>: (see above) The decision about where to physically locate a particular address is done by</p>
+</div><div class="options" id="o2"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans2" value="d24de5f6"></input> <p>hardware for virtual memory, software for caches</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="be136c1d"></input> <p>hardware for virtual memory, hardware for caches</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="d1a470e7"></input> <p>software for virtual memory, software for caches</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="0a5fa65e"></input> <p>software for virtual memory, hardware for caches</p>
+</li></ol></div></div></div><div class="question" id="q3" slug="14a72e52"><div class="description" id="d3"><p><strong>Question 3</strong>: Virtual memory splits addresses into two parts: a page number and page offset.
+Caches split addresses into three parts: a tag, set index, and block offset.
+Consider the purpose of each of these five pieces of addresses, 
+which of the cache's three parts has a purpose
+that is not implemented by one of the virtual memory's two pieces?</p>
+</div><div class="options" id="o3"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans3" value="4d97d8e8"></input> <p>the tag</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="174b4af2"></input> <p>the set index</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="d6c3f770"></input> <p>the block offset</p>
+</li></ol></div></div><div class="multiquestion"><p>The goal of a page table is to implement a <code>map&lt;vpn, ppn&gt;</code>,
+where <code>vpn</code> is a virtual page number and <code>ppn</code> is a physical page number.</p>
+<div class="question" id="q4" slug="e7b6a180"><div class="description" id="d4"><p><strong>Question 4</strong>: (see above) A single-level page table uses what data type to implement this map?</p>
+</div><div class="options" id="o4"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans4" value="fd5904a5"></input> <p>an array</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="122e203b"></input> <p>a hash table</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="d3850952"></input> <p>a tree</p>
+</li></ol></div></div><div class="question" id="q5" slug="f98f9ead"><div class="description" id="d5"><p><strong>Question 5</strong>: (see above) A multi-level page table uses what data type to implement this map?</p>
+
+<p>(Yes, we know the book describes it as several single-level page tables; one of these is still the correct answer)</p>
+</div><div class="options" id="o5"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans5" value="797b5dc5"></input> <p>an array</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="328afe66"></input> <p>a hash table</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="cbf916fc"></input> <p>a tree</p>
+</li></ol></div></div><div class="question" id="q6" slug="776dcbd8"><div class="description" id="d6"><p><strong>Question 6</strong>: (see above) Multi-level page tables are superior to single-level page tables because multi-level tables<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o6"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans6" value="52ec727d"></input> <p>use less space to store the mapping for sparse address spaces</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans6" value="0a7fcf3d"></input> <p>use less space to store the mapping for full address spaces</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans6" value="e0016ca8"></input> <p>are more efficient when creating entries for newly-allocated memory</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans6" value="9f72e79b"></input> <p>are more efficient when used to look up <code>ppn</code>s</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans6" value="ed21831a"></input> <p>are more flexible in the page sizes they can handle</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans6" value="0c94e0a1"></input> <p>are more flexible in the <code>sizeof(ppn) - sizeof(vpn)</code> they can handle</p>
+</li></ol></div></div></div><a href="." style="text-align:center; display:block;">Return to main page</a>
+<center><a href="../">Return to course page</a></center>
+</body>
+</html>

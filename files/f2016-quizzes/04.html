@@ -1,0 +1,154 @@
+﻿<html>
+<head>
+    <title>Quiz Viewer</title>
+    <style>
+        ol.options { margin-top:-1em; }
+        ol.options li p { display: inline; }
+        ol.options li { list-style: upper-alpha; }
+        body { background:#ccc; padding-top:1em; }
+        .question { background: white; border-radius:1ex; padding:0ex 1ex; margin:2ex;  }
+        .directions { background: #eee; padding:1ex 1ex; margin:2ex;  }
+        .multiquestion { background: #eee; border-radius:1ex; padding:0.7ex 0.7ex; }
+        .multiquestion + .multiquestion { margin-top:1em; }
+        .submitting { background: #fe7; }
+        .submitted { background: #dfd; }
+        textarea { background-color: inherit; }
+        #clock { position:fixed; right:0px; top:0px; background:#ff7; padding-left:0.5ex; padding-bottom:0.5ex; border-bottom-left-radius:1ex; border-left: 1px solid black; border-bottom: 1px solid black;}
+        .correct { background-color: #bfb; padding: 0ex 1ex; }
+        .incorrect { background-color: #fbb; padding: 0ex 1ex; }
+        .hist { color:#777; min-width: 2em; text-align:right; display:inline-block; }
+    </style>
+<script>function onload() {}</script></head>
+<body onload="onload()">
+    <center><a href="../">Return to course page</a></center><div class="directions"><p>Quiz on third week's material.</p>
+</div><div class="multiquestion"><p>The following ask about details of the assembly syntax we will use for this course (AT&amp;T syntax assembly).
+This is not because the topic is important in and of itself, but because knowing it will be important to learn what will follow.</p>
+<div class="question" id="q1" slug="88b5c2ab"><div class="description" id="d1"><p><strong>Question 1</strong>: (see above) The instruction <code>addq %rax, %rbx</code> changes what?</p>
+</div><div class="options" id="o1"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans1" value="c2bb967a"></input> <p>The contents of memory at an address found in the rax register</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="7e612da8"></input> <p>The contents of memory at an address found in the rbx register</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="c581f62f"></input> <p>The contents of the rax register</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="c56b2ba4"></input> <p>The contents of the rbx register</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="f156d082"></input> <p>none of the above</p>
+</li></ol></div></div><div class="question" id="q2" slug="c9108d4b"><div class="description" id="d2"><p><strong>Question 2</strong>: (see above) What is the difference between <code>15</code> and <code>$15</code>?</p>
+</div><div class="options" id="o2"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans2" value="5f6ceff3"></input> <p><code>15</code> is an address, <code>$15</code> is a value</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="d4b76db5"></input> <p><code>15</code> is a value, <code>$15</code> is an address</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="521ba440"></input> <p><code>15</code> is legal in assembly, <code>$15</code> is not</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="f351aec3"></input> <p><code>$15</code> is legal in assembly, <code>15</code> is not</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="de8858be"></input> <p>there is no difference</p>
+</li></ol></div></div></div><div class="question" id="q3" slug="0d25afcb"><div class="description" id="d3"><p><strong>Question 3</strong>: There are no labels in an executable binary program, but there are labels in assembly; for example, in the following <code>foo:</code> is a label <em>definition</em> and <code>baz</code> is a label <em>use</em></p>
+
+<pre><code>foo:
+    jmp baz
+</code></pre>
+
+<p>The assembler and linker remove the labels from assembly to create a binary executable by</p>
+</div><div class="options" id="o3"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans3" value="18a10628"></input> <p>removing both definitions and uses altogether</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="3e34c284"></input> <p>replacing both definitions and uses with immediate-value addresses</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="dbeb8762"></input> <p>replacing definitions with immediate-value addresses and removing uses altogether</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="ea28ad2d"></input> <p>replacing uses with immediate-value addresses and removing definitions altogether</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="4a303a14"></input> <p>none of the above</p>
+</li></ol></div></div><div class="question" id="q4" slug="7ddef53a"><div class="description" id="d4"><p><strong>Question 4</strong>: When we say that the PC and Condition Codes are not program registers, we mean that</p>
+</div><div class="options" id="o4"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans4" value="46829a41"></input> <p>they are not registers</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="bd06e7c9"></input> <p>user code cannot change their values</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="380caada"></input> <p>user code behavior does not depend on their values</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="200626bb"></input> <p>user code can manipulate them but shouldn't do so</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="6aeaa1cb"></input> <p>none of the above</p>
+</li></ol></div></div><div class="multiquestion"><p>Consider the assembly operation <code>popq %r11</code>.</p>
+<div class="question" id="q5" slug="37fabaf6"><div class="description" id="d5"><p><strong>Question 5</strong>: (see above) How many program registers need to be read to complete this instruction?
+In other words, how many program registers' values can impact the result of this <code>popq</code>?</p>
+</div><div class="options" id="o5"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans5" value="82c85b67"></input> <p><code>%r11</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="0e0795fa"></input> <p><code>%r11</code> and one other program register</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="f2d542a0"></input> <p><code>%r11</code> and two or more other program registers</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="e73958cb"></input> <p>none</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="b4f2585b"></input> <p>one program register (but not <code>%r11</code>)</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="cd63e52a"></input> <p>two or more other program registers (but not <code>%r11</code>)</p>
+</li></ol></div></div><div class="question" id="q6" slug="74df739f"><div class="description" id="d6"><p><strong>Question 6</strong>: (see above) How many program registers are written by this instruction?
+In other words, how many program registers' values change as a consequence of executing this <code>popq</code>?</p>
+</div><div class="options" id="o6"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans6" value="2bd2050c"></input> <p><code>%r11</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans6" value="b71f73a8"></input> <p><code>%r11</code> and one other program register</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans6" value="bcdb5132"></input> <p><code>%r11</code> and two or more other program registers</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans6" value="d08943a0"></input> <p>none</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans6" value="f2f8af3c"></input> <p>one program register (but not <code>%r11</code>)</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans6" value="9c845cfc"></input> <p>two or more other program registers (but not <code>%r11</code>)</p>
+</li></ol></div></div></div><div class="question" id="q7" slug="466d8bbd"><div class="description" id="d7"><p><strong>Question 7</strong>: An ISA specifies<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o7"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans7" value="a8614da1"></input> <p>The set of instructions that exist</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans7" value="85e05ba8"></input> <p>The semantic meaning of each instruction</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans7" value="987da416"></input> <p>The set of program registers that exist</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans7" value="caf0b6ba"></input> <p>The time taken to run each instruction</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans7" value="4a2f5860"></input> <p>The microcode implementation of each instruction</p>
+</li></ol></div></div><div class="question" id="q8" slug="c6ed99ed"><div class="description" id="d8"><p><strong>Question 8</strong>: RISC processors are typically described as<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o8"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans8" value="319755b2"></input> <p>having fewer instructions than CISC processors</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans8" value="41070785"></input> <p>having fewer addressing modes than CISC processors</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans8" value="e42b4c53"></input> <p>allowing any operand in any operation (i.e., if <code>14(%rax)</code> is legal in a move, it is also legal in an <code>add</code>)</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans8" value="8dba1f1d"></input> <p>being faster than CISC processors</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans8" value="7b315024"></input> <p>being slower than CISC processors</p>
+</li></ol></div></div><div class="question" id="q9" slug="8fcae7ca"><div class="description" id="d9"><p><strong>Question 9</strong>: Y86-64 lacks which of the following instructions?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o9"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans9" value="526ebddc"></input> <p>move from memory to memory</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans9" value="99864566"></input> <p>add immediate to register</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans9" value="4405c136"></input> <p>multiply register by register</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans9" value="83815b46"></input> <p>move between registers only after checking condition codes</p>
+</li></ol></div></div><div class="question" id="q10" slug="c9b6bd42"><div class="description" id="d10"><p><strong>Question 10</strong>: The Y86-64 assembly</p>
+
+<pre><code>irmovq   $3, %rax
+andq   %rax, %rax
+je     whee
+</code></pre>
+</div><div class="options" id="o10"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans10" value="877cdfe3"></input> <p>will jump to <code>whee</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans10" value="4afedf45"></input> <p>will not jump to <code>whee</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans10" value="1cb9d4b2"></input> <p>whether it jumps or not cannot be determined from the given assembly</p>
+</li></ol></div></div><a href="." style="text-align:center; display:block;">Return to main page</a>
+<center><a href="../">Return to course page</a></center>
+</body>
+</html>

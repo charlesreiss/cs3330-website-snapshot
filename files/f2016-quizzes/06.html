@@ -1,0 +1,127 @@
+﻿<html>
+<head>
+    <title>Quiz Viewer</title>
+    <style>
+        ol.options { margin-top:-1em; }
+        ol.options li p { display: inline; }
+        ol.options li { list-style: upper-alpha; }
+        body { background:#ccc; padding-top:1em; }
+        .question { background: white; border-radius:1ex; padding:0ex 1ex; margin:2ex;  }
+        .directions { background: #eee; padding:1ex 1ex; margin:2ex;  }
+        .multiquestion { background: #eee; border-radius:1ex; padding:0.7ex 0.7ex; }
+        .multiquestion + .multiquestion { margin-top:1em; }
+        .submitting { background: #fe7; }
+        .submitted { background: #dfd; }
+        textarea { background-color: inherit; }
+        #clock { position:fixed; right:0px; top:0px; background:#ff7; padding-left:0.5ex; padding-bottom:0.5ex; border-bottom-left-radius:1ex; border-left: 1px solid black; border-bottom: 1px solid black;}
+        .correct { background-color: #bfb; padding: 0ex 1ex; }
+        .incorrect { background-color: #fbb; padding: 0ex 1ex; }
+        .hist { color:#777; min-width: 2em; text-align:right; display:inline-block; }
+    </style>
+<script>function onload() {}</script></head>
+<body onload="onload()">
+    <center><a href="../">Return to course page</a></center><div class="directions"><p>Quiz on fourth week's material.</p>
+</div><div class="multiquestion"><p>The following ask about timing of circuit components.  The options are</p>
+
+<ul>
+<li>now, meaning after the delay inherent in transistors changing state but not other waiting</li>
+<li>next cycle, meaning after the next rising edge of the clock</li>
+<li>never, meaning the action described is insufficient to cause the listed change</li>
+<li>none of the above, meaning either (a) a different kind of timing or (b) the answer varies depending on some information we did not supply</li>
+</ul>
+<div class="question" id="q1" slug="983743c9"><div class="description" id="d1"><p><strong>Question 1</strong>: (see above) You change the input of a register such as the PC or a condition code.  The output changes</p>
+</div><div class="options" id="o1"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans1" value="a015f052"></input> <p>now</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="6b415ec3"></input> <p>next cycle</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="4cd05e37"></input> <p>never</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="1e8ba76c"></input> <p>none of the above</p>
+</li></ol></div></div><div class="question" id="q2" slug="3594991c"><div class="description" id="d2"><p><strong>Question 2</strong>: (see above) You provide a new register value to the register file.  The value in that register changes</p>
+</div><div class="options" id="o2"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans2" value="8e57c1c7"></input> <p>now</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="fce96543"></input> <p>next cycle</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="a875576a"></input> <p>never</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="0b97a14b"></input> <p>none of the above</p>
+</li></ol></div></div><div class="question" id="q3" slug="fc187497"><div class="description" id="d3"><p><strong>Question 3</strong>: (see above) You request access to a new register value from the register file.  The value becomes available to you</p>
+</div><div class="options" id="o3"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans3" value="996a1b92"></input> <p>now</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="953d005c"></input> <p>next cycle</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="a6186d28"></input> <p>never</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="c3f10c2e"></input> <p>none of the above</p>
+</li></ol></div></div><div class="question" id="q4" slug="42959e29"><div class="description" id="d4"><p><strong>Question 4</strong>: (see above) You read an address from memory.  The value read becomes available to you</p>
+</div><div class="options" id="o4"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans4" value="d3e84b6b"></input> <p>now</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="c3a82a65"></input> <p>next cycle</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="576dde7c"></input> <p>never</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="b4dd2a02"></input> <p>none of the above</p>
+</li></ol></div></div><div class="question" id="q5" slug="2f5c52ed"><div class="description" id="d5"><p><strong>Question 5</strong>: (see above) You write a value to an address in memory.  The value written enters memory</p>
+</div><div class="options" id="o5"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans5" value="3a64e4b6"></input> <p>now</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="08b9f7ba"></input> <p>next cycle</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="6dc642d3"></input> <p>never</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="7463a563"></input> <p>none of the above</p>
+</li></ol></div></div></div><div class="multiquestion"><p>The following ask about mux inputs in order to implement various instructions.
+Each one assumes that some given signal has a mux in front of it
+and asks what set of inputs that mux would need.
+Your answer should consider only data inputs, not selector wires
+and should be consistent with the presentation in the textbook.</p>
+<div class="question" id="q6" slug="2ed69990"><div class="description" id="d6"><p><strong>Question 6</strong>: (see above) Consider the data-memory touching instructions (<code>pushq</code>, <code>popq</code>, <code>rmmovq</code>, <code>mrmovq</code>, <code>call</code>, and <code>ret</code>).  What inputs are needed for the address to for data memory?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o6"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans6" value="91bbd709"></input> <p>the output of the ALU or the register file</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans6" value="caf29393"></input> <p>a constant value (such as 1 or 8)</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans6" value="4f57637e"></input> <p>the current instruction's address (i.e., the PC)</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans6" value="b6dfbde8"></input> <p>the subsequent instruction's address (i.e., valP)</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans6" value="b63a12c0"></input> <p>a part of the instruction encoding (such as rA, ifun, or valC)</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans6" value="e12d15b5"></input> <p>one or more values not listed above</p>
+</li></ol></div></div><div class="question" id="q7" slug="374617af"><div class="description" id="d7"><p><strong>Question 7</strong>: (see above) Consider the data-memory writing instructions (<code>pushq</code>, <code>rmmovq</code>, and <code>call</code>).  What inputs are needed for the value written into data memory?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o7"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans7" value="2e89ed6e"></input> <p>the output of the ALU or the register file</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans7" value="4f8d722b"></input> <p>a constant value (such as 1 or 8)</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans7" value="d2f5e9c0"></input> <p>the current instruction's address (i.e., the PC)</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans7" value="3e4aaaeb"></input> <p>the subsequent instruction's address (i.e., valP)</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans7" value="60b536c2"></input> <p>a part of the instruction encoding (such as rA, ifun, or valC)</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans7" value="739e6a54"></input> <p>one or more values not listed above</p>
+</li></ol></div></div><div class="question" id="q8" slug="d7420eae"><div class="description" id="d8"><p><strong>Question 8</strong>: (see above) Consider the unconditional move instructions (<code>irmovq</code>, <code>rrmovq</code>, <code>rmmovq</code>, and <code>mrmovq</code>).  What inputs are needed for the register destinations dstE and dstM?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o8"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans8" value="acfee62a"></input> <p>the output of the ALU or the register file</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans8" value="7fbacfab"></input> <p>a constant value (such as 1 or 8)</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans8" value="8b8febd1"></input> <p>the current instruction's address (i.e., the PC)</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans8" value="07d45481"></input> <p>the subsequent instruction's address (i.e., valP)</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans8" value="c7d7b150"></input> <p>a part of the instruction encoding (such as rA, ifun, or valC)</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans8" value="29f960f9"></input> <p>one or more values not listed above</p>
+</li></ol></div></div></div><a href="." style="text-align:center; display:block;">Return to main page</a>
+<center><a href="../">Return to course page</a></center>
+</body>
+</html>

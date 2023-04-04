@@ -1,0 +1,85 @@
+﻿<html>
+<head>
+    <title>Quiz Viewer</title>
+    <style>
+        ol.options { margin-top:-1em; }
+        ol.options li p { display: inline; }
+        ol.options li { list-style: upper-alpha; }
+        body { background:#ccc; padding-top:1em; }
+        .question { background: white; border-radius:1ex; padding:0ex 1ex; margin:2ex;  }
+        .directions { background: #eee; padding:1ex 1ex; margin:2ex;  }
+        .multiquestion { background: #eee; border-radius:1ex; padding:0.7ex 0.7ex; }
+        .multiquestion + .multiquestion { margin-top:1em; }
+        .submitting { background: #fe7; }
+        .submitted { background: #dfd; }
+        textarea { background-color: inherit; }
+        #clock { position:fixed; right:0px; top:0px; background:#ff7; padding-left:0.5ex; padding-bottom:0.5ex; border-bottom-left-radius:1ex; border-left: 1px solid black; border-bottom: 1px solid black;}
+        .correct { background-color: #bfb; padding: 0ex 1ex; }
+        .incorrect { background-color: #fbb; padding: 0ex 1ex; }
+        .hist { color:#777; min-width: 2em; text-align:right; display:inline-block; }
+    </style>
+<script>function onload() {}</script></head>
+<body onload="onload()">
+    <center><a href="../">Return to course page</a></center><div class="question" id="q1" slug="15217a82"><div class="description" id="d1"><p><strong>Question 1</strong>: Suppose we have 64KB pages, 8B page table entries, and a 2-level page table hierarchy.  How many bits long is the usable virtual address (the VPNs and VPO combined)?</p>
+
+<p>Answer as a normal base-10 number.</p>
+</div><div class="options" id="o1">Answer: <input disabled="disabled" type="text" name="ans1"/></div></div><div class="question" id="q2" slug="494cd4ea"><div class="description" id="d2"><p><strong>Question 2</strong>: Memory permission bits (such as "read-only") are stored in<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o2"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans2" value="945aed04"></input> <p>page table entries</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans2" value="ff7e9f34"></input> <p>data pages</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans2" value="ee8b0b3c"></input> <p>the TLB</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans2" value="dcccfd9d"></input> <p>operating system data structures</p>
+</li></ol></div></div><div class="question" id="q3" slug="86e4db0f"><div class="description" id="d3"><p><strong>Question 3</strong>: The Linux operating system data structure <code>vm_area_struct</code> refers to a range of addresses.  These ranges are usually aligned with page boundaries because</p>
+</div><div class="options" id="o3"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans3" value="173f0dfa"></input> <p><code>vm_area_struct</code>s store only physical page numbers, not whole addresses, to save space</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="19a9ae5a"></input> <p><code>vm_area_struct</code>s store only virtual page numbers, not whole addresses, to save space</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="51b9e22e"></input> <p>the MMU reads the <code>vm_area_struct</code> and expects page boundaries</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="738ce789"></input> <p>the OS uses the <code>vm_area_struct</code> to initialize page table entries so sub-page resolution is not useful</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="f206b403"></input> <p>speed: alignment with page boundaries makes memory accesses faster</p>
+</li></ol></div></div><div class="question" id="q4" slug="55ce347d"><div class="description" id="d4"><p><strong>Question 4</strong>: The TLB is a cache, which means it splits its input into parts.  Which of the parts used by data caches is missing, and why?</p>
+</div><div class="options" id="o4"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans4" value="0a022594"></input> <p>There is no tag because all the input bits are used for other purposes</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="0fbc5272"></input> <p>There is no tag because there is nothing to compare them to</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="f4685629"></input> <p>There is no index because the TLB is direct-mapped</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="47b05909"></input> <p>There is no index because the TLB is fully associative</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="866b1e6e"></input> <p>There is no offset because there is only one element per block</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="da6e2bf6"></input> <p>There is no offset because the TLB stores PPNs or PTEs, not bytes</p>
+</li></ol></div></div><div class="question" id="q5" slug="e2d0a1ad"><div class="description" id="d5"><p><strong>Question 5</strong>: In the processor described in the textbook, the TLB lookup and L1 cache lookup can run partly in parallel.  This is parallelism is possible because of careful selection of which of the following?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o5"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans5" value="a7bc6398"></input> <p>page size</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans5" value="f44822cc"></input> <p>single VPN size</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans5" value="c0b6755c"></input> <p>number of levels in page table hierarchy</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans5" value="50e25c2e"></input> <p>PPN size</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans5" value="6b2ad8aa"></input> <p>number of TLB offset bits</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans5" value="dd95fc7d"></input> <p>number of TLB index bits</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans5" value="ebf94a03"></input> <p>number of TLB tag bits</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans5" value="a29ddfbb"></input> <p>number of L1 offset bits</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans5" value="4efab16b"></input> <p>number of L1 index bits</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans5" value="893d54bd"></input> <p>number of L1 tag bits</p>
+</li></ol></div></div><a href="." style="text-align:center; display:block;">Return to main page</a>
+<center><a href="../">Return to course page</a></center>
+</body>
+</html>

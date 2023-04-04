@@ -1,0 +1,103 @@
+﻿<html>
+<head>
+    <title>Quiz Viewer</title>
+    <style>
+        ol.options { margin-top:-1em; }
+        ol.options li p { display: inline; }
+        ol.options li { list-style: upper-alpha; }
+        body { background:#ccc; padding-top:1em; }
+        .question { background: white; border-radius:1ex; padding:0ex 1ex; margin:2ex;  }
+        .directions { background: #eee; padding:1ex 1ex; margin:2ex;  }
+        .multiquestion { background: #eee; border-radius:1ex; padding:0.7ex 0.7ex; }
+        .multiquestion + .multiquestion { margin-top:1em; }
+        .submitting { background: #fe7; }
+        .submitted { background: #dfd; }
+        textarea { background-color: inherit; }
+        #clock { position:fixed; right:0px; top:0px; background:#ff7; padding-left:0.5ex; padding-bottom:0.5ex; border-bottom-left-radius:1ex; border-left: 1px solid black; border-bottom: 1px solid black;}
+        .correct { background-color: #bfb; padding: 0ex 1ex; }
+        .incorrect { background-color: #fbb; padding: 0ex 1ex; }
+        .hist { color:#777; min-width: 2em; text-align:right; display:inline-block; }
+    </style>
+<script>function onload() {}</script></head>
+<body onload="onload()">
+    <center><a href="../">Return to course page</a></center><div class="question" id="q1" slug="2da9ba24"><div class="description" id="d1"><p><strong>Question 1</strong>: The <em>context</em> of a process includes which of the following?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o1"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans1" value="b28fc607"></input> <p>the values of its registers (like <code>%rax</code> and <code>%rsp</code>)</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans1" value="7f37f5eb"></input> <p>the program's address space</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans1" value="138e2c8d"></input> <p>the value of the program's PC</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans1" value="a99307ea"></input> <p>the value of the exception table base register</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans1" value="fc03c415"></input> <p>the length of the program's time slice</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans1" value="37e21b02"></input> <p>the idenities of other programs executing concurrently with it</p>
+</li></ol></div></div><div class="question" id="q2" slug="138b8047"><div class="description" id="d2"><p><strong>Question 2</strong>: Increasing the amount of memory available in a machine
+will increase the number of processes the machine can run<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o2"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans2" value="7723df3e"></input> <p><em>concurrently</em> with each other</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans2" value="ec1bf760"></input> <p><em>in parallel</em> with each other</p>
+</li></ol></div></div><div class="multiquestion"><p>For these questions, refer to the terminology in section 8.1.2.</p>
+<div class="question" id="q3" slug="49fb3194"><div class="description" id="d3"><p><strong>Question 3</strong>: (see above) Which kind of
+exception allows operating systems to stop a process from executing
+for more than its assigned time slice?</p>
+</div><div class="options" id="o3"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans3" value="e86dcba6"></input> <p>an interrupt</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="f7fedf96"></input> <p>a trap</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="9895c906"></input> <p>a fault</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="7ef91f25"></input> <p>an abort</p>
+</li></ol></div></div><div class="question" id="q4" slug="52de43fc"><div class="description" id="d4"><p><strong>Question 4</strong>: (see above) Which kind of exception allows operating systems to <em>resume</em> executing a
+process that was paused to wait for a keypress?</p>
+</div><div class="options" id="o4"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans4" value="cd83d176"></input> <p>an interrupt</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="4b9dfcf6"></input> <p>a trap</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="810cfc02"></input> <p>a fault</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="0409e380"></input> <p>an abort</p>
+</li></ol></div></div><div class="question" id="q5" slug="b373580f"><div class="description" id="d5"><p><strong>Question 5</strong>: (see above) Which kind of exception allows an operating system to terminate a program
+that attempts to divide by zero?</p>
+</div><div class="options" id="o5"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans5" value="5f01b51a"></input> <p>an interrupt</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="05d4c9df"></input> <p>a trap</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="4dd67a6d"></input> <p>a fault</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="9c3b7ad3"></input> <p>an abort</p>
+</li></ol></div></div><div class="question" id="q6" slug="4e8483f1"><div class="description" id="d6"><p><strong>Question 6</strong>: (see above) If a program running in user mode tries to execute a <em>privileged
+instruction</em>, what will occur?</p>
+</div><div class="options" id="o6"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans6" value="55e8bdd0"></input> <p>an interrupt</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans6" value="d6dca6a8"></input> <p>a trap</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans6" value="9932481d"></input> <p>a fault</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans6" value="a05c59de"></input> <p>an abort</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans6" value="ffa41502"></input> <p>none of the above</p>
+</li></ol></div></div><div class="question" id="q7" slug="dbdc42d5"><div class="description" id="d7"><p><strong>Question 7</strong>: (see above) If a program requests that the operating system execute a privileged instruction
+<em>on its behalf</em>, what will occur?</p>
+</div><div class="options" id="o7"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans7" value="62d4cdb1"></input> <p>an interrupt</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans7" value="cc18612a"></input> <p>a trap</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans7" value="74ae6f9b"></input> <p>a fault</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans7" value="b1feb4e4"></input> <p>an abort</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans7" value="58ea97bf"></input> <p>none of the above</p>
+</li></ol></div></div></div><a href="." style="text-align:center; display:block;">Return to main page</a>
+<center><a href="../">Return to course page</a></center>
+</body>
+</html>

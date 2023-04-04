@@ -1,0 +1,70 @@
+﻿<html>
+<head>
+    <title>Quiz Viewer</title>
+    <style>
+        ol.options { margin-top:-1em; }
+        ol.options li p { display: inline; }
+        ol.options li { list-style: upper-alpha; }
+        body { background:#ccc; padding-top:1em; }
+        .question { background: white; border-radius:1ex; padding:0ex 1ex; margin:2ex;  }
+        .directions { background: #eee; padding:1ex 1ex; margin:2ex;  }
+        .multiquestion { background: #eee; border-radius:1ex; padding:0.7ex 0.7ex; }
+        .multiquestion + .multiquestion { margin-top:1em; }
+        .submitting { background: #fe7; }
+        .submitted { background: #dfd; }
+        textarea { background-color: inherit; }
+        #clock { position:fixed; right:0px; top:0px; background:#ff7; padding-left:0.5ex; padding-bottom:0.5ex; border-bottom-left-radius:1ex; border-left: 1px solid black; border-bottom: 1px solid black;}
+        .correct { background-color: #bfb; padding: 0ex 1ex; }
+        .incorrect { background-color: #fbb; padding: 0ex 1ex; }
+        .hist { color:#777; min-width: 2em; text-align:right; display:inline-block; }
+    </style>
+<script>function onload() {}</script></head>
+<body onload="onload()">
+    <center><a href="../">Return to course page</a></center><div class="question" id="q1" slug="66df7ed9"><div class="description" id="d1"><p><strong>Question 1</strong>: If we have a 9-bit page offset, 3-level page table, and 4-byte page table entries, how many bits is the virtual address?
+Answer as a normal base-10 number.</p>
+</div><div class="options" id="o1">Answer: <input disabled="disabled" type="text" name="ans1"/></div></div><div class="multiquestion">
+<div class="question" id="q2" slug="fc96e0bb"><div class="description" id="d2"><p><strong>Question 2</strong>: (see above) The (usable) size of a <em>physical address</em> can be selected independently of<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o2"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans2" value="58203629"></input> <p>the number of levels of the page table</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans2" value="11b2776c"></input> <p>the number of bits in of page offset</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans2" value="4ad4e234"></input> <p>the size of the page table entries</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans2" value="f22d25e4"></input> <p>the number of page table entries per page</p>
+</li></ol></div></div></div><div class="multiquestion"><p>Consider a 4-level page table with 256 page table entries per page.</p>
+<div class="question" id="q3" slug="67ef3c84"><div class="description" id="d3"><p><strong>Question 3</strong>: (see above) Assume all of the code and data in your program is stored in addresses using the following <em>virtual</em> page numbers: 0x0, 0x123, and 0x125.  How many pages of memory does the page table occupy?</p>
+</div><div class="options" id="o3"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans3" value="9ff45705"></input> <p>1</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="9f55e9c6"></input> <p>4</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="59e8d988"></input> <p>5</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="7a680d97"></input> <p>6</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="756a2a4b"></input> <p>7</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="e20421d9"></input> <p>12</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="2678009f"></input> <p>insufficient information to tell</p>
+</li></ol></div></div><div class="question" id="q4" slug="6d91049b"><div class="description" id="d4"><p><strong>Question 4</strong>: (see above) Assume all of the code and data in your program is stored in addresses using the following <em>physical</em> page numbers: 0x0, 0x123, and 0x125.  How many pages of memory does the page table occupy?</p>
+</div><div class="options" id="o4"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans4" value="0e1d43b9"></input> <p>1</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="ef03055e"></input> <p>4</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="88c0bb61"></input> <p>5</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="b66c5e51"></input> <p>6</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="b6048d19"></input> <p>7</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="ce584d87"></input> <p>12</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="b8a183d4"></input> <p>insufficient information to tell</p>
+</li></ol></div></div></div><a href="." style="text-align:center; display:block;">Return to main page</a>
+<center><a href="../">Return to course page</a></center>
+</body>
+</html>

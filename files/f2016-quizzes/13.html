@@ -1,0 +1,168 @@
+﻿<html>
+<head>
+    <title>Quiz Viewer</title>
+    <style>
+        ol.options { margin-top:-1em; }
+        ol.options li p { display: inline; }
+        ol.options li { list-style: upper-alpha; }
+        body { background:#ccc; padding-top:1em; }
+        .question { background: white; border-radius:1ex; padding:0ex 1ex; margin:2ex;  }
+        .directions { background: #eee; padding:1ex 1ex; margin:2ex;  }
+        .multiquestion { background: #eee; border-radius:1ex; padding:0.7ex 0.7ex; }
+        .multiquestion + .multiquestion { margin-top:1em; }
+        .submitting { background: #fe7; }
+        .submitted { background: #dfd; }
+        textarea { background-color: inherit; }
+        #clock { position:fixed; right:0px; top:0px; background:#ff7; padding-left:0.5ex; padding-bottom:0.5ex; border-bottom-left-radius:1ex; border-left: 1px solid black; border-bottom: 1px solid black;}
+        .correct { background-color: #bfb; padding: 0ex 1ex; }
+        .incorrect { background-color: #fbb; padding: 0ex 1ex; }
+        .hist { color:#777; min-width: 2em; text-align:right; display:inline-block; }
+    </style>
+<script>function onload() {}</script></head>
+<body onload="onload()">
+    <center><a href="../">Return to course page</a></center><div class="question" id="q1" slug="d2e907d6"><div class="description" id="d1"><p><strong>Question 1</strong>: When the outcome of a branch is guessed incorrectly in our book's pipelined
+Y86 processor, the branch takes ______ cycles to execute than on a
+pipelined processor without branch prediction.</p>
+</div><div class="options" id="o1"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans1" value="4aea9ef1"></input> <p>more cycles</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="e19ecc6d"></input> <p>the same number of cycles</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="cfd4515c"></input> <p>fewer cycles</p>
+</li></ol></div></div><div class="multiquestion"><p>Consider the following assembly program, executed on our book's pipelined processor
+with branch prediction:</p>
+
+<pre><code>        subq %r8, %r8 /* set r8 to 0 */
+        jg unreachable /* never taken */
+        jmp next
+next:   call empty
+        halt
+
+empty:  ret
+</code></pre>
+<div class="question" id="q2" slug="c5f366b2"><div class="description" id="d2"><p><strong>Question 2</strong>: (see above) When the <code>jg unreachable</code> instruction is fetched, the previous <code>subq %r8, %r8</code> instruction will be in what phase:</p>
+</div><div class="options" id="o2"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans2" value="f7990ef0"></input> <p>fetch</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="814dcea4"></input> <p>decode</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="b94bf99f"></input> <p>execute</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="2e29b792"></input> <p>memory</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="b10e3b43"></input> <p>writeback</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="7cbcccad"></input> <p>not in the pipeline</p>
+</li></ol></div></div><div class="question" id="q3" slug="61b3455a"><div class="description" id="d3"><p><strong>Question 3</strong>: (see above) When the <code>jmp next</code> instruction is fetched, the previous <code>jg unreachable</code> instruction will be in what phase:</p>
+</div><div class="options" id="o3"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans3" value="69b5d8f3"></input> <p>fetch</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="cc246a0e"></input> <p>decode</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="dc5799e5"></input> <p>execute</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="12c988f4"></input> <p>memory</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="df8efcad"></input> <p>writeback</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="d0cbfe68"></input> <p>not in the pipeline</p>
+</li></ol></div></div><div class="question" id="q4" slug="15e53c60"><div class="description" id="d4"><p><strong>Question 4</strong>: (see above) When the <code>halt</code> instruction is fetched, the previous <code>call empty</code> instruction will be in what phase:</p>
+</div><div class="options" id="o4"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans4" value="9ba02592"></input> <p>fetch</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="50053218"></input> <p>decode</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="4ad64094"></input> <p>execute</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="00c67bfb"></input> <p>memory</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="ab897ebf"></input> <p>writeback</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="2201f457"></input> <p>not in pipeline</p>
+</li></ol></div></div><div class="question" id="q5" slug="1bd17250"><div class="description" id="d5"><p><strong>Question 5</strong>: (see above) Which of these instructions will require a stall?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o5"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans5" value="71493623"></input> <p><code>subq %r8, %r8</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans5" value="19286b61"></input> <p><code>jmp next</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans5" value="08028508"></input> <p><code>call empty</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans5" value="11042b43"></input> <p><code>ret</code></p>
+</li></ol></div></div></div><div class="question" id="q6" slug="92e67142"><div class="description" id="d6"><p><strong>Question 6</strong>: Consider the following assembly snippet:</p>
+
+<pre><code>addq %rax, %rbx  
+nop
+nop
+nop
+xorq %r8, %rbx
+</code></pre>
+
+<p>Do the andq and xorq instructions exercise a data hazard? If so, can the
+hazard be handled without stalling using forwarding?</p>
+</div><div class="options" id="o6"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans6" value="faba1ee0"></input> <p>there is no hazard</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans6" value="1843ab68"></input> <p>there is a hazard, but it can be handled with forwarding</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans6" value="e7d70558"></input> <p>there is a hazard, and handling it will require stalling</p>
+</li></ol></div></div><div class="question" id="q7" slug="8b0e441e"><div class="description" id="d7"><p><strong>Question 7</strong>: Consider the following assembly snippet:</p>
+
+<pre><code>addq %rax, %rbx  
+nop
+xorq %r8, %rbx
+</code></pre>
+
+<p>Do the andq and xorq instructions exercise a data hazard? If so, can the
+hazard be handled without stalling using forwarding?</p>
+</div><div class="options" id="o7"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans7" value="4bc758f7"></input> <p>there is no hazard</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans7" value="7b07350d"></input> <p>there is a hazard, but it can be handled with forwarding</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans7" value="f15b81f1"></input> <p>there is a hazard, and handling it will require stalling</p>
+</li></ol></div></div><div class="multiquestion"><p>Consider the following sequence of instructions:</p>
+
+<pre><code>addq %rax, %rbx
+xorq %r8, %rbx
+</code></pre>
+
+<p>To handle the data hazard exercised by these instructions, we can implement
+forwarding from the ALU output to <code>valB</code> pipeline register after the decode
+stage.</p>
+<div class="question" id="q8" slug="3411899b"><div class="description" id="d8"><p><strong>Question 8</strong>: (see above) How many cycles does this forwarding path save versus stalling?</p>
+</div><div class="options" id="o8"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans8" value="ebdea401"></input> <p>0</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans8" value="0e6bb6f0"></input> <p>1</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans8" value="631faa18"></input> <p>2</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans8" value="baa6828a"></input> <p>3</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans8" value="de782a2b"></input> <p>4</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans8" value="0dd3747e"></input> <p>5</p>
+</li></ol></div></div><div class="question" id="q9" slug="b33ca701"><div class="description" id="d9"><p><strong>Question 9</strong>: (see above) Which of the following values from pipeline registers does the logic for
+deciding whether to use this forwarding path need?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o9"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans9" value="db2184b8"></input> <p>icode for addq</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans9" value="5df2d524"></input> <p>icode for xor</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans9" value="183fe717"></input> <p>ifunc for addq</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans9" value="74093250"></input> <p>ifunc for xor</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans9" value="ca96c0a1"></input> <p>rA for addq</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans9" value="f6f3b0ba"></input> <p>rB for addq</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans9" value="4a7538e1"></input> <p>rA for xorq</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans9" value="3202b610"></input> <p>rB for xorq</p>
+</li></ol></div></div></div><a href="." style="text-align:center; display:block;">Return to main page</a>
+<center><a href="../">Return to course page</a></center>
+</body>
+</html>

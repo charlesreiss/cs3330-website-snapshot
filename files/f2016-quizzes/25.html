@@ -1,0 +1,110 @@
+﻿<html>
+<head>
+    <title>Quiz Viewer</title>
+    <style>
+        ol.options { margin-top:-1em; }
+        ol.options li p { display: inline; }
+        ol.options li { list-style: upper-alpha; }
+        body { background:#ccc; padding-top:1em; }
+        .question { background: white; border-radius:1ex; padding:0ex 1ex; margin:2ex;  }
+        .directions { background: #eee; padding:1ex 1ex; margin:2ex;  }
+        .multiquestion { background: #eee; border-radius:1ex; padding:0.7ex 0.7ex; }
+        .multiquestion + .multiquestion { margin-top:1em; }
+        .submitting { background: #fe7; }
+        .submitted { background: #dfd; }
+        textarea { background-color: inherit; }
+        #clock { position:fixed; right:0px; top:0px; background:#ff7; padding-left:0.5ex; padding-bottom:0.5ex; border-bottom-left-radius:1ex; border-left: 1px solid black; border-bottom: 1px solid black;}
+        .correct { background-color: #bfb; padding: 0ex 1ex; }
+        .incorrect { background-color: #fbb; padding: 0ex 1ex; }
+        .hist { color:#777; min-width: 2em; text-align:right; display:inline-block; }
+    </style>
+<script>function onload() {}</script></head>
+<body onload="onload()">
+    <center><a href="../">Return to course page</a></center><div class="multiquestion">
+<div class="question" id="q1" slug="85a71163"><div class="description" id="d1"><p><strong>Question 1</strong>: (see above) Virtual memory <em>reduces the memory needed to</em> do which of the following?
+That is,</p>
+
+<ul>
+<li>we could do them with similar runtime without virtual memory</li>
+<li>but virtual memory is more space efficient<br />
+<strong>Select all that apply</strong></li>
+</ul>
+</div><div class="options" id="o1"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans1" value="51e32a94"></input> <p>all processes share the same kernel memory address space</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans1" value="65030e2a"></input> <p>prevent one process from accessing another process's memory</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans1" value="160fd699"></input> <p>have many processes use the same code for libraries</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans1" value="1c8be3b8"></input> <p>prevent a process from accessing kernel memory</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans1" value="7f685eaa"></input> <p>have all programs use the same address for the start of their stack</p>
+</li></ol></div></div><div class="question" id="q2" slug="588a393c"><div class="description" id="d2"><p><strong>Question 2</strong>: (see above) Virtual memory <em>enables efficiently</em> doing which of the following?
+That is, to do them without virtual memory would be computationally inefficient or impossible.<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o2"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans2" value="9d454e74"></input> <p>all processes share the same kernel memory address space</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans2" value="693de3b7"></input> <p>prevent one process from accessing another process's memory</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans2" value="cc6ab246"></input> <p>have many processes use the same code for libraries</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans2" value="2fb3b8b8"></input> <p>prevent a process from accessing kernel memory</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans2" value="12b4087e"></input> <p>have all programs use the same address for their stack</p>
+</li></ol></div></div></div><div class="question" id="q3" slug="6bae3bb3"><div class="description" id="d3"><p><strong>Question 3</strong>: The TLB is a cache; unlike the L1, L2, etc. caches, typical TLBs<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o3"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans3" value="304c1652"></input> <p>take page numbers, not addresses, as input</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans3" value="511c184b"></input> <p>do not use set indexs</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans3" value="5ad4ea54"></input> <p>do not use tags</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans3" value="9d9650b2"></input> <p>do not use block offsets</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans3" value="f56aa445"></input> <p>store page numbers, not data, in their lines</p>
+</li></ol></div></div><div class="question" id="q4" slug="1d319d75"><div class="description" id="d4"><p><strong>Question 4</strong>: The page table structure</p>
+
+<ul>
+<li>is read by hardware</li>
+<li>is written by the operating system (kernel-mode software)</li>
+<li>is inacessible to user-mode software</li>
+<li>is used in every memory access, unless the TLB short-circuits that</li>
+<li>contains permission bits</li>
+<li>is stored in memory on pages</li>
+<li>marks pages that have been swapped out of RAM</li>
+</ul>
+
+<p>The virtual memory areas structures described in section 9.7.2<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o4"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans4" value="1c986ee3"></input> <p>is read by hardware</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans4" value="ced1994a"></input> <p>is written by the operating system (kernel-mode software)</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans4" value="4d4b8814"></input> <p>is inacessible to user-mode software</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans4" value="2e9a2007"></input> <p>is used in every memory access, unless the TLB short-circuits that</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans4" value="8acaf3cb"></input> <p>contains permission bits</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans4" value="a3ab7155"></input> <p>is stored in memory on pages</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans4" value="730241bf"></input> <p>marks pages that have been swapped out of RAM</p>
+</li></ol></div></div><div class="question" id="q5" slug="3e543b71"><div class="description" id="d5"><p><strong>Question 5</strong>: When physical memory gets full, some pages of memory can be <em>swapped out</em> to make room for new pages.
+When a page is swapped out,</p>
+</div><div class="options" id="o5"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans5" value="b41eff7d"></input> <p>the contents of the page are kept but moved to another region of physical memory</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="3a461b7f"></input> <p>the contents of the page are discarded</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="4b1bff6e"></input> <p>the contents of the page are kept but moved out of memory entirely</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="c9eb4f82"></input> <p>the contents of the page are kept in place, but their virtual addess is changed</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="c133d086"></input> <p>the contents of the page are kept in place, but their virtual addess is discarded</p>
+</li></ol></div></div><a href="." style="text-align:center; display:block;">Return to main page</a>
+<center><a href="../">Return to course page</a></center>
+</body>
+</html>

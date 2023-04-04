@@ -1,0 +1,83 @@
+﻿<html>
+<head>
+    <title>Quiz Viewer</title>
+    <style>
+        ol.options { margin-top:-1em; }
+        ol.options li p { display: inline; }
+        ol.options li { list-style: upper-alpha; }
+        body { background:#ccc; padding-top:1em; }
+        .question { background: white; border-radius:1ex; padding:0ex 1ex; margin:2ex;  }
+        .directions { background: #eee; padding:1ex 1ex; margin:2ex;  }
+        .multiquestion { background: #eee; border-radius:1ex; padding:0.7ex 0.7ex; }
+        .multiquestion + .multiquestion { margin-top:1em; }
+        .submitting { background: #fe7; }
+        .submitted { background: #dfd; }
+        textarea { background-color: inherit; }
+        #clock { position:fixed; right:0px; top:0px; background:#ff7; padding-left:0.5ex; padding-bottom:0.5ex; border-bottom-left-radius:1ex; border-left: 1px solid black; border-bottom: 1px solid black;}
+        .correct { background-color: #bfb; padding: 0ex 1ex; }
+        .incorrect { background-color: #fbb; padding: 0ex 1ex; }
+        .hist { color:#777; min-width: 2em; text-align:right; display:inline-block; }
+    </style>
+<script>function onload() {}</script></head>
+<body onload="onload()">
+    <center><a href="../">Return to course page</a></center><div class="directions"><p>Quiz on fifth week's material.</p>
+</div><div class="question" id="q1" slug="17b1d4fb"><div class="description" id="d1"><p><strong>Question 1</strong>: Given the following HCL2D, which of the following signals are not initialized that need to be initialized in order for it to compile?
+Note that there may be other signals that need to be initialized beyond those listed here.</p>
+
+<pre><code>pc = 0;
+reg_srcA = REG_RAX;
+reg_dstE = REG_RBX;
+</code></pre>
+</div><div class="options" id="o1"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans1" value="3bd39136"></input> <p>a register to store the PC</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="53e56391"></input> <p><code>reg_outputA</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="f56ab38b"></input> <p><code>reg_srcB</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="a9af19cd"></input> <p><code>reg_inputE</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="17b36af1"></input> <p><code>reg_dstM</code></p>
+</li></ol></div></div><div class="multiquestion"><p>When running a simulator created using HCL2D,</p>
+<div class="question" id="q2" slug="8c434715"><div class="description" id="d2"><p><strong>Question 2</strong>: (see above) If I want to have it pause between each step I give it</p>
+</div><div class="options" id="o2"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans2" value="fc4f003f"></input> <p>the <code>-i</code> flag</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="21747a43"></input> <p>the <code>-d</code> flag</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="2ca56a19"></input> <p>the <code>-q</code> flag</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="a3e32119"></input> <p>none of the above</p>
+</li></ol></div></div><div class="question" id="q3" slug="794e2004"><div class="description" id="d3"><p><strong>Question 3</strong>: (see above) If I want to see every wire's value I give it</p>
+</div><div class="options" id="o3"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans3" value="4fd3f892"></input> <p>the <code>-i</code> flag</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="042d2db6"></input> <p>the <code>-d</code> flag</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="a40ceda7"></input> <p>the <code>-q</code> flag</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="fa862c05"></input> <p>none of the above</p>
+</li></ol></div></div></div><div class="question" id="q4" slug="d0ab853d"><div class="description" id="d4"><p><strong>Question 4</strong>: The minimal set of signals you need to set for a simulator to run contains which of the following?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o4"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans4" value="8ac7435d"></input> <p><code>pc</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans4" value="82636a0e"></input> <p><code>Stat</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans4" value="3f122b49"></input> <p><code>i10bytes</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans4" value="14da72b2"></input> <p><code>reg_srcA</code> and/or <code>reg_srcB</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans4" value="990f4f75"></input> <p><code>reg_dstE</code> and/or <code>reg_dstM</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans4" value="62a58695"></input> <p><code>reg_inputE</code> and/or <code>reg_inputM</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans4" value="3d2a097c"></input> <p><code>mem_writebit</code> and/or <code>reg_readbit</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans4" value="5baa7e50"></input> <p><code>mem_addr</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans4" value="e0999aa6"></input> <p><code>mem_input</code></p>
+</li></ol></div></div><a href="." style="text-align:center; display:block;">Return to main page</a>
+<center><a href="../">Return to course page</a></center>
+</body>
+</html>

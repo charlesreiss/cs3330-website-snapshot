@@ -1,0 +1,91 @@
+﻿<html>
+<head>
+    <title>Quiz Viewer</title>
+    <style>
+        ol.options { margin-top:-1em; }
+        ol.options li p { display: inline; }
+        ol.options li { list-style: upper-alpha; }
+        body { background:#ccc; padding-top:1em; }
+        .question { background: white; border-radius:1ex; padding:0ex 1ex; margin:2ex;  }
+        .directions { background: #eee; padding:1ex 1ex; margin:2ex;  }
+        .multiquestion { background: #eee; border-radius:1ex; padding:0.7ex 0.7ex; }
+        .multiquestion + .multiquestion { margin-top:1em; }
+        .submitting { background: #fe7; }
+        .submitted { background: #dfd; }
+        textarea { background-color: inherit; }
+        #clock { position:fixed; right:0px; top:0px; background:#ff7; padding-left:0.5ex; padding-bottom:0.5ex; border-bottom-left-radius:1ex; border-left: 1px solid black; border-bottom: 1px solid black;}
+        .correct { background-color: #bfb; padding: 0ex 1ex; }
+        .incorrect { background-color: #fbb; padding: 0ex 1ex; }
+        .hist { color:#777; min-width: 2em; text-align:right; display:inline-block; }
+    </style>
+<script>function onload() {}</script></head>
+<body onload="onload()">
+    <center><a href="../">Return to course page</a></center><div class="multiquestion"><p>Continuing the washer/dryer/folding example from lecture, suppose that the washer takes 20 minutes, the dryer 40, and folding 15.</p>
+<div class="question" id="q1" slug="8cb684b1"><div class="description" id="d1"><p><strong>Question 1</strong>: (see above) If we replace the dryer with two dryers, leaving clothes in the first for 20 minutes and then moving them to the second for another 20 minutes, we would</p>
+</div><div class="options" id="o1"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans1" value="4a141013"></input> <p>increase latency</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="3ebea0e1"></input> <p>increase throughput</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="655df82f"></input> <p>decrease latency</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="5ee3808c"></input> <p>decrease throughput</p>
+</li></ol></div></div><div class="question" id="q2" slug="f3963c99"><div class="description" id="d2"><p><strong>Question 2</strong>: (see above) Which of the following would be an example of a control dependency?</p>
+</div><div class="options" id="o2"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans2" value="55cb9a17"></input> <p>You only want to wash the rest of your dry-clean-only shirts if the first one looked OK after being washed</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="ba6fe776"></input> <p>You want to put the same bright red rag in every load of wash to dye your clothes pinkish</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="0ba4d654"></input> <p>Your wiring is old enough that you'll blow a fuse if you run the washer and dryer at the same time</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="ec575537"></input> <p>You have to share your washer with other people, and they're using it right now</p>
+</li></ol></div></div><div class="question" id="q3" slug="15a4cbce"><div class="description" id="d3"><p><strong>Question 3</strong>: (see above) Which of the following would be an example of a data dependency?</p>
+</div><div class="options" id="o3"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans3" value="fb01fb9b"></input> <p>You only want to wash the rest of your dry-clean-only shirts if the first one looked OK after being washed</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="57e4abc7"></input> <p>You want to put the same bright red rag in every load of wash to dye your clothes pinkish</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="4c9a77c3"></input> <p>Your wiring is old enough that you'll blow a fuse if you run the washer and dryer at the same time</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="2c58a00c"></input> <p>You have to share your washer with other people, and they're using it right now</p>
+</li></ol></div></div></div><div class="multiquestion"><p>The first version of the pipelined <code>addq</code> machine we looked at in class would give the wrong result for the following code</p>
+
+<pre><code>addq %r8, %r9
+addq %r9, %r10
+</code></pre>
+<div class="question" id="q4" slug="da676c62"><div class="description" id="d4"><p><strong>Question 4</strong>: (see above) Which of the following programs would also give the wrong results?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o4"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans4" value="6c50b8f2"></input> <p><code>addq %r8, %r9; addq %r10, %r9</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans4" value="2571a3de"></input> <p><code>addq %r9, %r8; addq %r9, %r10</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans4" value="4ef99bff"></input> <p><code>addq %r9, %r8; addq %r10, %r9</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans4" value="b7eb4a0d"></input> <p><code>addq %r10, %r9; addq %r8, %r9</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans4" value="3a8a35c9"></input> <p><code>addq %r9, %r10; addq %r9, %r8</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans4" value="70fa75d3"></input> <p><code>addq %r10, %r9; addq %r9, %r8</code></p>
+</li></ol></div></div><div class="question" id="q5" slug="5201696b"><div class="description" id="d5"><p><strong>Question 5</strong>: (see above) We discussed fixing this by adding <code>nop</code> instructions and by having the hardware stall.  If we can add stalling to the hardware without changing the hardware clock speed,</p>
+</div><div class="options" id="o5"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans5" value="01580819"></input> <p>manually adding <code>nop</code>s where needed would be faster</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="b3df99a1"></input> <p>hardware stalling would be faster</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="22167817"></input> <p>which one would be faster depends on the particular situation</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="1189abf5"></input> <p>they both have equivalent speed</p>
+</li></ol></div></div></div><div class="question" id="q6" slug="0750ff4a"><div class="description" id="d6"><p><strong>Question 6</strong>: Which is most important for a processor to seem fast to the end user?</p>
+</div><div class="options" id="o6"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans6" value="8a3a73dd"></input> <p>high latency</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans6" value="2db6fc13"></input> <p>low latency</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans6" value="905c3b7c"></input> <p>high throughput</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans6" value="5e5e077c"></input> <p>low throughput</p>
+</li></ol></div></div><a href="." style="text-align:center; display:block;">Return to main page</a>
+<center><a href="../">Return to course page</a></center>
+</body>
+</html>

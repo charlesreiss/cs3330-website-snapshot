@@ -1,0 +1,88 @@
+﻿<html>
+<head>
+    <title>Quiz Viewer</title>
+    <style>
+        ol.options { margin-top:-1em; }
+        ol.options li p { display: inline; }
+        ol.options li { list-style: upper-alpha; }
+        body { background:#ccc; padding-top:1em; }
+        .question { background: white; border-radius:1ex; padding:0ex 1ex; margin:2ex;  }
+        .directions { background: #eee; padding:1ex 1ex; margin:2ex;  }
+        .multiquestion { background: #eee; border-radius:1ex; padding:0.7ex 0.7ex; }
+        .multiquestion + .multiquestion { margin-top:1em; }
+        .submitting { background: #fe7; }
+        .submitted { background: #dfd; }
+        textarea { background-color: inherit; }
+        #clock { position:fixed; right:0px; top:0px; background:#ff7; padding-left:0.5ex; padding-bottom:0.5ex; border-bottom-left-radius:1ex; border-left: 1px solid black; border-bottom: 1px solid black;}
+        .correct { background-color: #bfb; padding: 0ex 1ex; }
+        .incorrect { background-color: #fbb; padding: 0ex 1ex; }
+        .hist { color:#777; min-width: 2em; text-align:right; display:inline-block; }
+    </style>
+<script>function onload() {}</script></head>
+<body onload="onload()">
+    <center><a href="../">Return to course page</a></center><div class="question" id="q1" slug="52729dd2"><div class="description" id="d1"><p><strong>Question 1</strong>: Which if the following were <em>not</em> identified in class as reasons that pipleine depths rarely exceed 15 stages?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o1"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans1" value="bff923ca"></input> <p>the difficulty of making equal partitions</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans1" value="4a19a764"></input> <p>the overhead of having too many pipeline registers</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans1" value="a0328c8b"></input> <p>the increase in the number of hazards</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans1" value="018f2d78"></input> <p>the increase in the number of stalls created by each hazard</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans1" value="7168d568"></input> <p>the additional cost of branch misprediction</p>
+</li></ol></div></div><div class="question" id="q2" slug="c0165699"><div class="description" id="d2"><p><strong>Question 2</strong> (2 points): Three of the following are true; which three?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o2"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans2" value="5af47384"></input> <p>all hyperthreaded processors are also superscalar processors</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans2" value="06255524"></input> <p>all superscalar processors are also hyperthreaded processors</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans2" value="dec1d642"></input> <p>all out-of-order processors are also superscalar processors</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans2" value="5a430af6"></input> <p>all out-of-order processors are also hyperthreaded processors</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans2" value="d4b99f1b"></input> <p>all hyperthreaded processors are also out-of-order processors</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans2" value="ccad7149"></input> <p>all superscalar processors are also out-of-order processors</p>
+</li></ol></div></div><div class="question" id="q3" slug="c2322bde"><div class="description" id="d3"><p><strong>Question 3</strong>: Register renaming is used to implement which of the following?
+Pick the most direct answer (i.e., if renaming is used to implement X, and X is used to implement Y, answer X not Y)</p>
+</div><div class="options" id="o3"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans3" value="7f9142b5"></input> <p>variable-duration functional units</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="1bdbbfc3"></input> <p>out-of-order processing</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="6a1fe284"></input> <p>superscalar processors</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="9edae8e6"></input> <p>hyperthreaded processors</p>
+</li></ol></div></div><div class="question" id="q4" slug="a32a1e35"><div class="description" id="d4"><p><strong>Question 4</strong>: Suppose two processors are each executing the following code, and that <code>shared</code> is in shared memory, and that <code>*shared</code> is initially 0.</p>
+
+<pre><code>int main(int argc, char *argv[]) {
+    int x = *shared;
+    *shared = x + 1;
+    return 0;
+}
+</code></pre>
+
+<p>If each processor has its own cache and memory exhibits sequential consistency, which of the following could be the contents of <code>*shared</code> when both processors finish executing?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o4"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans4" value="248b595c"></input> <p>0</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans4" value="6d400321"></input> <p>1</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans4" value="91166e45"></input> <p>2</p>
+</li></ol></div></div><div class="question" id="q5" slug="7d5f7c0e"><div class="description" id="d5"><p><strong>Question 5</strong>: Locality (as we discussed it) is a characteristic of</p>
+</div><div class="options" id="o5"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans5" value="503afa14"></input> <p>programs</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="e8edeed5"></input> <p>processors</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="e17cef93"></input> <p>memory</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="40588fb4"></input> <p>caches</p>
+</li></ol></div></div><a href="." style="text-align:center; display:block;">Return to main page</a>
+<center><a href="../">Return to course page</a></center>
+</body>
+</html>

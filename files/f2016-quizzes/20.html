@@ -1,0 +1,83 @@
+﻿<html>
+<head>
+    <title>Quiz Viewer</title>
+    <style>
+        ol.options { margin-top:-1em; }
+        ol.options li p { display: inline; }
+        ol.options li { list-style: upper-alpha; }
+        body { background:#ccc; padding-top:1em; }
+        .question { background: white; border-radius:1ex; padding:0ex 1ex; margin:2ex;  }
+        .directions { background: #eee; padding:1ex 1ex; margin:2ex;  }
+        .multiquestion { background: #eee; border-radius:1ex; padding:0.7ex 0.7ex; }
+        .multiquestion + .multiquestion { margin-top:1em; }
+        .submitting { background: #fe7; }
+        .submitted { background: #dfd; }
+        textarea { background-color: inherit; }
+        #clock { position:fixed; right:0px; top:0px; background:#ff7; padding-left:0.5ex; padding-bottom:0.5ex; border-bottom-left-radius:1ex; border-left: 1px solid black; border-bottom: 1px solid black;}
+        .correct { background-color: #bfb; padding: 0ex 1ex; }
+        .incorrect { background-color: #fbb; padding: 0ex 1ex; }
+        .hist { color:#777; min-width: 2em; text-align:right; display:inline-block; }
+    </style>
+<script>function onload() {}</script></head>
+<body onload="onload()">
+    <center><a href="../">Return to course page</a></center><div class="question" id="q1" slug="bd508a87"><div class="description" id="d1"><p><strong>Question 1</strong>: Why would a compiler likely not change</p>
+
+<pre><code>for(i=0; i&lt;strlen(s); i+=1)
+    x += s[i];
+</code></pre>
+
+<p>into</p>
+
+<pre><code>int N = strlen(s);
+for(i=0; i&lt;N; i+=1)
+    x += s[i];
+</code></pre>
+</div><div class="options" id="o1"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans1" value="3f778ab4"></input> <p>compilers don't do optimizations if they think they might make code slower</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="47f70d4d"></input> <p>compilers have trouble proving the two variants have the same behavior</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="21b33c24"></input> <p>compilers only look at one function at a time so it can't work with <code>strlen</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="743d0c49"></input> <p>compilers don't know how to move code outside of loops</p>
+</li></ol></div></div><div class="question" id="q2" slug="7ebe1bd7"><div class="description" id="d2"><p><strong>Question 2</strong>: If function <code>baz</code> contains an invocation to function <code>foo</code> inside of a loop, and that is the only place <code>foo</code> is invoked in the code,</p>
+</div><div class="options" id="o2"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans2" value="eacc8e6d"></input> <p>inlining <code>foo</code> would increase assembly size but reduce bookkeeping ovverhead</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="c204673b"></input> <p>inlining <code>foo</code> would decrease assembly size and reduce bookkeeping ovverhead</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="e5e4839c"></input> <p>inlining <code>foo</code> would increase assembly size and increase bookkeeping ovverhead</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="69057d4c"></input> <p>inlining <code>foo</code> would increase assembly size but decrease bookkeeping ovverhead</p>
+</li></ol></div></div><div class="question" id="q3" slug="138ff575"><div class="description" id="d3"><p><strong>Question 3</strong>: Which of the following will (almost) never make code slower?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o3"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans3" value="003acc66"></input> <p>moving computation out of loops</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans3" value="aee3ccde"></input> <p>inlining functions</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans3" value="176b8a7e"></input> <p>eliminating unneeded memory references</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans3" value="6cd06c7e"></input> <p>loop unrolling</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans3" value="d46bc767"></input> <p>reordering code to take advantage of pipeline parallelism</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans3" value="78f7146c"></input> <p>reordering loops to have better cache locality</p>
+</li></ol></div></div><div class="question" id="q4" slug="2887560f"><div class="description" id="d4"><p><strong>Question 4</strong>: Which of the following will generally make code harder to read and maintain?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o4"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans4" value="6eb0cffb"></input> <p>moving computation out of loops</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans4" value="8421e958"></input> <p>inlining functions</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans4" value="0a30f47e"></input> <p>loop unrolling</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans4" value="c27f7804"></input> <p>using multiple accumulators</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans4" value="21b93b26"></input> <p>blocking loops to improve cache hit rates</p>
+</li></ol></div></div><div class="question" id="q5" slug="5933c74f"><div class="description" id="d5"><p><strong>Question 5</strong>: If a functional unit has issue 2, latency 5, capacity 1, what is the best possible improvement that could be gained by exploiting its parallelism capabilities?  Answer with a speedup number (such as <code>1</code> if no benefit is possible or <code>7.5</code> if code could be made 7.5 times faster)<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o5">Answer: <input disabled="disabled" type="text" name="ans5"/></div></div><a href="." style="text-align:center; display:block;">Return to main page</a>
+<center><a href="../">Return to course page</a></center>
+</body>
+</html>

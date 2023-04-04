@@ -1,0 +1,144 @@
+﻿<html>
+<head>
+    <title>Quiz Viewer</title>
+    <style>
+        ol.options { margin-top:-1em; }
+        ol.options li p { display: inline; }
+        ol.options li { list-style: upper-alpha; }
+        body { background:#ccc; padding-top:1em; }
+        .question { background: white; border-radius:1ex; padding:0ex 1ex; margin:2ex;  }
+        .directions { background: #eee; padding:1ex 1ex; margin:2ex;  }
+        .multiquestion { background: #eee; border-radius:1ex; padding:0.7ex 0.7ex; }
+        .multiquestion + .multiquestion { margin-top:1em; }
+        .submitting { background: #fe7; }
+        .submitted { background: #dfd; }
+        textarea { background-color: inherit; }
+        #clock { position:fixed; right:0px; top:0px; background:#ff7; padding-left:0.5ex; padding-bottom:0.5ex; border-bottom-left-radius:1ex; border-left: 1px solid black; border-bottom: 1px solid black;}
+        .correct { background-color: #bfb; padding: 0ex 1ex; }
+        .incorrect { background-color: #fbb; padding: 0ex 1ex; }
+        .hist { color:#777; min-width: 2em; text-align:right; display:inline-block; }
+    </style>
+<script>function onload() {}</script></head>
+<body onload="onload()">
+    <center><a href="../">Return to course page</a></center><div class="question" id="q1" slug="77ab3892"><div class="description" id="d1"><p><strong>Question 1</strong>: Real memory can take tens or even hundreds of cycles to execute a single read, and the time can vary from one read to the next.  One read might happen in a single cycle, the next might take 100 cycles.</p>
+
+<p>Assuming that 10% of your code is memory reads and that almost all memory reads are followed by a use of the read value in the next instruction.  If half of memory accessed take 1 cycle and the other half take 10 cycles, which of the following would result in the highest throughput?</p>
+</div><div class="options" id="o1"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans1" value="f027ee3e"></input> <p>Have a single memory stage, but stall if the read is going to take 10 cycles instead of one</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="c7ff6a1b"></input> <p>Split the memory stage into ten pipeline stages</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="eafd29b2"></input> <p>Have a single memory stage, and increase the clock cycle to 10 times its current duration</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="df0d776e"></input> <p>Split the memory stage into more than one stage, but fewer than ten, and increase the clock cycle</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="24ffc7e6"></input> <p>Split the memory stage into more than one stage, but fewer than ten, and stall for long reads</p>
+</li></ol></div></div><div class="multiquestion"><p>These questions have you match the terms with examples to which the terms might apply.  The same nine options are used in all four questions.</p>
+<div class="question" id="q2" slug="dd18b6cf"><div class="description" id="d2"><p><strong>Question 2</strong>: (see above) "Superscalar" applies to which of the following?</p>
+</div><div class="options" id="o2"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans2" value="7ad5f310"></input> <p>A processor that can fetch two instructions every cycle</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="5cb4659f"></input> <p>A processor that can execute instructions in a different order than they appear in code</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="af6e5200"></input> <p>A processor that can use vectors of values as operands in single instructions</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="1b974ce8"></input> <p>A functional unit that can perform more than one operation per cycle</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="89ba144f"></input> <p>A functional unit that can begin a new operation every cycle</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="9877647b"></input> <p>A functional unit that can only accept a new operation every few cycles</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="9f359a03"></input> <p>A program in which adjacent instructions do not have dependencies</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="88caaa48"></input> <p>A program that uses vectors as operands instead of single values</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="7f2d8193"></input> <p>A program that has multiple copies of each function</p>
+</li></ol></div></div><div class="question" id="q3" slug="a79bcad0"><div class="description" id="d3"><p><strong>Question 3</strong>: (see above) "Out-of-order" applies to which of the following?</p>
+</div><div class="options" id="o3"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans3" value="228aaecc"></input> <p>A processor that can fetch two instructions every cycle</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="91cb7915"></input> <p>A processor that can execute instructions in a different order than they appear in code</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="ec5fcbdc"></input> <p>A processor that can use vectors of values as operands in single instructions</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="97a0820d"></input> <p>A functional unit that can perform more than one operation per cycle</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="d5d6b096"></input> <p>A functional unit that can begin a new operation every cycle</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="f59aca88"></input> <p>A functional unit that can only accept a new operation every few cycles</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="ce3c71c4"></input> <p>A program in which adjacent instructions do not have dependencies</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="b60eeef7"></input> <p>A program that uses vectors as operands instead of single values</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="eb934e9e"></input> <p>A program that has multiple copies of each function</p>
+</li></ol></div></div><div class="question" id="q4" slug="6bf3a8c1"><div class="description" id="d4"><p><strong>Question 4</strong>: (see above) An issue time of 0.5 indicates which of the following?</p>
+</div><div class="options" id="o4"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans4" value="eaab4535"></input> <p>A processor that can fetch two instructions every cycle</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="bba96e62"></input> <p>A processor that can execute instructions in a different order than they appear in code</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="8fd1ec44"></input> <p>A processor that can use vectors of values as operands in single instructions</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="48b980cc"></input> <p>A functional unit that can perform more than one operation per cycle</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="a67bf26d"></input> <p>A functional unit that can begin a new operation every cycle</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="f3a0c019"></input> <p>A functional unit that can only accept a new operation every few cycles</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="02fe3ae9"></input> <p>A program in which adjacent instructions do not have dependencies</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="e9be41eb"></input> <p>A program that uses vectors as operands instead of single values</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="dd0e1daa"></input> <p>A program that has multiple copies of each function</p>
+</li></ol></div></div><div class="question" id="q5" slug="1ec0c6c3"><div class="description" id="d5"><p><strong>Question 5</strong>: (see above) "not fully pipelined" indicates which of the following?</p>
+</div><div class="options" id="o5"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans5" value="b8e07683"></input> <p>A processor that can fetch two instructions every cycle</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="fed3c2ac"></input> <p>A processor that can execute instructions in a different order than they appear in code</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="f581051d"></input> <p>A processor that can use vectors of values as operands in single instructions</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="3138dfb9"></input> <p>A functional unit that can perform more than one operation per cycle</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="56223b35"></input> <p>A functional unit that can begin a new operation every cycle</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="f2da4cad"></input> <p>A functional unit that can only accept a new operation every few cycles</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="a89444a9"></input> <p>A program in which adjacent instructions do not have dependencies</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="ae0203e0"></input> <p>A program that uses vectors as operands instead of single values</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="c57835a9"></input> <p>A program that has multiple copies of each function</p>
+</li></ol></div></div></div><div class="question" id="q6" slug="67947ddf"><div class="description" id="d6"><p><strong>Question 6</strong>: Which of the following exhibits spatial locality but not temporal locality?</p>
+</div><div class="options" id="o6"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans6" value="dd8d7b3e"></input> <p>a function that does not access memory</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans6" value="5c8abb09"></input> <p>a function that does a lot of work on each element of an array in order</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans6" value="eb75a874"></input> <p>a function that iterates over a set of keys, inserting a value for each into a hashmap</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans6" value="23979696"></input> <p>a function that sets all of the elements of a large array in order</p>
+</li></ol></div></div><div class="multiquestion"><p>Your brain could be considered a kind of cache for the textbook.</p>
+<div class="question" id="q7" slug="797aff1a"><div class="description" id="d7"><p><strong>Question 7</strong>: (see above) If I ask a question that is answered in the textbook but not in a region I have asked you to read, I should expect you to experience</p>
+</div><div class="options" id="o7"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans7" value="57acc518"></input> <p>a cold miss</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans7" value="4157f5ea"></input> <p>a conflict miss</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans7" value="3221b934"></input> <p>a capacity miss</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans7" value="4cb97587"></input> <p>a hit</p>
+</li></ol></div></div><div class="question" id="q8" slug="fd4d31a1"><div class="description" id="d8"><p><strong>Question 8</strong>: (see above) If I ask you to read a hundred pages and then ask a question, I should expect you to experience</p>
+</div><div class="options" id="o8"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans8" value="47bcbdb1"></input> <p>a cold miss</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans8" value="14e23cb1"></input> <p>a conflict miss</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans8" value="a8baddfe"></input> <p>a capacity miss</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans8" value="a6e1112c"></input> <p>a hit</p>
+</li></ol></div></div></div><a href="." style="text-align:center; display:block;">Return to main page</a>
+<center><a href="../">Return to course page</a></center>
+</body>
+</html>

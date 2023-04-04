@@ -1,0 +1,59 @@
+﻿<html>
+<head>
+    <title>Quiz Viewer</title>
+    <style>
+        ol.options { margin-top:-1em; }
+        ol.options li p { display: inline; }
+        ol.options li { list-style: upper-alpha; }
+        body { background:#ccc; padding-top:1em; }
+        .question { background: white; border-radius:1ex; padding:0ex 1ex; margin:2ex;  }
+        .directions { background: #eee; padding:1ex 1ex; margin:2ex;  }
+        .multiquestion { background: #eee; border-radius:1ex; padding:0.7ex 0.7ex; }
+        .multiquestion + .multiquestion { margin-top:1em; }
+        .submitting { background: #fe7; }
+        .submitted { background: #dfd; }
+        textarea { background-color: inherit; }
+        #clock { position:fixed; right:0px; top:0px; background:#ff7; padding-left:0.5ex; padding-bottom:0.5ex; border-bottom-left-radius:1ex; border-left: 1px solid black; border-bottom: 1px solid black;}
+        .correct { background-color: #bfb; padding: 0ex 1ex; }
+        .incorrect { background-color: #fbb; padding: 0ex 1ex; }
+        .hist { color:#777; min-width: 2em; text-align:right; display:inline-block; }
+    </style>
+<script>function onload() {}</script></head>
+<body onload="onload()">
+    <center><a href="../">Return to course page</a></center><div class="directions"><p>Skim &sect;2 for parts you don't remember</p>
+</div><div class="multiquestion"><p>In the following questions, let <code>B</code> be the maximum number (closest to postiive infinity) and <code>S</code> the minimum (closest to negative infinity) in the number system listed.</p>
+<div class="question" id="q1" slug="dd09f208"><div class="description" id="d1"><p><strong>Question 1</strong>: (see above) In two's compliment,</p>
+</div><div class="options" id="o1"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans1" value="33bc5786"></input> <p><code>B + 1 == 0</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="a3e6b788"></input> <p><code>S - 1 == 0</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="b0ba1089"></input> <p><code>-B == B</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="7eb56594"></input> <p><code>-S == S</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="dd29d4a1"></input> <p>None of the above</p>
+</li></ol></div></div><div class="question" id="q2" slug="cfa916aa"><div class="description" id="d2"><p><strong>Question 2</strong>: (see above) In unsigned binary,</p>
+</div><div class="options" id="o2"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans2" value="cc1401f1"></input> <p><code>B + 1 == 0</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="bfe37a0a"></input> <p><code>S - 1 == 0</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="522b18a5"></input> <p><code>-B == B</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="a254509a"></input> <p><code>-S == S</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="71882d36"></input> <p>None of the above</p>
+</li></ol></div></div></div><div class="question" id="q3" slug="f6de16d4"><div class="description" id="d3"><p><strong>Question 3</strong>: Assume <code>x</code> and <code>y</code> are binary numbers.  Let <code>u</code> be the result of adding <code>x</code> and <code>y</code> using unsigned arithemtic and <code>s</code> be the result of adding <code>x</code> and <code>y</code> using signed (two's compliment) arithmetic. Assume all values are 64-bits long.</p>
+</div><div class="options" id="o3"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans3" value="3ebcef6f"></input> <p><code>a</code> and <code>b</code> have the same bits set as one another for all <code>x and</code>y`</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="12a377af"></input> <p><code>a</code> and <code>b</code> have different bits from one another for all <code>x</code> and <code>y</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="b87b095c"></input> <p><code>a</code> and <code>b</code> might have the same or different bits, depending on the values of <code>x</code> and <code>y</code></p>
+</li></ol></div></div><div class="question" id="q4" slug="35168db5"><div class="description" id="d4"><p><strong>Question 4</strong>: Suppose you have a 32-bit <code>unsigned int</code> value initialized with a hexidecimal constant like <code>0xa180039b</code>.
+If you change just one hexadecimal digit in the constant, what is the maximum number of bits that could change?</p>
+</div><div class="options" id="o4">Answer: <input disabled="disabled" type="text" name="ans4"/></div></div><a href="." style="text-align:center; display:block;">Return to main page</a>
+<center><a href="../">Return to course page</a></center>
+</body>
+</html>

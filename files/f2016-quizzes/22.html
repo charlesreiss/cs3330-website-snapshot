@@ -1,0 +1,149 @@
+﻿<html>
+<head>
+    <title>Quiz Viewer</title>
+    <style>
+        ol.options { margin-top:-1em; }
+        ol.options li p { display: inline; }
+        ol.options li { list-style: upper-alpha; }
+        body { background:#ccc; padding-top:1em; }
+        .question { background: white; border-radius:1ex; padding:0ex 1ex; margin:2ex;  }
+        .directions { background: #eee; padding:1ex 1ex; margin:2ex;  }
+        .multiquestion { background: #eee; border-radius:1ex; padding:0.7ex 0.7ex; }
+        .multiquestion + .multiquestion { margin-top:1em; }
+        .submitting { background: #fe7; }
+        .submitted { background: #dfd; }
+        textarea { background-color: inherit; }
+        #clock { position:fixed; right:0px; top:0px; background:#ff7; padding-left:0.5ex; padding-bottom:0.5ex; border-bottom-left-radius:1ex; border-left: 1px solid black; border-bottom: 1px solid black;}
+        .correct { background-color: #bfb; padding: 0ex 1ex; }
+        .incorrect { background-color: #fbb; padding: 0ex 1ex; }
+        .hist { color:#777; min-width: 2em; text-align:right; display:inline-block; }
+    </style>
+<script>function onload() {}</script></head>
+<body onload="onload()">
+    <center><a href="../">Return to course page</a></center><div class="question" id="q1" slug="6ece37ba"><div class="description" id="d1"><p><strong>Question 1</strong>: In class we discussed how the following code</p>
+
+<pre><code>int main(void) {
+    for (int i = 0; i &lt; N; ++i) {
+        long start = get_time();
+        long end = get_time();
+        times[i] = end − start;
+    }
+}
+</code></pre>
+
+<p>will mostly put small times in <code>times</code> (a few nanoseconds), but there will be a few much larger values too (a few milliseconds).  These longer times are generally caused a</p>
+</div><div class="options" id="o1"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans1" value="fb2bc39f"></input> <p>a trap occurring between reading <code>start</code> and <code>stop</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="7afd90bd"></input> <p>a fault occurring between reading <code>start</code> and <code>stop</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="bb7884f3"></input> <p>an interrupt occurring between reading <code>start</code> and <code>stop</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="f13fd37d"></input> <p>an abort occurring between reading <code>start</code> and <code>stop</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="7b0de63a"></input> <p>a signal occurring between reading <code>start</code> and <code>stop</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="6b0b43fd"></input> <p>none of the above</p>
+</li></ol></div></div><div class="multiquestion">
+<div class="question" id="q2" slug="3effaba5"><div class="description" id="d2"><p><strong>Question 2</strong>: (see above) Each of the following is either synchronous or asynchronous.  Which are synchronous?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o2"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans2" value="8123c23f"></input> <p>traps</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans2" value="61d2f07a"></input> <p>faults</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans2" value="eb3aaa0f"></input> <p>interrupts</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans2" value="27af36aa"></input> <p>signals</p>
+</li></ol></div></div><div class="question" id="q3" slug="5972d162"><div class="description" id="d3"><p><strong>Question 3</strong>: (see above) Software exceptions are most similar to which kind of hardware exception?</p>
+</div><div class="options" id="o3"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans3" value="248d4b95"></input> <p>traps</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="c63dc750"></input> <p>faults</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="bf38f5d1"></input> <p>interrupts</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="1f00a721"></input> <p>signals</p>
+</li></ol></div></div></div><div class="multiquestion">
+<div class="question" id="q4" slug="5a24bc1e"><div class="description" id="d4"><p><strong>Question 4</strong>: (see above) Which of the following are true about <em>signal handlers</em>?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o4"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans4" value="8b10b488"></input> <p>they run in user mode</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans4" value="f915e1dd"></input> <p>the author of one must write different code to return than in a normal function</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans4" value="9a842656"></input> <p>they can be executed in response to an event external to the interrupted program</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans4" value="dd72ab42"></input> <p>they can be executed in response to an invalid memory access</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans4" value="ea76dba4"></input> <p>they have extra privileges that ordinary program code does not</p>
+</li></ol></div></div><div class="question" id="q5" slug="0258afb9"><div class="description" id="d5"><p><strong>Question 5</strong>: (see above) Which of the following are true about <em>exception handlers</em>?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o5"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans5" value="b67beaa2"></input> <p>they run in user mode</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans5" value="1466447e"></input> <p>the author of one must write different code to return than in a normal function</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans5" value="956a70c6"></input> <p>they can be executed in response to an event external to the interrupted program</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans5" value="44ac046a"></input> <p>they can be executed in response to an invalid memory access</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans5" value="a747d1f0"></input> <p>they have extra privileges that ordinary program code does not.</p>
+</li></ol></div></div></div><div class="question" id="q6" slug="14b788b7"><div class="description" id="d6"><p><strong>Question 6</strong>: If process A is running, then the operating system context switches to process B.
+After the switch, where is the context of <em>process A</em> stored?</p>
+</div><div class="options" id="o6"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans6" value="fd8ac578"></input> <p>on process A's stack</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans6" value="8714dd5c"></input> <p>on process B's stack</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans6" value="1f2d13ac"></input> <p>in the operating system's memory</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans6" value="eb74afe6"></input> <p>in the registers of the processor</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans6" value="e1334065"></input> <p>in the exception table</p>
+</li></ol></div></div><div class="question" id="q7" slug="c4afc4bc"><div class="description" id="d7"><p><strong>Question 7</strong>: Suppose process A is running when the operating system context switches to process B.
+After the switch, where is the context of <em>process B</em> stored?</p>
+</div><div class="options" id="o7"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans7" value="907ec0ad"></input> <p>on process A's stack</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans7" value="1aaa528a"></input> <p>on process B's stack</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans7" value="e5ab99e1"></input> <p>in the operating system's memory</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans7" value="f1f4a5ff"></input> <p>in the registers of the processor</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans7" value="6f76143d"></input> <p>in the exception table</p>
+</li></ol></div></div><div class="question" id="q8" slug="498f43b0"><div class="description" id="d8"><p><strong>Question 8</strong>: Given a call to <code>setjmp</code> like:</p>
+
+<pre><code>if (setjmp(env) == 0) {
+    ...
+} else {
+    ...
+}
+</code></pre>
+
+<p>Which of the following are saved in <code>env</code>?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o8"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans8" value="d13887f6"></input> <p>the list of registered signal handlers</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans8" value="204a253e"></input> <p>the stack pointer</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans8" value="6993ff0c"></input> <p>copies of the values of program registers</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans8" value="39b8e227"></input> <p>the return address of setjmp</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans8" value="d05613a3"></input> <p>copies of the values of global variables</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans8" value="52cb3be4"></input> <p>the address space of the current process</p>
+</li></ol></div></div><div class="question" id="q9" slug="36c2ea88"><div class="description" id="d9"><p><strong>Question 9</strong>: If an external event that would trigger an interrupt happens, but interrupts are disabled, then</p>
+</div><div class="options" id="o9"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans9" value="cb37f0b5"></input> <p>the interrupt handler will never run, so the OS must check for the event in another way</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans9" value="4220ce91"></input> <p>the interrupt handler will run as soon as interrupts are enabled</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans9" value="9ac96124"></input> <p>the interrupt handler will run because the external event reenables interrupts</p>
+</li></ol></div></div><a href="." style="text-align:center; display:block;">Return to main page</a>
+<center><a href="../">Return to course page</a></center>
+</body>
+</html>

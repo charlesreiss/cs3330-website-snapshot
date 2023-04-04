@@ -1,0 +1,99 @@
+﻿<html>
+<head>
+    <title>Quiz Viewer</title>
+    <style>
+        ol.options { margin-top:-1em; }
+        ol.options li p { display: inline; }
+        ol.options li { list-style: upper-alpha; }
+        body { background:#ccc; padding-top:1em; }
+        .question { background: white; border-radius:1ex; padding:0ex 1ex; margin:2ex;  }
+        .directions { background: #eee; padding:1ex 1ex; margin:2ex;  }
+        .multiquestion { background: #eee; border-radius:1ex; padding:0.7ex 0.7ex; }
+        .multiquestion + .multiquestion { margin-top:1em; }
+        .submitting { background: #fe7; }
+        .submitted { background: #dfd; }
+        textarea { background-color: inherit; }
+        #clock { position:fixed; right:0px; top:0px; background:#ff7; padding-left:0.5ex; padding-bottom:0.5ex; border-bottom-left-radius:1ex; border-left: 1px solid black; border-bottom: 1px solid black;}
+        .correct { background-color: #bfb; padding: 0ex 1ex; }
+        .incorrect { background-color: #fbb; padding: 0ex 1ex; }
+        .hist { color:#777; min-width: 2em; text-align:right; display:inline-block; }
+    </style>
+<script>function onload() {}</script></head>
+<body onload="onload()">
+    <center><a href="../">Return to course page</a></center><div class="directions"><p>Quiz on second week's material.</p>
+</div><div class="question" id="q1" slug="fdcd73c4"><div class="description" id="d1"><p><strong>Question 1</strong>: Given the following code, which options listed are valid type names?</p>
+
+<pre><code>typedef struct foo { int x; } baz;    
+</code></pre>
+
+<p><strong>Select all that apply</strong></p>
+</div><div class="options" id="o1"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans1" value="cb801e48"></input> <p><code>struct foo</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans1" value="b25c068e"></input> <p><code>struct baz</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans1" value="250bddd7"></input> <p><code>foo</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans1" value="38d95de3"></input> <p><code>baz</code></p>
+</li></ol></div></div><div class="question" id="q2" slug="dcf7a875"><div class="description" id="d2"><p><strong>Question 2</strong>: What does the following code print? (do not run the code: trace it by hand).</p>
+
+<pre><code>void main(void) {
+    int i = 0, j = 0, k = 0;
+    i = 1;
+Start:
+    goto L1;
+L2:
+    j = i+k;
+    goto L3;
+L1:
+    k += 2;
+    if (i &lt; j) goto L3;
+    goto L2;
+L3:
+    printf("%d %d %d\n", i, j, k);
+}
+</code></pre>
+
+<p>Your answer should be either three numbers separated by spaces or the word <code>ERROR</code> if there is an error or it prints nothing.</p>
+</div><div class="options" id="o2">Answer: <input disabled="disabled" type="text" name="ans2"/></div></div><div class="question" id="q3" slug="7227c41d"><div class="description" id="d3"><p><strong>Question 3</strong>: In the C standard, what is the difference between "undefined behavior" and "implementation defined behavior"?</p>
+</div><div class="options" id="o3"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans3" value="4fad52d4"></input> <p>an "implementation defined behavior" may vary between compilers, but not between programs created with the same compiler</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="a44474d3"></input> <p>an "undefined behavior" may vary between compilers, but not between programs created with the same compiler</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="c4e027fb"></input> <p>they are synonyms</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="5d945241"></input> <p>none of the above</p>
+</li></ol></div></div><div class="question" id="q4" slug="ff9da88e"><div class="description" id="d4"><p><strong>Question 4</strong>: Which of the following behave differently (result in different bits in their answers) when applied to <code>signed</code> vs. <code>unsigned</code> values?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o4"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans4" value="ea14efc7"></input> <p><code>&lt;</code>, <code>&gt;</code>, etc</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans4" value="e752c534"></input> <p><code>&lt;&lt;</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans4" value="763b5d01"></input> <p><code>&gt;&gt;</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans4" value="12ad0863"></input> <p>binary operators <code>+</code> and <code>-</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans4" value="ef0ef756"></input> <p>unary operator <code>-</code></p>
+</li></ol></div></div><div class="question" id="q5" slug="a41fa20b"><div class="description" id="d5"><p><strong>Question 5</strong>: If <code>x</code> and <code>y</code> are <code>int</code> values, what is the largest possible number of bits that could be set in <code>z</code> by the assignment <code>z = (!x)&amp;(~y);</code>?</p>
+</div><div class="options" id="o5">Answer: <input disabled="disabled" type="text" name="ans5"/></div></div><div class="question" id="q6" slug="eb52683d"><div class="description" id="d6"><p><strong>Question 6</strong>: Which of the following are equivalent to <code>!!x</code>?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o6"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans6" value="91744af7"></input> <p><code>!~x</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans6" value="6b383f1c"></input> <p><code>~!x</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans6" value="91e79386"></input> <p><code>-!x</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans6" value="d38a6fb2"></input> <p><code>(-!x)&amp;1</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans6" value="d6d1010a"></input> <p><code>(!x)&amp;1</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans6" value="ec126dd8"></input> <p><code>1 - (!x)</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans6" value="da167f42"></input> <p><code>(!x) - 1</code></p>
+</li></ol></div></div><a href="." style="text-align:center; display:block;">Return to main page</a>
+<center><a href="../">Return to course page</a></center>
+</body>
+</html>

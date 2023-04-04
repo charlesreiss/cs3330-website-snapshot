@@ -1,0 +1,110 @@
+﻿<html>
+<head>
+    <title>Quiz Viewer</title>
+    <style>
+        ol.options { margin-top:-1em; }
+        ol.options li p { display: inline; }
+        ol.options li { list-style: upper-alpha; }
+        body { background:#ccc; padding-top:1em; }
+        .question { background: white; border-radius:1ex; padding:0ex 1ex; margin:2ex;  }
+        .directions { background: #eee; padding:1ex 1ex; margin:2ex;  }
+        .multiquestion { background: #eee; border-radius:1ex; padding:0.7ex 0.7ex; }
+        .multiquestion + .multiquestion { margin-top:1em; }
+        .submitting { background: #fe7; }
+        .submitted { background: #dfd; }
+        textarea { background-color: inherit; }
+        #clock { position:fixed; right:0px; top:0px; background:#ff7; padding-left:0.5ex; padding-bottom:0.5ex; border-bottom-left-radius:1ex; border-left: 1px solid black; border-bottom: 1px solid black;}
+        .correct { background-color: #bfb; padding: 0ex 1ex; }
+        .incorrect { background-color: #fbb; padding: 0ex 1ex; }
+        .hist { color:#777; min-width: 2em; text-align:right; display:inline-block; }
+    </style>
+<script>function onload() {}</script></head>
+<body onload="onload()">
+    <center><a href="../">Return to course page</a></center><div class="directions"><p>Pre-quiz on third week's material.</p>
+</div><div class="question" id="q1" slug="7c695507"><div class="description" id="d1"><p><strong>Question 1</strong>: The instruction <code>leaq 7(%rax, %rbx, 4), %rdx</code> does which of the following?</p>
+</div><div class="options" id="o1"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans1" value="990ca829"></input> <p><code>rdx = 7 + rax + rbx*4</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="b2783263"></input> <p><code>*(7 + rax + rbx*4) = rdx</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="ba1962cb"></input> <p><code>rdx = *(7 + rax + rbx*4)</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="0cdefcb2"></input> <p><code>rdx = 7 + (rax + rbx)*4</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="83f7f813"></input> <p><code>*(7 + (rax + rbx)*4) = rdx</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="99c089b2"></input> <p><code>rdx = *(7 + (rax + rbx)*4)</code></p>
+</li></ol></div></div><div class="multiquestion"><p>The textbook presents the following to implementations of factorial (in figures 3.19 and 3.20):</p>
+
+<pre><code>fact_do:                    fact_while:
+    movl $1, %eax               movl $1, %eax
+L2:                             jmp L5
+    imulq %rdi, %rax        L6:
+    subq $1, %rdi               imulq %rdi, %rax
+    cmpq $1, %rdi               subq $1, %rdi
+    jg  L2                  L5:
+    rep                         cmpq $1, %rdi
+    ret                         jg L6
+                                rep
+                                ret
+</code></pre>
+<div class="question" id="q2" slug="27e2b6cc"><div class="description" id="d2"><p><strong>Question 2</strong>: (see above) Consider the mathematical instructions <code>imulq</code>, <code>subq</code>, and <code>cmpq</code>.
+Let <code>d</code> be the number of these instructions executed by <code>fact_do</code>
+and <code>w</code> be the number of these instructions executed by <code>fact_while</code>.
+Assume both functions are invoked with the argument 3 (which is passed into the functions in <code>%rdi</code>).
+What is the value of <code>d - w</code>?</p>
+</div><div class="options" id="o2">Answer: <input disabled="disabled" type="text" name="ans2"/></div></div><div class="question" id="q3" slug="ca0f0b0a"><div class="description" id="d3"><p><strong>Question 3</strong>: (see above) Compare the speed of <code>fact_do</code> and <code>fact_while</code></p>
+</div><div class="options" id="o3"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans3" value="81dc4d86"></input> <p>they are equally fast</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="e0a5479b"></input> <p><code>fact_do</code> is faster by a constant number of cycles (an additive constant)</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="1ec4df18"></input> <p><code>fact_do</code> is faster by a constant factor (a multiplicative constant)</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="0f41b8c7"></input> <p><code>fact_do</code> is asymptotically faster</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="f04dccc6"></input> <p><code>fact_while</code> is faster by a constant number of cycles (an additive constant)</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="9da9bb47"></input> <p><code>fact_while</code> is faster by a constant factor (a multiplicative constant)</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="c8ff425c"></input> <p><code>fact_while</code> is asymptotically faster</p>
+</li></ol></div></div></div><div class="question" id="q4" slug="c7aca2ca"><div class="description" id="d4"><p><strong>Question 4</strong>: Figure 3.28 explains how six arguments are passed to a function in six registers.
+A function with seven arguments</p>
+</div><div class="options" id="o4"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans4" value="de338a36"></input> <p>cannot be implemented using x86-64 calling conventions</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="e423c89c"></input> <p>would pass the arguments in seven registers</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="8335264d"></input> <p>would pass the seventh argument on the stack</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="85215e49"></input> <p>would pass the first argument on the stack</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="5dadf51e"></input> <p>would pass all seven arguments on the stack</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="1924dee9"></input> <p>none of the above</p>
+</li></ol></div></div><div class="multiquestion"><p>Consider the Y86-64 instruction encodings in Figure 4.2.
+Assume that memory is little-endian.</p>
+<div class="question" id="q5" slug="79f4a823"><div class="description" id="d5"><p><strong>Question 5</strong>: (see above) Why not encode <code>ret</code>, <code>halt</code>, and <code>nop</code> in just 4 bits instead of 8?</p>
+</div><div class="options" id="o5"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans5" value="03342947"></input> <p>it is impossible to have an instruction shorter than a byte</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="17e4c1f0"></input> <p>it possible but inefficient at runtime to have an instruction shorter than a byte</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="b26a9bff"></input> <p>a real system probably would use 4-bit instructions, but the book wanted to simplify the encoding to make the student's life easier</p>
+</li></ol></div></div><div class="question" id="q6" slug="3b852447"><div class="description" id="d6"><p><strong>Question 6</strong>: (see above) Suppose address <code>0x10</code> contains instruction <code>rrmovq %rsp, %r8</code>.  If we read the value in address <code>0x10</code> as a <code>short</code> value, it will be</p>
+</div><div class="options" id="o6"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans6" value="ed2adb99"></input> <p><code>0x10</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans6" value="1335fd5b"></input> <p><code>0x2048</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans6" value="2764c7ff"></input> <p><code>0x4820</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans6" value="ba0a49ee"></input> <p><code>0x284</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans6" value="e03ddae3"></input> <p><code>0x8402</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans6" value="012b4e85"></input> <p>none of the above</p>
+</li></ol></div></div></div><a href="." style="text-align:center; display:block;">Return to main page</a>
+<center><a href="../">Return to course page</a></center>
+</body>
+</html>

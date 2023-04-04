@@ -1,0 +1,1509 @@
+
+﻿<html>
+<head>
+    <title>All quizzes for Fall 2017 (key)</title>
+    <style>
+        ol.options { margin-top:-1em; }
+        ol.options li p { display: inline; }
+        ol.options li { list-style: upper-alpha; }
+        body { background:#ccc; padding-top:1em; }
+        .question { background: white; border-radius:1ex; padding:0ex 1ex; margin:2ex;  }
+        .directions { background: #eee; padding:1ex 1ex; margin:2ex;  }
+        .multiquestion { background: #eee; border-radius:1ex; padding:0.7ex 0.7ex; }
+        .multiquestion + .multiquestion { margin-top:1em; }
+        .submitting { background: #fe7; }
+        .submitted { background: #dfd; }
+        textarea { background-color: inherit; }
+        .correct { background-color: #bfb; padding: 0ex 1ex; }
+        .incorrect { background-color: #fbb; padding: 0ex 1ex; }
+        .hist { color:#777; min-width: 2em; text-align:right; display:inline-block; }
+    </style>
+</head>
+    <h1>All quizzes for Fall 2017 (key)</h1>
+
+<h2>Quiz 00</h2><div class="quizFrame"><div class="question" id="q1" slug="f76e7022"><div class="description" id="d1"><p><strong>Question 1</strong>: Suppose a program has three tasks to perform:</p>
+
+<ul><li>Task A, which takes 10 seconds; then
+<li>Task B, which takes 6 seconds; then
+<li>Task C, which takes 3 seconds</ul>
+
+<p>Initially, the program performs each of these tasks one at a time.
+Which of the following changes will result in the fastest
+runtime? (Assume doing two tasks in parallel does not make either
+of the parallel tasks slower.)</p>
+</div><div class="options" id="o1"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans1" value="78f9f46b"></input> <p>run task A, B, and C in parallel</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="493f39ae"></input> <p>speedup B and C by a factor of 7</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans1" value="4e25eb64"></input> <p>speedup A and B by a factor of 3</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="cb60ba59"></input> <p>speedup A by a factor of 5</p>
+</li></ol></div></div><div class="question" id="q2" slug="0f33c24c"><div class="description" id="d2"><p><strong>Question 2</strong>: Which of the following are true about <strong>object files</strong>?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o2"><ol class="options">
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans2" value="564e2be3"></input> <p>The object file contains the names of labels from the corresponding assembly file.</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans2" value="27bd2422"></input> <p>In addition to the machine code itself, the object file includes information about where in the machine code memory addresses will be when the program runs.</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans2" value="40b85140"></input> <p>In addition to the machine code itself, the object file includes information about where each instruction starts in the machine code.</p>
+</li></ol></div></div><div class="question" id="q3" slug="45589452"><div class="description" id="d3"><p><strong>Question 3</strong>: If the bytes <code>0x12</code>, followed by <code>0x34</code>, followed by <code>0x56</code>, followed
+by <code>0x78</code> are interpreted as a 4-byte <strong>little</strong> endian integer, what
+value will they have?</p>
+</div><div class="options" id="o3"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans3" value="31b977ce"></input> <p><code>0x12345678</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="a390a475"></input> <p><code>0x21436587</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="b2c3edd1"></input> <p><code>0x87654321</code></p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans3" value="0ba58d8b"></input> <p><code>0x78563412</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="a3b1363c"></input> <p>none of the above</p>
+</li></ol></div></div><div class="question" id="q4" slug="5b6c23c0"><div class="description" id="d4"><p><strong>Question 4</strong>: After the statements <code>char array[3] = {10, 12, 14}; char *ptr = array;</code>, which of the following C expressions
+are true?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o4"><ol class="options">
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans4" value="70456e93"></input> <p><code>array + 0 == ptr</code></p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans4" value="8a6e6837"></input> <p><code>ptr + 2 == &amp;(array[2])</code></p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans4" value="7aee7762"></input> <p><code>*array + 1 == *ptr + 1</code></p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans4" value="c6016586"></input> <p><code>*(ptr + 1) == 12</code></p>
+</li></ol></div></div></div><h2>Quiz 01</h2><div class="quizFrame"></div><h2>Quiz 02</h2><div class="quizFrame"><div class="question" id="q1" slug="fdcd73c4"><div class="description" id="d1"><p><strong>Question 1</strong>: After <code>int array[3] = {10, 6, 2}; int *ptr = array;</code>, which of the following C
+expressions are true:<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o1"><ol class="options">
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans1" value="cb801e48"></input> <p><code>sizeof(array[1]) == sizeof(ptr[1])</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans1" value="b25c068e"></input> <p><code>sizeof(array) == 3 * sizeof(ptr)</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans1" value="250bddd7"></input> <p><code>sizeof(array) == sizeof(&amp;array[0])</code></p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans1" value="38d95de3"></input> <p><code>array + 1 == ptr + 1</code></p>
+</li></ol></div></div><div class="question" id="q2" slug="dcf7a875"><div class="description" id="d2"><p><strong>Question 2</strong>: After the declaration:</p>
+
+<pre><code class="C">    typedef struct foo {
+        int x;
+    } bar;
+</code></pre>
+
+<p>which of the following C statements declare a instance of the struct?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o2"><ol class="options">
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans2" value="538878bd"></input> <p><code>bar x;</code></p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans2" value="8c590c72"></input> <p><code>struct foo x;</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans2" value="78630cb4"></input> <p><code>struct bar x;</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans2" value="ba26546f"></input> <p><code>typedef bar baz;</code></p>
+</li></ol></div></div><div class="question" id="q3" slug="7227c41d"><div class="description" id="d3"><p><strong>Question 3</strong>: What is the value of <code>%rax</code> after running the following? (You may
+assume this assembly does not segfault or otherwise crash.)</p>
+
+<pre><code class="asm">    movq %rsp, %rax
+    pushq %rax
+    subq %rsp, %rax
+    leaq (%rax, %rax, 2), %rax
+</code></pre>
+</div><div class="options" id="o3"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans3" value="4fad52d4"></input> <p>12</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans3" value="a44474d3"></input> <p>24</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="c4e027fb"></input> <p>8</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="5d945241"></input> <p>it depends on the initial value of <code>%rsp</code> or on the contents of the stack</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="35d541a8"></input> <p>none of the above</p>
+</li></ol></div></div><div class="question" id="q4" slug="ff9da88e"><div class="description" id="d4"><p><strong>Question 4</strong>: What is the value of <code>%rax</code> after running the following?</p>
+
+<pre><code class="asm">    movq $10, %rax
+    movq $20, %rbx
+    subq %rbx, %rax
+    jg skip
+    addq $10, %rax
+skip:
+</code></pre>
+</div><div class="options" id="o4"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans4" value="ea14efc7"></input> <p>-10</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans4" value="e752c534"></input> <p>0</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="763b5d01"></input> <p>10</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="12ad0863"></input> <p>20</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="ef0ef756"></input> <p>30</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="9690d0a6"></input> <p>not enough information is provided</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="17357e39"></input> <p>none of the above</p>
+</li></ol></div></div></div><h2>Quiz 03</h2><div class="quizFrame"></div><h2>Quiz 04</h2><div class="quizFrame"><div class="question" id="q1" slug="88b5c2ab"><div class="description" id="d1"><p><strong>Question 1</strong>: Which of the following usually true about RISC-like instruction sets
+compared to CISC-like instruction sets?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o1"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans1" value="c2bb967a"></input> <p>simpler instructions can be encoded using less space than complicated instructions</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans1" value="7e612da8"></input> <p>common operations (like pushing a value on the stack) have special, dedicated instructions</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans1" value="c581f62f"></input> <p>they have more registers</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans1" value="c56b2ba4"></input> <p>they have fewer ways of specifying instruction operands</p>
+</li></ol></div></div><div class="question" id="q2" slug="c9108d4b"><div class="description" id="d2"><p><strong>Question 2</strong>: Consider the following C code:</p>
+
+<pre><code class="C">    while (a + b &gt; 0) {
+        b += foo();
+    }
+</code></pre>
+
+<p>If <code>a</code> stored in <code>%r12</code> and <code>b</code> is stored in <code>%rbx</code>, which 
+of the following are valid compilations of this code? (Note
+that both <code>%r12</code> and <code>%rbx</code> are callee-saved registers.)<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o2"><ol class="options">
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans2" value="5f6ceff3"></input> <pre><code class="asm">    jmp middle
+top:
+    call foo
+    addq %rax, %rbx
+middle:
+    movq %r12, %rax
+    addq %rbx, %rax
+    jg top
+bottom:
+</code></pre>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans2" value="d4b76db5"></input> <pre><code class="asm">top:
+    addq %r12, %rbx
+    jle bottom
+    call foo
+    addq %rax, %rbx
+    jmp top
+bottom:
+</code></pre>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans2" value="521ba440"></input> <pre><code class="asm">   movq %r12, %rax
+   addq %rbx, %rax
+   jl bottom
+top:
+   call foo
+   addq %rax, %rbx
+   movq %rbx, %rax
+   addq %r12, %rax
+   jg top
+</code></pre>
+</li></ol></div></div><div class="question" id="q3" slug="0d25afcb"><div class="description" id="d3"><p><strong>Question 3</strong>: Which of the following are valid Y86-64 assembly?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o3"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans3" value="18a10628"></input> <p><code>rrmovq %rax, %r15</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans3" value="3e34c284"></input> <p><code>mrmovq 0x1234(%rbx,2), %r10</code></p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans3" value="dbeb8762"></input> <p><code>xorq %rax, %rbx</code></p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans3" value="ea28ad2d"></input> <p><code>cmovne %rbx, %rcx</code></p>
+</li>
+<li>(dropped from quiz)(correct answer)<input disabled="disabled" type="checkbox" name="ans3" value="4a303a14"></input> <p><code>popq %rsp</code></p>
+</li></ol></div></div><div class="question" id="q4" slug="7ddef53a"><div class="description" id="d4"><p><strong>Question 4</strong>: Which of the following are attributes of an instruction set?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o4"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans4" value="46829a41"></input> <p>the number of cycles each instruction takes to execute</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans4" value="bd06e7c9"></input> <p>whether floating point is supported</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans4" value="380caada"></input> <p>the number of registers available to programmers</p>
+</li>
+<li>(dropped from quiz)(correct answer)<input disabled="disabled" type="checkbox" name="ans4" value="200626bb"></input> <p>the size of memory addresses</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans4" value="6aeaa1cb"></input> <p>whether condition codes or compare-and-branch instructions are used</p>
+</li></ol></div></div></div><h2>Quiz 05</h2><div class="quizFrame"><div class="question" id="q1" slug="15f247fe"><div class="description" id="d1"><p><strong>Question 1</strong>: Which of the following are true about combinatorial circuits?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o1"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans1" value="32709e3f"></input> <p>They can implement a counter.</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans1" value="2a156b69"></input> <p>They only act when triggered by the rising edge of a clock signal.</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans1" value="e5ab4b55"></input> <p>They produce their output based on <strong><em>only</em></strong> their input.</p>
+</li></ol></div></div><div class="question" id="q2" slug="a32bd572"><div class="description" id="d2"><p><strong>Question 2</strong>: In the registers described in section 4.2.5 of our textbook, if a register is outputting
+the value <em>a</em>, and its input changes from <em>a</em> to <em>b</em>, the output will change:</p>
+</div><div class="options" id="o2"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans2" value="34c24028"></input> <p>after a small delay that does not depend on a clock signal</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="eaf8c99a"></input> <p>nearly immediately if the clock signal is high; when the clock signal becomes high otherwise</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="a83d77c0"></input> <p>upon the next rising <strong>or</strong> falling edge of the clock signal</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans2" value="15622297"></input> <p>upon the next rising edge of the clock signal</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="81939461"></input> <p>upon the next falling edge of the clock signal</p>
+</li></ol></div></div><div class="question" id="q3" slug="627b38b1"><div class="description" id="d3"><p><strong>Question 3</strong>: In the register file described in section 4.2.5 of our textbook, changes to the read register ID
+input will cause changes to the corresponding register value being outputted by the register file:</p>
+</div><div class="options" id="o3"><ol class="options">
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans3" value="0fd1f9ce"></input> <p>after a small delay that does not depend on a clock signal</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="b21ea152"></input> <p>nearly immediately if the clock signal is high; when the clock signal becomes high otherwise</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="eb6c28f8"></input> <p>upon the next rising <strong>or</strong> falling edge of the clock signal</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="347b31e2"></input> <p>upon the next rising edge of the clock signal</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="fede2683"></input> <p>upon the next falling edge of the clock signal</p>
+</li></ol></div></div><div class="question" id="q4" slug="d7b4a397"><div class="description" id="d4"><p><strong>Question 4</strong>: According to the description of conceptual "stages" described in our textbook for a Y86-64 processor in section
+4.3.1, which of the following instructions may need to perform work in the "execute" stage?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o4"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans4" value="25e3c3a3"></input> <p>halt</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans4" value="feb9e7b3"></input> <p>pushq</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans4" value="7ae36198"></input> <p>call</p>
+</li>
+<li>(dropped from quiz)<input disabled="disabled" type="checkbox" name="ans4" value="879e3a16"></input> <p>irmovq</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans4" value="a876b0b9"></input> <p>addq</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans4" value="d7b46f95"></input> <p>mrmovq</p>
+</li></ol></div></div><div class="question" id="q5" slug="2ce87381"><div class="description" id="d5"><p><strong>Question 5</strong>: Our textbook's description of the conceptual "write back" stage for the Y86-64 processor notes that the
+processor may write "up to two results to the register file". Which instructions require <strong>two</strong>
+values to be written to the register file?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o5"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans5" value="c7e98e18"></input> <p>pushq</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans5" value="6c492254"></input> <p>popq</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans5" value="540798fb"></input> <p>rmmovq</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans5" value="6f77a1ca"></input> <p>subq</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans5" value="28eda262"></input> <p>ret</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans5" value="be7ddcc5"></input> <p>call</p>
+</li></ol></div></div></div><h2>Quiz 06</h2><div class="quizFrame"><div class="question" id="q1" slug="983743c9"><div class="description" id="d1"><p><strong>Question 1</strong> (0 points): If <code>x</code> and <code>y</code> are <strong>positive</strong> unsigned ints, then which of the following C expressions
+are <strong>always</strong> true?</p>
+</div><div class="options" id="o1"><ol class="options">
+<li>(dropped from quiz)<input disabled="disabled" type="radio" name="ans1" value="a015f052"></input> <p><code>(x &amp; y) &gt; (x | y)</code></p>
+</li>
+<li>(dropped from quiz)<input disabled="disabled" type="radio" name="ans1" value="6b415ec3"></input> <p><code>(x &gt;&gt; 8) &amp; 0xFF == (x &amp; 0xFF80) &gt;&gt; 8</code> <em>(key: <code>((x &gt;&gt; 8) &amp; 0xFF) == ((x &amp; 0xFF80) &gt;&gt; 8)</code> would always be true)</em></p>
+</li>
+<li>(dropped from quiz)<input disabled="disabled" type="radio" name="ans1" value="4cd05e37"></input> <p><code>((x &gt;&gt; 2) | x) &amp; y == (x &amp; y) | ((x &amp; y) &gt;&gt; 2)</code></p>
+</li>
+<li>(dropped from quiz)<input disabled="disabled" type="radio" name="ans1" value="1e8ba76c"></input> <p><code>(x + y) &gt;&gt; 7 == (x &gt;&gt; 7) + (y &gt;&gt; 7)</code> <em>(key: <code>(127 + 1) &gt;&gt; 7 == 1</code>, <code>(127 &gt;&gt; 7) + (1 &gt;&gt; 7) == 0</code>)</em></p>
+</li></ol></div></div><div class="question" id="q2" slug="3594991c"><div class="description" id="d2"><p><strong>Question 2</strong>: If <code>x</code> is a signed short on our lab machines (two bytes, two's complement), then which
+of the following are possible results of <code>x &gt;&gt; 3</code>?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o2"><ol class="options">
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans2" value="8e57c1c7"></input> <p>0</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans2" value="fce96543"></input> <p>-1</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans2" value="a875576a"></input> <p>7</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans2" value="0b97a14b"></input> <p>-7</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans2" value="f5e052f7"></input> <p>10000</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans2" value="4bf34b41"></input> <p>-10000</p>
+</li></ol></div></div><div class="question" id="q3" slug="fc187497"><div class="description" id="d3"><p><strong>Question 3</strong>: Given a signed integer <code>x</code>, which of the following C expressions results in
+<code>x</code> with the first and third least significant bits cleared?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o3"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans3" value="996a1b92"></input> <p><code>((x &gt;&gt; 1) &lt;&lt; 1) | ((x &gt;&gt; 3) &lt;&lt; 3)</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans3" value="953d005c"></input> <p><code>(((x &gt;&gt; 1) ^ 2) &lt;&lt; 1)</code></p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans3" value="a6186d28"></input> <p><code>(((x &gt;&gt; 1) &amp; (~2)) &lt;&lt; 1)</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans3" value="c3f10c2e"></input> <p><code>x ^ 5</code></p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans3" value="75a925cc"></input> <p><code>x &amp; -6</code></p>
+</li></ol></div></div><div class="multiquestion"><p>For these questions, consider the processor "state" components we discussed in lecture ---
+the register file, ALU, instruction memory, data memory and PC register --- and
+the single-cycle processor designs we discussed based on connecting these with MUXes.</p>
+<div class="question" id="q4" slug="42959e29"><div class="description" id="d4"><p><strong>Question 4</strong>: (see above) Given the processor components we discussed, a processor executing the <code>addq</code> instruction
+would update the value stored in the result register in the register file ________
+when it updates the value stored in the program counter register.</p>
+</div><div class="options" id="o4"><ol class="options">
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans4" value="d3e84b6b"></input> <p>at approximately the same time as <em>(key: on the rising edge of the clock signal even though the values to store may be computed at different times)</em></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="c3a82a65"></input> <p>after</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="576dde7c"></input> <p>before</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="b4dd2a02"></input> <p>unknown --- it depends on how efficient the ALU and register file are</p>
+</li></ol></div></div><div class="question" id="q5" slug="2f5c52ed"><div class="description" id="d5"><p><strong>Question 5</strong>: (see above) If we were building a processor to implement the Y86 <code>jmp</code>, <code>addq</code> and <code>mrmovq</code> instructions <strong>only</strong>, 
+which of the following inputs would need to be controlled by a MUX or similar logic
+<strong>depended on the instructions <code>icode</code></strong>?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o5"><ol class="options">
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans5" value="3a64e4b6"></input> <p>the input of the program counter register <em>(key: <code>jmp</code> uses part of instruction memory output; others do not)</em></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans5" value="08b9f7ba"></input> <p>the read register number inputs to the register file <em>(key: harmless to read extra registers)</em></p>
+</li>
+<li>(dropped from quiz)(correct answer)<input disabled="disabled" type="checkbox" name="ans5" value="6dc642d3"></input> <p>the write register number inputs to the register file <em>(key: this or write value input needs something)</em></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans5" value="7463a563"></input> <p>the write enable input to the data memory <em>(key: no instructions write, can be hard-wired to 0)</em></p>
+</li>
+<li>(dropped from quiz)<input disabled="disabled" type="checkbox" name="ans5" value="673cec7c"></input> <p>the inputs to the data memory <em>(key: probably harmless to read memory when unneeded)</em></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans5" value="afd64df0"></input> <p>the address input to the instruction memory <em>(key: always equal to PC register output)</em></p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans5" value="763dd8fd"></input> <p>the inputs to the ALU <em>(key: <code>mrmovq</code> adds value from instruction; <code>addq</code> adds value from register)</em></p>
+</li></ol></div></div></div></div><h2>Quiz 07</h2><div class="quizFrame"><div class="question" id="q1" slug="9005a42b"><div class="description" id="d1"><p><strong>Question 1</strong>: In HCL (our flavor or the one described in the book), for which of
+the following values of x and y is the result 42?</p>
+
+<pre><code>    [ x &gt; y : 41 ; x &gt; y + 2 : 42 ; x + y &lt; 0 : 43 ; 1 : x + y ]
+</code></pre>
+
+<p><strong>Select all that apply</strong></p>
+</div><div class="options" id="o1"><ol class="options">
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans1" value="030a1aa4"></input> <p><code>x = 21</code>, <code>y = 21</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans1" value="2a258eef"></input> <p><code>x = 23</code>, <code>y = 19</code></p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans1" value="3fc981a8"></input> <p><code>x = 0</code>, <code>y = 42</code></p>
+</li>
+<li>(dropped from quiz)<input disabled="disabled" type="checkbox" name="ans1" value="97a45b95"></input> <p><code>x = 43</code>, <code>y = -1</code> <em>(dropped because depends on how signed/unsigned comparisons work)</em></p>
+</li></ol></div></div><div class="question" id="q2" slug="2594cbbc"><div class="description" id="d2"><p><strong>Question 2</strong>: Suppose you are debugging a processor you wrote in HCLRS and discover that <code>%rax</code> is being written
+by an instruction that should not modify any register.
+Which of the following are likely causes of this bug?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o2"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans2" value="315f2b12"></input> <p><code>mem_writebit</code> is 1 when it should be 0</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans2" value="6e012672"></input> <p><code>reg_dstE</code> has the wrong value</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans2" value="3c65f217"></input> <p><code>reg_dstM</code> has the wrong value</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans2" value="292fec06"></input> <p><code>reg_inputE</code> has the wrong value</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans2" value="eddc391a"></input> <p><code>reg_srcB</code> has the wrong value</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans2" value="0bf746e5"></input> <p><code>mem_addr</code> has the wrong value</p>
+</li></ol></div></div><div class="question" id="q3" slug="725e91c3"><div class="description" id="d3"><p><strong>Question 3</strong>: In the processor design in the book, some instructions require a constant that is not
+part of the instruction's machine code to be fed to the ALU. These include:<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o3"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans3" value="cb45d92d"></input> <p><code>mrmovq</code></p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans3" value="60448189"></input> <p><code>pushq</code></p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans3" value="b55362e7"></input> <p><code>ret</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans3" value="52b7eb60"></input> <p><code>xorq</code></p>
+</li></ol></div></div><div class="question" id="q4" slug="af2a41d3"><div class="description" id="d4"><p><strong>Question 4</strong>: During the execution of the <code>ret</code> instruction in the processor design discussed in the book, the input to the program counter register should
+be equal to:</p>
+</div><div class="options" id="o4"><ol class="options">
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans4" value="047abbc5"></input> <p>the output of the data memory</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="5a37e876"></input> <p>part of the output of the instruction memory</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="a96ca74b"></input> <p>one of the outputs of the register file</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="d6c1e11d"></input> <p>the output of the ALU</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="54701365"></input> <p>the output of an PC register plus a small constant</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="988bf9ca"></input> <p>different kinds of values depending on the condition codes</p>
+</li></ol></div></div><div class="question" id="q5" slug="fb5b2b4c"><div class="description" id="d5"><p><strong>Question 5</strong>: During the execution of a <code>popq %rax</code> instruction in the processor design discussed in
+the book, which operations occur significantly before the value of <code>%rsp</code> stored in the register file
+changes?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o5"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans5" value="aecea2d0"></input> <p>the value of <code>%rax</code> stored in the register file changes</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans5" value="1eee6caf"></input> <p>the instruction is read from the instruction memory</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans5" value="ebebec48"></input> <p>the value to be stored in <code>%rax</code> is read from the data memory</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans5" value="3f7746ce"></input> <p>the prior value of <code>%rsp</code> is read from the register file</p>
+</li></ol></div></div></div><h2>Quiz 08</h2><div class="quizFrame"><div class="question" id="q1" slug="17b1d4fb"><div class="description" id="d1"><p><strong>Question 1</strong>: The textbook's processor design performs an addition by 0 in the ALU for <code>irmovq</code>
+instruction to produce the value for the register file to write. What
+is an alternative to this design?</p>
+</div><div class="options" id="o1"><ol class="options">
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans1" value="3bd39136"></input> <p>add a MUX in front of one of the register file "value to write" inputs and connect one of the inputs to this MUX to part of the output of the instruction memory</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="53e56391"></input> <p>add an additional input to the MUX controlling one of the "register number to read" inputs to the register file and connect it to part of the output of the instruction memory</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="f56ab38b"></input> <p>add a MUX in front of the data memory "address to read or write" input and connect it to part of the output of the instruction memory</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="a9af19cd"></input> <p>none of the above</p>
+</li></ol></div></div><div class="question" id="q2" slug="8c434715"><div class="description" id="d2"><p><strong>Question 2</strong>: Our textbook divides its single-cycle processor design into six stages. What is true about
+these stages?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o2"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans2" value="fc4f003f"></input> <p>the stages represent the order in which this processor executes an instruction</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans2" value="21747a43"></input> <p>some instructions have no useful operations in some stages</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans2" value="2ca56a19"></input> <p>the length of the current instruction is computed in the logic of the "decode" stage.</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans2" value="a3e32119"></input> <p>the data memory access, if any, is part of the "memory" stage</p>
+</li></ol></div></div><div class="question" id="q3" slug="794e2004"><div class="description" id="d3"><p><strong>Question 3</strong>: During execution of <code>popq</code> instruction, the address that is passed to the data memory
+is equal to one of the outputs of</p>
+</div><div class="options" id="o3"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans3" value="4fd3f892"></input> <p>the ALU</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans3" value="042d2db6"></input> <p>the register file</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="a40ceda7"></input> <p>the PC register</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="fa862c05"></input> <p>the instruction memory</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="5e06d2ae"></input> <p>it doesn't matter; the <code>popq</code> instruction doesn't use the data memory</p>
+</li></ol></div></div><div class="question" id="q4" slug="d0ab853d"><div class="description" id="d4"><p><strong>Question 4</strong>: Given the following HCLRS code</p>
+
+<pre><code>    register xY {
+        a : 64 = 0;
+        b : 64 = 0;
+    }
+    x_a = Y_a + Y_b;
+    x_b = Y_b + 1;
+</code></pre>
+
+<p>During the initial clock cycle <code>Y_a</code> and <code>Y_b</code> are 0. What is the value of
+<code>Y_a</code> after three rising clock edges?</p>
+</div><div class="options" id="o4"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans4" value="8ac7435d"></input> <p>0</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="82636a0e"></input> <p>1</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="3f122b49"></input> <p>2</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans4" value="14da72b2"></input> <p>3</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="990f4f75"></input> <p>4</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="62a58695"></input> <p>5</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="3d2a097c"></input> <p>7</p>
+</li></ol></div></div></div><h2>Quiz 09</h2><div class="quizFrame"></div><h2>Quiz 10</h2><div class="quizFrame"><div class="question" id="q1" slug="22192a6d"><div class="description" id="d1"><p><strong>Question 1</strong>: A circuit that can be easily broken into multiple, approximately parts 
+that take approximately equal amounts of time is a ________ candidate for
+pipelining than a circuit that can be easily broken into one complex, slow part and many
+fast, simple parts.</p>
+</div><div class="options" id="o1"><ol class="options">
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans1" value="2112ef27"></input> <p>better</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="18cffee7"></input> <p>worse</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="9772aab0"></input> <p>about as good</p>
+</li></ol></div></div><div class="question" id="q2" slug="210753a7"><div class="description" id="d2"><p><strong>Question 2</strong>: Adding pipelining to a processor will usually ________ the amount of time
+it takes to execute a single function of several hundred instructions.</p>
+</div><div class="options" id="o2"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans2" value="339918a7"></input> <p>increase</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans2" value="278d35e7"></input> <p>decrease</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="c492bc96"></input> <p>not change</p>
+</li></ol></div></div><div class="question" id="q3" slug="14dc4231"><div class="description" id="d3"><p><strong>Question 3</strong>: Adding pipelining to a processor will usually ________ the amount of time
+it takes to execute a single instruction.</p>
+</div><div class="options" id="o3"><ol class="options">
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans3" value="18fcf2d3"></input> <p>increase</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="4fb106c0"></input> <p>decrease</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="64efe007"></input> <p>not change</p>
+</li></ol></div></div><div class="question" id="q4" slug="5d7aa518"><div class="description" id="d4"><p><strong>Question 4</strong>: Which of the following usually <strong>increases</strong> as the number of pipeline stages
+in a procesor design increases?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o4"><ol class="options">
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans4" value="42434416"></input> <p>the portion of the cycle time devoted to register delays</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans4" value="3a9ffc48"></input> <p>the complexity of each pipeline stage</p>
+</li></ol></div></div></div><h2>Quiz 11</h2><div class="quizFrame"></div><h2>Quiz 12</h2><div class="quizFrame"><div class="question" id="q1" slug="20b4b514"><div class="description" id="d1"><p><strong>Question 1</strong>: Consider the following Y86 assembly snippet running
+on the PIPE processsor described in our textbook:</p>
+
+<pre><code class="asm">    andq %rax, %rbx
+    subq %rcx, %rdx
+    rrmovq %r8, %r9
+    xorq %r10, %r11
+</code></pre>
+
+<p>When the <code>andq</code> instruction is in its memory stage, then the
+<code>rrmovq</code> instruction is in the ______ stage.</p>
+</div><div class="options" id="o1"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans1" value="bc38f9dd"></input> <p>fetch</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans1" value="99d936cf"></input> <p>decode</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="42b8542a"></input> <p>execute</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="cedbf94a"></input> <p>memory</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="03880df7"></input> <p>writeback</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="ddb3e53b"></input> <p>none; the instruction is not being run anywhere in the pipeline</p>
+</li></ol></div></div><div class="question" id="q2" slug="97f3d5cd"><div class="description" id="d2"><p><strong>Question 2</strong>: Consider the following Y86 assembly snippet running on the PIPE
+processor described in our textbook:</p>
+
+<pre><code class="asm">    andq %rax, %rbx
+    call foo
+    xorq %r10, %r11
+    halt
+foo:
+    subq %rcx, %rdx
+    ret
+</code></pre>
+
+<p>When the <code>xorq</code> instruction is in its fetch stage, then the
+<code>subq</code> instruction is in the _____ stage.</p>
+</div><div class="options" id="o2"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans2" value="38cfe3a1"></input> <p>fetch</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="f2f57608"></input> <p>decode</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="b06e3f31"></input> <p>execute</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="96c37b84"></input> <p>memory</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="d6068050"></input> <p>writeback</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans2" value="63c609c0"></input> <p>none; the instruction is not being run anywhere in the pipeline</p>
+</li></ol></div></div><div class="question" id="q3" slug="320e1483"><div class="description" id="d3"><p><strong>Question 3</strong>: Assume we are executing a program on the PIPE processor design described
+in the textbook.
+If one instruction in this program writes to the register <code>%rax</code> and a later instruction
+in the program reads that value from <code>%rax</code>, then<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o3"><ol class="options">
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans3" value="7174b5a9"></input> <p>there must be data dependency between the two instructions</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans3" value="b5098c51"></input> <p>there must be a data hazard involving these two instructions</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans3" value="c5e17d59"></input> <p>if the two instructions are in the same function, there must be a control hazard involving the two instructions</p>
+</li></ol></div></div><div class="question" id="q4" slug="6fcfd2b6"><div class="description" id="d4"><p><strong>Question 4</strong>: Which of the following statements are true about forwarding, stalling, and branch prediction are true?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o4"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans4" value="3c43f277"></input> <p>Forwarding can handle data hazards that stalling alone cannot.</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans4" value="8222ce84"></input> <p>A combination of stalling and forwarding can be used together to handle a <strong><em>single</em></strong> data hazard.</p>
+</li></ol></div></div><div class="question" id="q5" slug="6f525f75"><div class="description" id="d5"><p><strong>Question 5</strong>: When branch prediction predicts the wrong instruction,<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o5"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans5" value="a3cbcd3d"></input> <p>the processor needs to fetch the mispredicted conditional jump instruction twice.</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans5" value="e7d46092"></input> <p>the processor does not fetch new instructions until the mispredicted conditional jump instruction's result is known</p>
+</li></ol></div></div></div><h2>Quiz 13</h2><div class="quizFrame"><div class="question" id="q1" slug="d2e907d6"><div class="description" id="d1"><p><strong>Question 1</strong> (2 points): Which of the following assembly snippets exercises a data hazard in the PIPE processor design described in our textbook?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o1"><ol class="options">
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans1" value="4aea9ef1"></input> <pre><code class="asm">addq %rax, %rbx
+addq %rbx, %rcx
+</code></pre>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans1" value="e19ecc6d"></input> <pre><code class="asm">rmmovq %rcx, 0(%rdx)
+nop
+addq %rcx, %rdx
+</code></pre>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans1" value="cfd4515c"></input> <pre><code class="asm">addq %rcx, %rdx
+nop
+rmmovq %rcx, 0(%rdx)
+</code></pre>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans1" value="9c4513c9"></input> <pre><code class="asm">addq %rax, %rbx
+nop
+nop
+addq %rbx, %rcx
+</code></pre>
+</li></ol></div></div><div class="question" id="q2" slug="c5f366b2"><div class="description" id="d2"><p><strong>Question 2</strong>: If we want to squash the instruction currently in the execute stage, what should we do
+in HCL?</p>
+</div><div class="options" id="o2"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans2" value="f7990ef0"></input> <p>set the "bubble" signal to 1 on the decode to execute pipeline registers</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="814dcea4"></input> <p>set the "stall" signal to 1 on the decode to execute pipeline registers</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans2" value="b94bf99f"></input> <p>set the "bubble" signal to 1 on the execute to memory pipeline registers <strong>(preferred answer; this replaces the instruction with a nop)</strong></p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans2" value="2e29b792"></input> <p>set the "stall" signal to 1 on the execute to memory pipeline registers <strong>(answer accepted, but this assumes we are also stalling the instruction currently in the memory stage)</strong></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="b10e3b43"></input> <p>none of the above</p>
+</li></ol></div></div><div class="question" id="q3" slug="61b3455a"><div class="description" id="d3"><p><strong>Question 3</strong>: Consider the following assembly code:</p>
+
+<pre><code class="asm">    mrmovq 0(%rbx), %rcx
+    jne foo
+    addq %rcx, %rdx
+...
+foo:
+</code></pre>
+
+<p>On the PIPE processor described in the textbook and in lecture
+(that uses forwarding and branch prediction), if the <code>jne</code> is <strong>not taken</strong> (control goes to <code>addq</code>),
+the <code>addq</code> instruction will be fetched when the
+<code>mrmovq</code> instruction is in the ____ stage.</p>
+</div><div class="options" id="o3"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans3" value="69b5d8f3"></input> <p>fetch</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="cc246a0e"></input> <p>decode</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="dc5799e5"></input> <p>execute</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="12c988f4"></input> <p>memory</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans3" value="df8efcad"></input> <p>writeback</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="d0cbfe68"></input> <p>none of the above, the instruction is not in the pipeline</p>
+</li></ol></div></div><div class="multiquestion"><p>Consider splitting up the "decode" and "writeback" stages of our PIPE processor in order to accommodate a slower,
+internally pipelined register file. This register file accepts register numbers to read every cycle,
+and outputs a result near the end of the following clock cycle. It also accepts register numbers
+and value pairs to write every cycle, but doesn't complete the write until the end of the following clock cycle.</p>
+
+<p>In the resulting processor, the pipeline stages will be:</p>
+
+<ol>
+<li>Fetch</li>
+<li>Decode 1</li>
+<li>Decode 2</li>
+<li>Execute</li>
+<li>Memory</li>
+<li>Writeback 1</li>
+<li>Writeback 2</li>
+</ol>
+
+<p>For one instruction to read a value another wrote from the register file,
+the Writeback 2 stage of the writing instruction needs to complete by the time
+the reading instruction starts its Decode 1 stage.</p>
+<div class="question" id="q4" slug="15e53c60"><div class="description" id="d4"><p><strong>Question 4</strong>: (see above) Suppose this modified processor is executing the following assembly snippet:</p>
+
+<pre><code class="asm">    irmovq $0x1234, %rax
+    mrmovq 4(%rax), %rbx
+    subq %rbx, %rcx
+</code></pre>
+
+<p>If this processor resolves hazards in this assembly with <strong>stalling only</strong>, how many cycles of stalling
+will be required?</p>
+</div><div class="options" id="o4"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans4" value="9ba02592"></input> <p>0</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="50053218"></input> <p>1</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="4ad64094"></input> <p>2</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="00c67bfb"></input> <p>3</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="ab897ebf"></input> <p>4</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="2201f457"></input> <p>5</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="e5b4c552"></input> <p>more than 5 and less than 10</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans4" value="973c1f35"></input> <p>10 or more</p>
+</li></ol></div></div><div class="question" id="q5" slug="1bd17250"><div class="description" id="d5"><p><strong>Question 5</strong>: (see above) Suppose this modified processor is executing the following assembly snippet:</p>
+
+<pre><code class="asm">    irmovq $0x1234, %rax
+    mrmovq 4(%rax), %rbx
+    subq %rbx, %rcx
+</code></pre>
+
+<p>If this processor resolves hazards in this assembly with <strong>stalling and forwarding</strong>, how many cycles of stalling
+will be required?</p>
+</div><div class="options" id="o5"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans5" value="71493623"></input> <p>0</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans5" value="19286b61"></input> <p>1</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="08028508"></input> <p>2</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="11042b43"></input> <p>3</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="7180844f"></input> <p>4</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="7a39227f"></input> <p>5</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="2620922e"></input> <p>more than 5 and less than 10</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="70a72ae1"></input> <p>10 or more</p>
+</li></ol></div></div></div></div><h2>Quiz 14</h2><div class="quizFrame"><div class="question" id="q1" slug="77ab3892"><div class="description" id="d1"><p><strong>Question 1</strong>: Which of the following are examples of <strong>temporal locality</strong>?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o1"><ol class="options">
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans1" value="f027ee3e"></input> <p>the instructions in a loop are fetched multiple times</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans1" value="c7ff6a1b"></input> <p>most consecutively executed instructions in a loop are adjacent in memory</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans1" value="eafd29b2"></input> <p>when searching a binary search tree repeatedly (for many different keys), the children of the root node are accessed repeatedly</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans1" value="df0d776e"></input> <p>when accessing a hashtable repeatedly, accesses are evenly distributed throughout the hashtable</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans1" value="24ffc7e6"></input> <p>when looking for a newline in a C-style string, the string is scanned from beginning to end</p>
+</li></ol></div></div><div class="question" id="q2" slug="dd18b6cf"><div class="description" id="d2"><p><strong>Question 2</strong>: Which of the following are examples of <strong>spatial locality</strong>?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o2"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans2" value="7ad5f310"></input> <p>the instructions in a loop are fetched multiple times</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans2" value="5cb4659f"></input> <p>most consecutively executed instructions in a loop are adjacent in memory</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans2" value="af6e5200"></input> <p>when searching a binary search tree repeatedly (for many different keys), the children of the root node are accessed repeatedly</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans2" value="1b974ce8"></input> <p>when accessing a hashtable repeatedly, accesses are evenly distributed throughout the hashtable</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans2" value="89ba144f"></input> <p>when looking for a newline in a C-style string, the string is scanned from beginning to end</p>
+</li></ol></div></div><div class="question" id="q3" slug="a79bcad0"><div class="description" id="d3"><p><strong>Question 3</strong>: If a cache line is storing the values in memory around address X, then 
+the <strong>tag</strong> in this cache line contains</p>
+</div><div class="options" id="o3"><ol class="options">
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans3" value="228aaecc"></input> <p>part of the address X</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="91cb7915"></input> <p>part of the bytes in memory around address X</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="ec5fcbdc"></input> <p>information about when memory address X was last accessed</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="97a0820d"></input> <p>information about whether the cache's value for memory address X is consistent with the value in memory</p>
+</li></ol></div></div><div class="question" id="q4" slug="6bf3a8c1"><div class="description" id="d4"><p><strong>Question 4</strong>: In order to identify whether a memory access to the byte at address X hits in a cache, it is necessary to access:<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o4"><ol class="options">
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans4" value="eaab4535"></input> <p>the valid bits for the lines in the set of the cache corresponding to address X</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans4" value="bba96e62"></input> <p>the tag bits for the lines in the set of the cache corresponding to address X</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans4" value="8fd1ec44"></input> <p>the valid bits of sets adjacent to the set of the cache corresponding to address X</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans4" value="48b980cc"></input> <p>the block offset bits of the address X</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans4" value="a67bf26d"></input> <p>the set index bits of the address X</p>
+</li></ol></div></div><div class="multiquestion"><p>In section 6.4.7, our textbook talks about miss rate, hit time and miss penalty. Together
+these determine the effective performance of a cache.</p>
+<div class="question" id="q5" slug="1ec0c6c3"><div class="description" id="d5"><p><strong>Question 5</strong>: (see above) Which of the following are likely to be improved by switching from a direct-mapped
+to set-associative cache of the same size?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o5"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans5" value="b8e07683"></input> <p>hit time</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans5" value="fed3c2ac"></input> <p>miss rate</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans5" value="f581051d"></input> <p>miss penalty</p>
+</li></ol></div></div><div class="question" id="q6" slug="67947ddf"><div class="description" id="d6"><p><strong>Question 6</strong>: (see above) Which of the following are likely to be improved by
+decreasing the size of the cache (but leaving the block size and associativity the same)?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o6"><ol class="options">
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans6" value="dd8d7b3e"></input> <p>hit time</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans6" value="5c8abb09"></input> <p>miss rate</p>
+</li>
+<li>(dropped from quiz)(correct answer)<input disabled="disabled" type="checkbox" name="ans6" value="eb75a874"></input> <p>miss penalty <em>(I was thinking that it would be faster to write to a smaller cache, but it is reasonable to assume the cache completes the write to the cache while the processor is using the returned value, so no extra time is required)</em></p>
+</li></ol></div></div></div></div><h2>Quiz 15</h2><div class="quizFrame"><div class="multiquestion"><p>Consider a 1.5 MB 3-way set associative cache with 64B cache blocks,
+an LRU replacement policy, and a write-allocate, write-back policy.</p>
+<div class="question" id="q1" slug="52729dd2"><div class="description" id="d1"><p><strong>Question 1</strong>: (see above) Values for which of the following addresses would be stored 
+as part of the <strong>same cache block</strong> as <code>0x12345678</code> in this cache?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o1"><ol class="options">
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans1" value="bff923ca"></input> <p><code>0x12345670</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans1" value="4a19a764"></input> <p><code>0x00045678</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans1" value="a0328c8b"></input> <p><code>0x12345680</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans1" value="018f2d78"></input> <p><code>0x12300078</code></p>
+</li></ol></div></div><div class="question" id="q2" slug="c0165699"><div class="description" id="d2"><p><strong>Question 2</strong>: (see above) Which of the following addresses have the same <strong>tag</strong> in this
+cache as <code>0x12345678</code> in this cache?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o2"><ol class="options">
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans2" value="5af47384"></input> <p><code>0x12345670</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans2" value="06255524"></input> <p><code>0x00045678</code></p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans2" value="dec1d642"></input> <p><code>0x12345680</code></p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans2" value="5a430af6"></input> <p><code>0x12300078</code></p>
+</li></ol></div></div><div class="question" id="q3" slug="c2322bde"><div class="description" id="d3"><p><strong>Question 3</strong>: (see above) How many sets are in this cache?</p>
+</div><div class="options" id="o3"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans3" value="7f9142b5"></input> <p>1024</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="1bdbbfc3"></input> <p>2048</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="6a1fe284"></input> <p>4096</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans3" value="9edae8e6"></input> <p>8192</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="dc69890e"></input> <p>16384</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="7cf17e5d"></input> <p>32768</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="d3a829f0"></input> <p>none of the above</p>
+</li></ol></div></div></div><div class="multiquestion"><p>Consider a program that reads a byte at each
+of the following addresses in the following order:</p>
+
+<ul>
+<li>0x00</li>
+<li>0x10</li>
+<li>0x20</li>
+<li>0x00</li>
+<li>0x10</li>
+<li>0x20</li>
+<li>0x00</li>
+<li>0x10</li>
+<li>0x20</li>
+</ul>
+<div class="question" id="q4" slug="a32a1e35"><div class="description" id="d4"><p><strong>Question 4</strong>: (see above) How many cache misses will a 32B direct-mapped cache with 16B blocks
+experience on this access pattern, assuming the cache is
+initially empty?</p>
+</div><div class="options" id="o4"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans4" value="248b595c"></input> <p>0</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="6d400321"></input> <p>3</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="91166e45"></input> <p>6</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans4" value="fa5e0279"></input> <p>7</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="07339eff"></input> <p>8</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="1ebd126c"></input> <p>9</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="b81b48da"></input> <p>none of the above</p>
+</li></ol></div></div><div class="question" id="q5" slug="7d5f7c0e"><div class="description" id="d5"><p><strong>Question 5</strong> (0 points): (see above) How many cache misses will a 4-way set associative 32B cache with 2B blocks
+experience on this access pattern, assuming the cache is
+initially empty?</p>
+</div><div class="options" id="o5"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans5" value="503afa14"></input> <p>0</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans5" value="e8edeed5"></input> <p>3</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="e17cef93"></input> <p>6</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="40588fb4"></input> <p>7</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="c1299718"></input> <p>8</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="e7aee061"></input> <p>9</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="e52ff66c"></input> <p>none of the above</p>
+</li></ol></div></div></div><div class="question" id="q6" slug="d6c6e45b"><div class="description" id="d6"><p><strong>Question 6</strong>: Which of the following cache design changes increase the amount of metadata (non-data storage) required
+for a cache?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o6"><ol class="options">
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans6" value="723f7226"></input> <p>using a write-back policy instead of a write-through policy</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans6" value="7c204258"></input> <p>using an LRU replacement policy instead of a random replacement policy</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans6" value="0a01bc07"></input> <p>making the cache 8-way set associative instead of 4-way (without changing the block size or total number of data bytes stored)</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans6" value="2c33ce49"></input> <p>doubling the cache block size (without changing the associativity or total number of data bytes stored)</p>
+</li></ol></div></div></div><h2>Quiz 16</h2><div class="quizFrame"><div class="question" id="q1" slug="945f3bf2"><div class="description" id="d1"><p><strong>Question 1</strong>: In section 5.1, the textbook discusses how <em>memory aliasing</em> can prevent compilers from performing
+some optimizations. Which of the following optimizations might be prohibited
+due to the possiblity of memory aliasing? Assume that <code>pa</code> and <code>pb</code> and declared as
+<code>unsigned long *</code>s, and <code>x</code> and <code>y</code> are declared as a <code>unsigned long</code>s.</p>
+
+<p><em>[Dropped two options because the textbook says "two pointers point to the same place" rather than a more general description of aliasing. Also, the compiler can observe that the two droppped options would be an infinite loop if there were aliasing and still optimize them. (C allows compilers to remove infinite loops without side effects.)]</em></p>
+
+<p><em>[I should have included setting <code>y</code> or <code>*pb</code> to 0 on the options below, too, though I think it
+was clear enough for most for the remaining options.]</em><br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o1"><ol class="options">
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans1" value="7ae06738"></input> <p>converting <code>while (*pb &gt; 0) { *pa += 1; *pb -= 1; }</code> into <code>*pa += *pb;</code></p>
+</li>
+<li>(dropped from quiz)(correct answer)<input disabled="disabled" type="checkbox" name="ans1" value="36497498"></input> <p>converting <code>while (y &gt; 0) { *pa += 1; y -= 1; }</code> into <code>*pa += y;</code></p>
+</li>
+<li>(dropped from quiz)(correct answer)<input disabled="disabled" type="checkbox" name="ans1" value="6b65cc30"></input> <p>converting <code>while (*pb &gt; 0) { x += 1; *pb -= 1; }</code> into <code>x += pb;</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans1" value="695727e1"></input> <p>converting <code>while (y &gt; 0) { x += 1; y -= 1; }</code> into <code>x += y;</code></p>
+</li></ol></div></div><div class="question" id="q2" slug="8e6820f2"><div class="description" id="d2"><p><strong>Question 2</strong>: Which of the following optimizations are likely to increase the size of an executable?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o2"><ol class="options">
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans2" value="e2fb77ae"></input> <p>function inlining</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans2" value="0e9a8af1"></input> <p>loop unrolling</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans2" value="eedf9427"></input> <p>accumulating results in registers instead of in memory</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans2" value="b8c254d0"></input> <p>relocating a function call outside of a loop</p>
+</li></ol></div></div><div class="question" id="q3" slug="0d2e12ca"><div class="description" id="d3"><p><strong>Question 3</strong>: Suppose I try to optimize code by using function inlining, but discover that the resulting
+code is <em>slower</em>.  Which of the following are likely causes of this?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o3"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans3" value="4d22db3f"></input> <p>inlining created more memory aliasing, making it harder for the compiler to perform other optimizations</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans3" value="228d5403"></input> <p>inlining increased the number of instruction cache misses</p>
+</li>
+<li>(accepted any answer)<input disabled="disabled" type="checkbox" name="ans3" value="bcbfd3fb"></input> <p>inlining increased the number of instructions in a loop, causing it to run slower <em>[intended intrepretation was "number of instructions executions in a loop", but plausible explanation if you're thinking about the amount of space required to store all the instructions a loop contains/executes]</em></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans3" value="8b9abd01"></input> <p>inlining required the compiler to store values on the stack that were previously stored in registers</p>
+</li></ol></div></div><div class="question" id="q4" slug="4ec73ce4"><div class="description" id="d4"><p><strong>Question 4</strong>: Section 5.7.2 and FIgure 5.12 indicates that that the Intel Haswell microarchitecture has
+a fully pipelined functional unit that can issue one multiplication per cycle, but with a
+3 cycle latency. Given this, how many cycles does it take to use this
+functional unit to compute <code>(x * y) * z</code>? (Give the total latency of the computation.
+Assume no extra time is required to provide inputs to or read outputs from the functional unit.)</p>
+</div><div class="options" id="o4"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans4" value="e5677d7a"></input> <p>2 cycles</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="9c6a7ab0"></input> <p>3 cycles</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="e40e864d"></input> <p>4 cycles</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="ea9d6257"></input> <p>5 cycles</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans4" value="95c54d0b"></input> <p>6 cycles</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="c6b69ebb"></input> <p>7 cycles</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="e9a713cd"></input> <p>8 cycles</p>
+</li></ol></div></div></div><h2>Quiz 17</h2><div class="quizFrame"><div class="multiquestion"><p>Consider the following three pieces of C code:</p>
+
+<pre><code>/* version 1 */
+for (int i = 0; i &lt; N; ++i)
+    for (int j = 0; j &lt; N; ++j)
+        A[i * N + j] = B[j * N + i];
+
+/* version 2 */
+for (int j = 0; j &lt; N; ++j)
+    for (int i = 0; i &lt; N; ++i)
+        A[i * N + j] = B[j * N + i];
+
+/* version 3 */
+for (int ii = 0; ii &lt; N; ii += 64)
+    for (int j = 0; j &lt; N; ++j)
+        for (int i = 0; i &lt; ii + 64; ++i)
+            A[i * N + j] = B[j * N + i];
+</code></pre>
+
+<p><em>[Version 3 was meant to start the innermost loop from <code>ii</code>. Given that, version 2
+would have better spatial locality in B. Without that, it's ambiguous whether
+version 2 has better spatial locality in B in than version 3. Also, given that version 3 has better temporal locality in <code>A</code>.]</em></p>
+
+<p>Assume <code>N</code> is a large multiple of 64.</p>
+<div class="question" id="q1" slug="ca7a1272"><div class="description" id="d1"><p><strong>Question 1</strong>: (see above) In which version do accesses to A have the best <strong>temporal locality</strong>?</p>
+</div><div class="options" id="o1"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans1" value="c4ab27aa"></input> <p>version 1</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="207461f9"></input> <p>version 2</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans1" value="4863a0cf"></input> <p>verison 3 <em>[only one that accesses any element of <code>A</code> twice]</em></p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans1" value="8f177b28"></input> <p>two or more versions are tied for best spatial <em>[copy/paste error, meant: temporal]</em> locality for accesses to A</p>
+</li></ol></div></div><div class="question" id="q2" slug="cba0f48e"><div class="description" id="d2"><p><strong>Question 2</strong>: (see above) In which version do accesses to A have the best <strong>spatial locality</strong>?</p>
+</div><div class="options" id="o2"><ol class="options">
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans2" value="7b79ad8a"></input> <p>version 1</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="724410c9"></input> <p>version 2</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="c5df0794"></input> <p>verison 3</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="84fd5a01"></input> <p>two or more versions are tied for best spatial locality for accesses to A</p>
+</li></ol></div></div><div class="question" id="q3" slug="e6b62903"><div class="description" id="d3"><p><strong>Question 3</strong>: (see above) In which version do accesses to B have the best <strong>spatial locality</strong>?</p>
+</div><div class="options" id="o3"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans3" value="dea5e25a"></input> <p>version 1</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans3" value="7a8658f3"></input> <p>version 2</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans3" value="1aab06f2"></input> <p>verison 3</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans3" value="c1154a97"></input> <p>two or more versions are tied for best spatial locality for accesses to B</p>
+</li></ol></div></div></div><div class="multiquestion"><p>Consider the following C code:</p>
+
+<pre><code>long array[1024 * 1024];
+for (int x = 0; x &lt; 10; ++x)
+    for (int i = 0; i &lt; 1024 * 1024; i += 1024)
+        array[i] += 1;
+</code></pre>
+
+<p>Assume that all variables but <code>array</code> are placed into registers
+and that array is placed in memory such that the address of
+<code>array[0]</code> is a multiple of the cache block size (i.e. all of
+its block offset bits are 0).
+Also, assume that <code>long</code>s are 8 bytes and
+all caches are initially empty.</p>
+
+<p><em>[The numbers in parenthesis were meant to correspond to the numbers before, but due to some silly mathematical errors, one did not.]</em></p>
+<div class="question" id="q4" slug="86268c89"><div class="description" id="d4"><p><strong>Question 4</strong>: (see above) How many <strong>data cache misses</strong> will this C code experience on 
+a 64KB (64 * 1024 byte) direct-mapped cache with 64B cache blocks?</p>
+</div><div class="options" id="o4"><ol class="options">
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans4" value="b6a9b1f3"></input> <p><code>10240</code> <em>[values at i and i + 1024 * 64 / 8 map to same cache set]</em></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="3150b50c"></input> <p><code>1024</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="dc0da17e"></input> <p><code>9664</code> (1024 + (1024 - 64) * 9)</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="11bf7ff6"></input> <p><code>9600</code> ((1024-64) * 10)</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="f4e885d1"></input> <p><code>5632</code> (1024 + (1024 - 512) * 9)</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="6139f828"></input> <p><code>6144</code> <s>((1024 - 512) * 10)</s>1024 + (1024 - 512) * 10</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="1d4e093b"></input> <p>none of the above</p>
+</li></ol></div></div><div class="question" id="q5" slug="a77e5712"><div class="description" id="d5"><p><strong>Question 5</strong> (0 points): (see above) <em>[Dropped, because I needed to specify the replacement policy for you to answer this question.]</em></p>
+
+<p>How many <strong>data cache misses</strong> will this C code experience on 
+a 1.5MB (1536 * 1024 byte) 3-way set associative cache with 64B cache blocks?</p>
+</div><div class="options" id="o5"><ol class="options">
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans5" value="caa24697"></input> <p><code>10240</code> <em>[values at i and i + 1024 * 512 / 8 and i + 1024 * 512 / 8 * 2 and i + 1024 * 512 / 8 * 3 and i + 1024 * 512 / 8 * 4 and up to <code>* 6</code> map to same cache set, so this is what would happen with an LRU replacement policy]</em></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="618955a5"></input> <p><code>1024</code> <em>[if it was an array of bytes]</em></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="6e3ec125"></input> <p><code>9664</code> (1024 + (1024 - 64) * 9)</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="bd7b3732"></input> <p><code>9600</code> ((1024-64) * 10)</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="d2bf79aa"></input> <p><code>5632</code> (1024 + (1024 - 512) * 9)</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="7e3eb7a9"></input> <p><code>6144</code> <s>((1024 - 512) * 10)</s>1024 + (1024 - 512) * 10</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans5" value="4f2f1dd6"></input> <p>none of the above</p>
+</li></ol></div></div></div><div class="question" id="q6" slug="8d711ee3"><div class="description" id="d6"><p><strong>Question 6</strong>: Which of the following optimizations are often difficult for compilers to do because of
+aliasing?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o6"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans6" value="08280432"></input> <p>function inlining</p>
+</li>
+<li>(dropped from quiz)<input disabled="disabled" type="checkbox" name="ans6" value="4c840471"></input> <p>loop unrolling <em>[I think aliasing is not a big issue here, but it is reasonable to think that the loop bound being aliased would cause lots of problems and not be a rare occurrence.]</em></p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans6" value="5a36a0f0"></input> <p>cache blocking</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans6" value="14929972"></input> <p>storing an repeatedly accessed array element in a register instead of loading it repeatedly from memory</p>
+</li></ol></div></div><div class="question" id="q7" slug="29f40a82"><div class="description" id="d7"><p><strong>Question 7</strong>: Which of the following optimizations reduce the number of instructions a program executes?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o7"><ol class="options">
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans7" value="381575d5"></input> <p>function inlining</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans7" value="56071d59"></input> <p>loop unrolling</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans7" value="3802a37d"></input> <p>cache blocking</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans7" value="81b94f8c"></input> <p>changing loop orders</p>
+</li></ol></div></div></div><h2>Quiz 18</h2><div class="quizFrame"></div><h2>Quiz 19</h2><div class="quizFrame"><div class="question" id="q1" slug="2bfc87d6"><div class="description" id="d1"><p><strong>Question 1</strong>: Using multiple accumulators increases performance by<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o1"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans1" value="1c0026bc"></input> <p>decreasing the number of instructions a program executes</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans1" value="b5a9bc21"></input> <p>decreasing the number of cache misses a program experiences</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans1" value="00ed30e2"></input> <p>increasing the amount of the processor's parallelism a program can use</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans1" value="30b6c8ce"></input> <p>decreasing the amount of pointer aliasing in a program</p>
+</li></ol></div></div><div class="question" id="q2" slug="0c31c376"><div class="description" id="d2"><p><strong>Question 2</strong>: Which of the following assembly snippets should be faster on a
+modern processor (like that described in section 5.7.1-2 of the book)?</p>
+</div><div class="options" id="o2"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans2" value="2f1a092f"></input> <pre><code>addq %r8, %rax
+addq %r9, %rax
+addq %r10, %rax
+</code></pre>
+</li>
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans2" value="efb65bde"></input> <pre><code>addq %r8, %rax
+addq %r9, %r10
+addq %r10, %rax
+</code></pre>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="eaba516f"></input> <pre><code>addq %r8, %r9
+addq %r9, %rax
+addq %r10, %rax
+</code></pre>
+</li></ol></div></div><div class="multiquestion"><p>In section 8.1.2, our book classifies hardware exceptions into four categories:</p>
+
+<ul>
+<li>interrupts;</li>
+<li>traps;</li>
+<li>faults; and</li>
+<li>aborts</li>
+</ul>
+
+<p>For this question, indicate what kind of exception each scenario is, based
+on the book's terminology. None of the below are aborts,
+so we have omitted that answer.</p>
+<div class="question" id="q3" slug="21f750ef"><div class="description" id="d3"><p><strong>Question 3</strong>: (see above) If a process requests the operating system read some data from a file into the process's memory,
+this will trigger what kind of exception?</p>
+</div><div class="options" id="o3"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans3" value="5ad0d31b"></input> <p>interrupt</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans3" value="7e0fc4b0"></input> <p>trap</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="e1e0ddf5"></input> <p>fault</p>
+</li></ol></div></div><div class="question" id="q4" slug="0cc28d5d"><div class="description" id="d4"><p><strong>Question 4</strong>: (see above) If a process accesses memory that is not valid, this will trigger what kind of exception?</p>
+</div><div class="options" id="o4"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans4" value="0fd55899"></input> <p>interrupt</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="a73b95fa"></input> <p>trap</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans4" value="52a5046f"></input> <p>fault</p>
+</li></ol></div></div></div><div class="question" id="q5" slug="c6b66659"><div class="description" id="d5"><p><strong>Question 5</strong>: Each process has:<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o5"><ol class="options">
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans5" value="d65d18f8"></input> <p>its own view of the contents of memory</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans5" value="b2915cc0"></input> <p>its own exception table base register</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans5" value="15551bc1"></input> <p>its own program counter</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans5" value="d3df30a8"></input> <p>its own values for general-purpose registers like <code>%rax</code></p>
+</li></ol></div></div><div class="question" id="q6" slug="5ae4f3e6"><div class="description" id="d6"><p><strong>Question 6</strong>: Exception handlers (of the kind discussed in our textbook) are:</p>
+</div><div class="options" id="o6"><ol class="options">
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans6" value="56cff1c8"></input> <p>a special kind of function that could be written in assembly</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans6" value="940a2ce8"></input> <p>hardware components built-in to a processor</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans6" value="7d0932d4"></input> <p>part of various I/O devices, like keyboards</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans6" value="01513413"></input> <p>a special kind of process the operating system runs</p>
+</li></ol></div></div></div><h2>Quiz 20</h2><div class="quizFrame"><div class="multiquestion"><p>Mutlquestion
+Consider the following code:</p>
+
+<pre><code>u = a * b
+v = c * d
+w = u + v
+
+x = a + b
+y = x + c
+z = y * d
+</code></pre>
+<div class="question" id="q1" slug="bd508a87"><div class="description" id="d1"><p><strong>Question 1</strong>: (see above) If this is run on a processor with the following functional units:</p>
+
+<ul>
+<li>several pipelined multipliers which accept one multiply per cycle and have 3 cycle latency;</li>
+<li>several pipelined adders which accept one add per cycle and have 2 cycle latency;</li>
+</ul>
+
+<p>Then, how long should the computations take? (Assume there is no penalty for forwarding the results
+of a functional unit to another calculation.)</p>
+</div><div class="options" id="o1"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans1" value="3f778ab4"></input> <p>2 cycles</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="47f70d4d"></input> <p>3 cycles</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="21b33c24"></input> <p>4 cycles</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="743d0c49"></input> <p>5 cycles</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="e3d6c737"></input> <p>6 cycles</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans1" value="a9bc3166"></input> <p>7 cycles</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="8aee37d1"></input> <p>8 cycles</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="1d6b6bbc"></input> <p>9 cycles</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="d2128873"></input> <p>10 cycles</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="ef186ec0"></input> <p>none of the above</p>
+</li></ol></div></div></div><div class="question" id="q2" slug="7ebe1bd7"><div class="description" id="d2"><p><strong>Question 2</strong>: Which of the following are helpful properties for a function to have if a programmer or
+compiler is going to have it take advantage of vector instructions?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o2"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans2" value="eacc8e6d"></input> <p>it has a variety of kinds of operations it performs that can take advantage of the variety of functional units available in the processor</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans2" value="c204673b"></input> <p>it performs the same operation on many different pieces of data</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans2" value="e5e4839c"></input> <p>the data it operates on is contiguous in memory</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans2" value="69057d4c"></input> <p>the result of each computation is used immediately by the next computation</p>
+</li></ol></div></div><div class="question" id="q3" slug="138ff575"><div class="description" id="d3"><p><strong>Question 3</strong>: If process A performs a system call and the exception handler for the system call performs a context switch
+to process B, then the context of process A is stored where?</p>
+</div><div class="options" id="o3"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans3" value="003acc66"></input> <p>in special registers in the processor</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans3" value="aee3ccde"></input> <p>in the operating system's memory</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="176b8a7e"></input> <p>on the stack of process A</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="6cd06c7e"></input> <p>in the exception table</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="d46bc767"></input> <p>in the system call wrapper</p>
+</li></ol></div></div><div class="question" id="q4" slug="2887560f"><div class="description" id="d4"><p><strong>Question 4</strong>: The exception table contains:</p>
+</div><div class="options" id="o4"><ol class="options">
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans4" value="6eb0cffb"></input> <p>a list of pointers to machine code</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="8421e958"></input> <p>a list of recently triggered exceptions</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="0a30f47e"></input> <p>the context of the program that was interrupted by an exception</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="c27f7804"></input> <p>the contexts of exception handlers</p>
+</li></ol></div></div><div class="question" id="q5" slug="5933c74f"><div class="description" id="d5"><p><strong>Question 5</strong>: Which of the following are likely to run in kernel mode?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o5"><ol class="options">
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans5" value="86801c3e"></input> <p>the timer interrupt handler</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans5" value="ac7de3b0"></input> <p>the C standard library function <code>sprintf</code></p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans5" value="77bf7d04"></input> <p>the code that sets up the exception table</p>
+</li></ol></div></div><div class="question" id="q6" slug="9b7e8df4"><div class="description" id="d6"><p><strong>Question 6</strong>: Which of the following are part of a process's context?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o6"><ol class="options">
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans6" value="25a8804a"></input> <p>its stack pointer</p>
+</li>
+<li>(accepted any answer)<input disabled="disabled" type="checkbox" name="ans6" value="faaa23a3"></input> <p>the values stored on its stack <em>(the book says contexts "consists of ... the user's stack ...". I think this is not what is almost ever met by a "context" since it's not something that the OS would change as part of a context switch, but I'll certainly accept that some may have answered this based on having read the book closely enough...)</em></p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans6" value="bdc4d68d"></input> <p>its program counter value</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans6" value="941c1c72"></input> <p>its condition codes</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans6" value="53b3b038"></input> <p>the next time at which a timer interrupt will be triggered</p>
+</li></ol></div></div></div><h2>Quiz 21</h2><div class="quizFrame"><div class="question" id="q1" slug="2da9ba24"><div class="description" id="d1"><p><strong>Question 1</strong>: Which of the following are ways in which Linux's <strong>signals</strong> are
+similar to exceptions?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o1"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans1" value="b28fc607"></input> <p>both signal and exception handlers are run in kernel mode</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans1" value="7f37f5eb"></input> <p>both signals and exceptions can happen as a result of an event external to the program</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans1" value="138e2c8d"></input> <p>both signals and exceptions can happen as a result of an intentional action within a program</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans1" value="a99307ea"></input> <p>both signals and exceptions can happen as a result of an invalid memory access within a program</p>
+</li></ol></div></div><div class="question" id="q2" slug="138b8047"><div class="description" id="d2"><p><strong>Question 2</strong>: Some Linux signals correspond to hardware exceptions. When the corresponding
+hardware exception occurs and a process previously registered a signal handler
+for the signal,</p>
+</div><div class="options" id="o2"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans2" value="7723df3e"></input> <p>the hardware directly runs the signal handler, because the operating system configured it to do so</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="ec1bf760"></input> <p>a library function in the process detects that it needs to run the signal handler by making a system call</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="6fe519c8"></input> <p>the operating system creates or forks a new process to run the signal handler</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans2" value="bec43df7"></input> <p>the operating system causes the signal handler to be invoked as part of a context switch to the process</p>
+</li></ol></div></div><div class="question" id="q3" slug="49fb3194"><div class="description" id="d3"><p><strong>Question 3</strong>: If values are part of the same virtual page, then, if the values
+are loaded in memory, the values are</p>
+</div><div class="options" id="o3"><ol class="options">
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans3" value="e86dcba6"></input> <p>stored on the same physical page</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="f7fedf96"></input> <p>stored on different physical pages</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="9895c906"></input> <p>may or may not be stored on different physical pages</p>
+</li></ol></div></div><div class="question" id="q4" slug="52de43fc"><div class="description" id="d4"><p><strong>Question 4</strong>: When virtual memory is used for caching, what entity is responsible for loading data
+in response to a cache miss?</p>
+</div><div class="options" id="o4"><ol class="options">
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans4" value="cd83d176"></input> <p>the operating system</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="4b9dfcf6"></input> <p>the memory management unit (MMU)</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="810cfc02"></input> <p>the L2 or L3 cache</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="0409e380"></input> <p>the DRAM</p>
+</li></ol></div></div><div class="question" id="q5" slug="b373580f"><div class="description" id="d5"><p><strong>Question 5</strong>: A page table entry contains<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o5"><ol class="options">
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans5" value="5f01b51a"></input> <p>physical page numbers</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans5" value="05d4c9df"></input> <p>virtual page numbers</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans5" value="4dd67a6d"></input> <p>page contents</p>
+</li></ol></div></div></div><h2>Quiz 22</h2><div class="quizFrame"><div class="question" id="q1" slug="6ece37ba"><div class="description" id="d1"><p><strong>Question 1</strong>: A typical operating system may disable interrupts</p>
+</div><div class="options" id="o1"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans1" value="fb2bc39f"></input> <p>to allow programs running in user-mode to run faster</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans1" value="7afd90bd"></input> <p>to more easily/safely manipulate data structures used by exception handlers</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="bb7884f3"></input> <p>while running a (Linux-style) signal handler in case it manipulates global data</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="f13fd37d"></input> <p>as the <em>last</em> step of a context switch</p>
+</li></ol></div></div><div class="question" id="q2" slug="3effaba5"><div class="description" id="d2"><p><strong>Question 2</strong>: Signal handlers<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o2"><ol class="options">
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans2" value="8123c23f"></input> <p>follow the same calling convention as ordinary C functions</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans2" value="61d2f07a"></input> <p>run in a seperate address space from the rest of their program</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans2" value="eb3aaa0f"></input> <p>trigger a fault if they access an invalid memory address</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans2" value="27af36aa"></input> <p>can be interrupted by timer interrupts</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans2" value="4564f440"></input> <p>can invoke a system call</p>
+</li></ol></div></div><div class="multiquestion"><p>Consider a processor which has:</p>
+
+<ul>
+<li>32-bit virtual addresses</li>
+<li>24-bit physical addresses</li>
+<li>128KB (where 1 KB = 1024 B) pages</li>
+</ul>
+<div class="question" id="q3" slug="5972d162"><div class="description" id="d3"><p><strong>Question 3</strong>: (see above) How large is a physical page number on this processor?</p>
+</div><div class="options" id="o3"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans3" value="248d4b95"></input> <p>3 bits</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="c63dc750"></input> <p>4 bits</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="bf38f5d1"></input> <p>5 bits</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="1f00a721"></input> <p>6 bits</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans3" value="d9b902fb"></input> <p>7 bits</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="b6f3b375"></input> <p>8 bits</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="fa8b0b5d"></input> <p>9 bits</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="957d694a"></input> <p>10 bits</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="2937fdc5"></input> <p>24 bits</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="7ce1b0db"></input> <p>none of the above</p>
+</li></ol></div></div><div class="question" id="q4" slug="5a24bc1e"><div class="description" id="d4"><p><strong>Question 4</strong>: (see above) Which of the following <strong>virtual addresses</strong> are part of the same virtual page as
+<code>0x12345678</code> on this processor?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o4"><ol class="options">
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans4" value="8b10b488"></input> <p><code>0x1234FFFF</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans4" value="f915e1dd"></input> <p><code>0xFFFF5678</code></p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans4" value="9a842656"></input> <p><code>0x12345FFF</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans4" value="dd72ab42"></input> <p><code>0x12300678</code></p>
+</li></ol></div></div></div><div class="question" id="q5" slug="0258afb9"><div class="description" id="d5"><p><strong>Question 5</strong>: Suppose a processor has 4096-byte pages and 4 byte page table entries,
+and its page table base register is set to physical byte address <code>0x1234000</code>.
+Assume the processor uses the scheme we discussed
+in lecture to store its page tables as a contigous array of page table entries in memory.
+At what physical address will the processor look for
+the page table entry for the virtual page number 3?</p>
+</div><div class="options" id="o5"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans5" value="b67beaa2"></input> <p><code>0x1234000</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="1466447e"></input> <p><code>0x1234003</code></p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans5" value="956a70c6"></input> <p><code>0x123400C</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="44ac046a"></input> <p><code>0x1234C00</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="a747d1f0"></input> <p><code>0x1234300</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="650d7f96"></input> <p><code>0x1240000</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="d2e8f296"></input> <p>none of the above</p>
+</li></ol></div></div></div><h2>Quiz 23</h2><div class="quizFrame"><div class="question" id="q1" slug="cfb190bd"><div class="description" id="d1"><p><strong>Question 1</strong>: When a page fault occurs, and the operating system loads the virtual page that caused the fault
+from disk and updates the page table accordingly (the scenario depicted in Figure 9.13(b)), it will</p>
+</div><div class="options" id="o1"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans1" value="f9cb651a"></input> <p>continue running the program starting with the instruction after the one which caused the fault</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans1" value="b0a2f87a"></input> <p>continue running the program starting with the instruction which caused the fault</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="bd77aebb"></input> <p>restart the program from the beginning of its current method</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="175276a2"></input> <p>send the something like the SIGSEGV signal to the program</p>
+</li></ol></div></div><div class="question" id="q2" slug="e124620d"><div class="description" id="d2"><p><strong>Question 2</strong>: In a multi-level page table like described in section 9.6.3,
+the page table entries for the first level contain</p>
+</div><div class="options" id="o2"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans2" value="d24de5f6"></input> <p>the virtual addresses or virtual page numbers containing the second-level page tables</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="be136c1d"></input> <p>the physical addresses of linked lists of page table entries</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans2" value="d1a470e7"></input> <p>the physical addresses or physical page numbers of the second-level page tables</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="0a5fa65e"></input> <p>the physical page numbers where the program's actual data is stored</p>
+</li></ol></div></div><div class="question" id="q3" slug="14a72e52"><div class="description" id="d3"><p><strong>Question 3</strong>: Multi-level page tables are most efficient at representing</p>
+</div><div class="options" id="o3"><ol class="options">
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans3" value="4d97d8e8"></input> <p>address spaces with large, contiguous regions of unallocated memory</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="174b4af2"></input> <p>address spaces where the allocated addresses are evenly distributed throughout the address space</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="d6c3f770"></input> <p>address spaces where several virtual pages map to each allocated physical page</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="bdb4f547"></input> <p>address spaces with smaller pages</p>
+</li></ol></div></div><div class="question" id="q4" slug="e7b6a180"><div class="description" id="d4"><p><strong>Question 4</strong>: The Core i7 address translation described by the textbook uses a four-level page table.
+When the processor successfully fetches an one-byte instruction using this page table, that can
+require up to ___ memory accesses.</p>
+</div><div class="options" id="o4"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans4" value="fd5904a5"></input> <p>1</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="122e203b"></input> <p>2</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="d3850952"></input> <p>3</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="5b9d652e"></input> <p>4</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans4" value="e1fb4961"></input> <p>5</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="55db7d1c"></input> <p>6</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="73ef2098"></input> <p>8</p>
+</li></ol></div></div></div><h2>Quiz 24</h2><div class="quizFrame"></div><h2>Quiz 25</h2><div class="quizFrame"><div class="question" id="q1" slug="85a71163"><div class="description" id="d1"><p><strong>Question 1</strong>: The TLB index is computed from</p>
+</div><div class="options" id="o1"><ol class="options">
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans1" value="51e32a94"></input> <p>part of the virtual page number</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="65030e2a"></input> <p>part of the physical page number</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="160fd699"></input> <p>part of the page offset</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="1c8be3b8"></input> <p>part of the page offset and/or part of the virtual page number</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="7f685eaa"></input> <p>part of the page offset and/or part of the physical page number</p>
+</li></ol></div></div><div class="question" id="q2" slug="588a393c"><div class="description" id="d2"><p><strong>Question 2</strong>: When the processor tries to access a memory address X and a TLB miss happens,
+in the design described in the book, the MMU</p>
+</div><div class="options" id="o2"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans2" value="9d454e74"></input> <p>triggers a fault</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans2" value="693de3b7"></input> <p>retrieves a page table entry from cache or memory</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="cc6ab246"></input> <p>retrieves a page from disk</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="2fb3b8b8"></input> <p>accesses memory address X in the L1 cache</p>
+</li></ol></div></div><div class="question" id="q3" slug="6bae3bb3"><div class="description" id="d3"><p><strong>Question 3</strong>: In the design described in the example in section 9.6.4 of the book,
+when performing a memory access the result of the TLB access is needed to<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o3"><ol class="options">
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans3" value="304c1652"></input> <p>compute the cache tag to compare with the value stored in the cache</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans3" value="511c184b"></input> <p>compute the location of a page table entry</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans3" value="5ad4ea54"></input> <p>compute the base address of a page table</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans3" value="9d9650b2"></input> <p>compute the physical page offset, which is part of the cache index</p>
+</li></ol></div></div></div><h2>Quiz 26</h2><div class="quizFrame"><div class="multiquestion"><p>Consider a system with:</p>
+
+<ul>
+<li>16KB pages (2 to the 14th byte pages)</li>
+<li>38-bit virtual addresses and 30-bit physical addresses</li>
+<li>2-level page tables, with 4 byte page table entries</li>
+<li>page tables at each level are one page (4096 entries)</li>
+<li>a 32-entry, 4-way unified (instruction and data) TLB</li>
+</ul>
+<div class="question" id="q1" slug="15217a82"><div class="description" id="d1"><p><strong>Question 1</strong>: (see above) When the processor is accessing the virtual address <code>0x00CAFECAFE</code>, what is the index
+of the TLB set being accessed? (The index of the first TLB set is <code>0</code>.)</p>
+</div><div class="options" id="o1"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans1" value="e422ee70"></input> <p>0</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="46454a13"></input> <p>1</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="00c54a34"></input> <p>2</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans1" value="f67b10e6"></input> <p>3</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="3db84d2a"></input> <p>4</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="09023884"></input> <p>5</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="596cdef7"></input> <p>6</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="ea3a9a67"></input> <p>7</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="63065b58"></input> <p>none of the above</p>
+</li></ol></div></div><div class="question" id="q2" slug="494cd4ea"><div class="description" id="d2"><p><strong>Question 2</strong>: (see above) If the page table base register contains the byte address <code>0x100000</code>, then where will
+the processor look for the first-level page table entry for the virtual address
+<code>0x0012345678</code></p>
+</div><div class="options" id="o2"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans2" value="945aed04"></input> <p><code>0x100000</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="ff7e9f34"></input> <p><code>0x100001</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="ee8b0b3c"></input> <p><code>0x100004</code></p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans2" value="dcccfd9d"></input> <p><code>0x100010</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="ad9acbee"></input> <p>none of the above</p>
+</li></ol></div></div><div class="question" id="q3" slug="86e4db0f"><div class="description" id="d3"><p><strong>Question 3</strong>: (see above) Suppose a process has the following
+virtual page numbers allocated in its page tables:</p>
+
+<ul>
+<li>VPN <code>0x10</code></li>
+<li>VPN <code>0xFF</code></li>
+<li>VPN <code>0x5000</code></li>
+<li>VPN <code>0x5001</code></li>
+</ul>
+
+<p>All other pages are invalid.
+How many pages of page tables does this process need
+on this processor?</p>
+</div><div class="options" id="o3"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans3" value="173f0dfa"></input> <p>1</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="19a9ae5a"></input> <p>2</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="radio" name="ans3" value="51b9e22e"></input> <p>3</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="738ce789"></input> <p>4</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="f206b403"></input> <p>5</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="0a8937c5"></input> <p>more than 5</p>
+</li></ol></div></div><div class="question" id="q4" slug="55ce347d"><div class="description" id="d4"><p><strong>Question 4</strong>: (see above) Suppose the system wants to have an L1 cache organized based on physical
+addresses (so, e.g., a given physical address always maps to the same set),
+but lookup the appropriate set of the L1 cache before it
+completes the TLB lookup.
+Which of the following L1 data cache designs would allow this?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o4"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans4" value="0a022594"></input> <p>32KB, direct-mapped with 64B blocks</p>
+</li>
+<li>(correct answer)<input disabled="disabled" type="checkbox" name="ans4" value="0fbc5272"></input> <p>32KB, 2-way set associative cache with 128B blocks</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans4" value="f4685629"></input> <p>128KB, 4-way set associative cache with 32B blocks</p>
+</li></ol></div></div></div></div>

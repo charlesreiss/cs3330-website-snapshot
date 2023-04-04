@@ -1,0 +1,116 @@
+﻿<html>
+<head>
+    <title>Quiz Viewer</title>
+    <style>
+        ol.options { margin-top:-1em; }
+        ol.options li p { display: inline; }
+        ol.options li { list-style: upper-alpha; }
+        body { background:#ccc; padding-top:1em; }
+        .question { background: white; border-radius:1ex; padding:0ex 1ex; margin:2ex;  }
+        .directions { background: #eee; padding:1ex 1ex; margin:2ex;  }
+        .multiquestion { background: #eee; border-radius:1ex; padding:0.7ex 0.7ex; }
+        .multiquestion + .multiquestion { margin-top:1em; }
+        .submitting { background: #fe7; }
+        .submitted { background: #dfd; }
+        textarea { background-color: inherit; }
+        #clock { position:fixed; right:0px; top:0px; background:#ff7; padding-left:0.5ex; padding-bottom:0.5ex; border-bottom-left-radius:1ex; border-left: 1px solid black; border-bottom: 1px solid black;}
+        .correct { background-color: #bfb; padding: 0ex 1ex; }
+        .incorrect { background-color: #fbb; padding: 0ex 1ex; }
+        .hist { color:#777; min-width: 2em; text-align:right; display:inline-block; }
+    </style>
+<script>function onload() {}</script></head>
+<body onload="onload()">
+    <center><a href="../">Return to course page</a></center><div class="multiquestion"><p>For the following questions, refer to Figure 6.26 in the textbook.</p>
+<div class="question" id="q1" slug="945f3bf2"><div class="description" id="d1"><p><strong>Question 1</strong>: (see above) If a cache has 1024 sets, each containing two 128 byte blocks,
+then what is the number of block offset bits? Answer as a normal base-10 number.</p>
+</div><div class="options" id="o1">Answer: <input disabled="disabled" type="text" name="ans1"/></div></div><div class="question" id="q2" slug="8e6820f2"><div class="description" id="d2"><p><strong>Question 2</strong>: (see above) If a cache for a processor with 32-bit physical memory addresses is direct-mapped, has
+64 byte blocks, and 20 tag bits in each cache line, then the size of the
+cache (excluding overhead) is:</p>
+</div><div class="options" id="o2"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans2" value="e2fb77ae"></input> <p>2KB</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="0e9a8af1"></input> <p>4KB</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="eedf9427"></input> <p>8KB</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="b8c254d0"></input> <p>64KB</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="585f5fdd"></input> <p>1MB</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="f211a754"></input> <p>64MB</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="e7fd27a4"></input> <p>there is not enough information to know</p>
+</li></ol></div></div><div class="question" id="q3" slug="0d2e12ca"><div class="description" id="d3"><p><strong>Question 3</strong>: (see above) If a cache for a processor with 64-bit physical memory addresses has 1024 sets and 2 lines per set,
+and each line contains a 32 byte block, then what is the number of tag bits in each
+line of the cache? Answer as a normal base-10 number.</p>
+</div><div class="options" id="o3">Answer: <input disabled="disabled" type="text" name="ans3"/></div></div></div><div class="question" id="q4" slug="4ec73ce4"><div class="description" id="d4"><p><strong>Question 4</strong>: Suppose a cache has 20 tag bits, 8 index bits, and 4 block offset bits. In which set would
+the memory address <code>0x12345678</code> be looked up?</p>
+</div><div class="options" id="o4"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans4" value="e5677d7a"></input> <p>set number <code>0x78</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="9c6a7ab0"></input> <p>set number <code>0x56</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="e40e864d"></input> <p>set number <code>0x34</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="ea9d6257"></input> <p>set number <code>0x12</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="95c54d0b"></input> <p>none of the above</p>
+</li></ol></div></div><div class="question" id="q5" slug="ba6b669a"><div class="description" id="d5"><p><strong>Question 5</strong>: Which of the following changes can <em>decrease</em> the number of conflict misses in a cache?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o5"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans5" value="9d9c6315"></input> <p>doubling the number of lines per set and halving the number of sets</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans5" value="3bf4faf9"></input> <p>doubling the block size and halving the number of sets</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans5" value="59acd3e6"></input> <p>doubling the number of sets and halving the block size</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans5" value="4c33b056"></input> <p>doubling the block size and halving the number of lines per set</p>
+</li></ol></div></div><div class="multiquestion"><p>In the following, assume where possible that the changes listed are independent:
+that cache size can be changed without modifying block size, etc.</p>
+<div class="question" id="q6" slug="5f468f65"><div class="description" id="d6"><p><strong>Question 6</strong>: (see above) Which of the following changes are likely to <em>increase</em> the hit rate of a cache?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o6"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans6" value="d6ff056a"></input> <p>Increasing the cache size</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans6" value="4b7fd79a"></input> <p>Decreasing the cache size</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans6" value="1309042e"></input> <p>Increasing the block size</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans6" value="c2206d30"></input> <p>Decreasing the block size</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans6" value="dd7e12a3"></input> <p>Increasing the associativity</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans6" value="f626911c"></input> <p>Decreasing the associativity</p>
+</li></ol></div></div><div class="question" id="q7" slug="87c8e0b5"><div class="description" id="d7"><p><strong>Question 7</strong>: (see above) Which of the following changes are likely to <em>increase</em> the miss penalty of a cache?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o7"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans7" value="559cefa0"></input> <p>Increasing the cache size</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans7" value="ae57b7a3"></input> <p>Decreasing the cache size</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans7" value="7fd39b8f"></input> <p>Increasing the block size</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans7" value="0cf0833f"></input> <p>Decreasing the block size</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans7" value="e8ffc54c"></input> <p>Increasing the associativity</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans7" value="e1d44e4a"></input> <p>Decreasing the associativity</p>
+</li></ol></div></div><div class="question" id="q8" slug="a1bd5db4"><div class="description" id="d8"><p><strong>Question 8</strong>: (see above) Which of the following changes to the cache are likely to <em>increase</em> how much it can
+benefit from spatial locality?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o8"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans8" value="c1d3a92a"></input> <p>Increasing the cache size</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans8" value="95bec00b"></input> <p>Decreasing the cache size</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans8" value="b02fc19d"></input> <p>Increasing the block size</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans8" value="3ccd77d5"></input> <p>Decreasing the block size</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans8" value="59539c26"></input> <p>Increasing the associativity</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans8" value="ce90a2af"></input> <p>Decreasing the associativity</p>
+</li></ol></div></div></div><a href="." style="text-align:center; display:block;">Return to main page</a>
+<center><a href="../">Return to course page</a></center>
+</body>
+</html>

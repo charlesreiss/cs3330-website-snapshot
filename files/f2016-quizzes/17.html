@@ -1,0 +1,71 @@
+﻿<html>
+<head>
+    <title>Quiz Viewer</title>
+    <style>
+        ol.options { margin-top:-1em; }
+        ol.options li p { display: inline; }
+        ol.options li { list-style: upper-alpha; }
+        body { background:#ccc; padding-top:1em; }
+        .question { background: white; border-radius:1ex; padding:0ex 1ex; margin:2ex;  }
+        .directions { background: #eee; padding:1ex 1ex; margin:2ex;  }
+        .multiquestion { background: #eee; border-radius:1ex; padding:0.7ex 0.7ex; }
+        .multiquestion + .multiquestion { margin-top:1em; }
+        .submitting { background: #fe7; }
+        .submitted { background: #dfd; }
+        textarea { background-color: inherit; }
+        #clock { position:fixed; right:0px; top:0px; background:#ff7; padding-left:0.5ex; padding-bottom:0.5ex; border-bottom-left-radius:1ex; border-left: 1px solid black; border-bottom: 1px solid black;}
+        .correct { background-color: #bfb; padding: 0ex 1ex; }
+        .incorrect { background-color: #fbb; padding: 0ex 1ex; }
+        .hist { color:#777; min-width: 2em; text-align:right; display:inline-block; }
+    </style>
+<script>function onload() {}</script></head>
+<body onload="onload()">
+    <center><a href="../">Return to course page</a></center><div class="multiquestion"><p>Given a 1KB set-associative cache with 2 lines per set and 16 bytes per block,
+with the LRU cache replacement policy,</p>
+<div class="question" id="q1" slug="ca7a1272"><div class="description" id="d1"><p><strong>Question 1</strong>: (see above) How many blocks are there in the cache?</p>
+</div><div class="options" id="o1">Answer: <input disabled="disabled" type="text" name="ans1"/></div></div><div class="question" id="q2" slug="cba0f48e"><div class="description" id="d2"><p><strong>Question 2</strong>: (see above) How many bits long is the set index?</p>
+</div><div class="options" id="o2">Answer: <input disabled="disabled" type="text" name="ans2"/></div></div><div class="question" id="q3" slug="e6b62903"><div class="description" id="d3"><p><strong>Question 3</strong>: (see above) Assume that the cache is initially empty and we perform 8-byte data reads on the following addresses in the order listed:</p>
+
+<ul>
+<li><code>0x0000</code>, <!-- idx 0 cold miss --></li>
+<li><code>0x0008</code>, <!-- idx 0 hit --></li>
+<li><code>0x1000</code>, <!-- idx 0 cold miss --></li>
+<li><code>0x1028</code>, <!-- idx 2 cold miss --></li>
+<li><code>0x0000</code>, <!-- idx 0 hit --></li>
+<li><code>0x2000</code>, <!-- idx 0 cold miss --></li>
+<li><code>0x0008</code>, <!-- idx 0 hit --></li>
+<li><code>0x1000</code>, <!-- idx 0 conflict miss --></li>
+<li><code>0x1028</code>  <!-- idx 2 hit --></li>
+</ul>
+
+<p>How many cache hits will this access pattern experience?</p>
+</div><div class="options" id="o3">Answer: <input disabled="disabled" type="text" name="ans3"/></div></div></div><div class="question" id="q4" slug="86268c89"><div class="description" id="d4"><p><strong>Question 4</strong> (0 points): Which of the following is probably a bad idea if memory reads have good locality but memory writes do not have locality?</p>
+</div><div class="options" id="o4"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans4" value="b6a9b1f3"></input> <p>write-back</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="3150b50c"></input> <p>write-through</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="dc0da17e"></input> <p>write buffers</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="11bf7ff6"></input> <p>loop reordering</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="f4e885d1"></input> <p>memory blocking</p>
+</li></ol></div></div><div class="question" id="q5" slug="a77e5712"><div class="description" id="d5"><p><strong>Question 5</strong>: The loop order</p>
+
+<pre><code>for(int i = 0; i &lt; N; i += 1)
+    for(int j = 0; j &lt; N; j += 1)
+</code></pre>
+
+<p>is the most efficient for which of the following loop bodies?  Assume <code>N</code> is a large number</p>
+</div><div class="options" id="o5"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans5" value="caa24697"></input> <p><code>a[i][j] = a[i][j]*2;</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="618955a5"></input> <p><code>a[j][i] = a[i][j]*2;</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="6e3ec125"></input> <p><code>a[i][j] = a[j][i]*2;</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans5" value="bd7b3732"></input> <p><code>a[j][i] = a[j][i]*2;</code></p>
+</li></ol></div></div><a href="." style="text-align:center; display:block;">Return to main page</a>
+<center><a href="../">Return to course page</a></center>
+</body>
+</html>

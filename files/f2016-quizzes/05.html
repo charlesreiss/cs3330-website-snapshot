@@ -1,0 +1,77 @@
+﻿<html>
+<head>
+    <title>Quiz Viewer</title>
+    <style>
+        ol.options { margin-top:-1em; }
+        ol.options li p { display: inline; }
+        ol.options li { list-style: upper-alpha; }
+        body { background:#ccc; padding-top:1em; }
+        .question { background: white; border-radius:1ex; padding:0ex 1ex; margin:2ex;  }
+        .directions { background: #eee; padding:1ex 1ex; margin:2ex;  }
+        .multiquestion { background: #eee; border-radius:1ex; padding:0.7ex 0.7ex; }
+        .multiquestion + .multiquestion { margin-top:1em; }
+        .submitting { background: #fe7; }
+        .submitted { background: #dfd; }
+        textarea { background-color: inherit; }
+        #clock { position:fixed; right:0px; top:0px; background:#ff7; padding-left:0.5ex; padding-bottom:0.5ex; border-bottom-left-radius:1ex; border-left: 1px solid black; border-bottom: 1px solid black;}
+        .correct { background-color: #bfb; padding: 0ex 1ex; }
+        .incorrect { background-color: #fbb; padding: 0ex 1ex; }
+        .hist { color:#777; min-width: 2em; text-align:right; display:inline-block; }
+    </style>
+<script>function onload() {}</script></head>
+<body onload="onload()">
+    <center><a href="../">Return to course page</a></center><div class="directions"><p>Pre-quiz on fourth week's material.  Figure numbers are the same in both 2nd and 3rd edition of the textbook.</p>
+</div><div class="multiquestion"><p>The SEQ processor design uses conceptual stages.
+Sometimes it refers to six of them, and other times it leaves off the sixth (PC Update).
+We'll usually leave off PC Update, which is why it does not appear as an option below.</p>
+<div class="question" id="q1" slug="15f247fe"><div class="description" id="d1"><p><strong>Question 1</strong>: (see above) Which stage is responsible for retrieving instruction bytes from memory based on the PC?</p>
+</div><div class="options" id="o1"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans1" value="32709e3f"></input> <p>Fetch</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="2a156b69"></input> <p>Decode</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="e5ab4b55"></input> <p>Execute</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="544a2fbb"></input> <p>Memory</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="68c1d68c"></input> <p>Writeback</p>
+</li></ol></div></div><div class="question" id="q2" slug="a32bd572"><div class="description" id="d2"><p><strong>Question 2</strong>: (see above) Which stage is responsible for interpreting the bytes of an instruction to determine what action is being requested?</p>
+</div><div class="options" id="o2"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans2" value="34c24028"></input> <p>Fetch</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="eaf8c99a"></input> <p>Decode</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="a83d77c0"></input> <p>Execute</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="15622297"></input> <p>Memory</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="81939461"></input> <p>Writeback</p>
+</li></ol></div></div></div><div class="question" id="q3" slug="627b38b1"><div class="description" id="d3"><p><strong>Question 3</strong>: Suppose <code>R</code> is a register (like those discussed in the textbook)
+with input <code>x</code>, clock input <code>c</code>, and output <code>y</code>.</p>
+</div><div class="options" id="o3"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans3" value="0fd1f9ce"></input> <p>Whenever you change <code>x</code>, the value of <code>y</code> changes to match <code>x</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="b21ea152"></input> <p>If you change <code>x</code> while <code>c</code> is <code>1</code>, the value of <code>y</code> changes to match <code>x</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="eb6c28f8"></input> <p>If you change <code>x</code> while <code>c</code> is <code>0</code>, the value of <code>y</code> changes to match <code>x</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="347b31e2"></input> <p>If you change <code>c</code> to <code>1</code> after changing <code>x</code>, the value of <code>y</code> changes to match <code>x</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="fede2683"></input> <p>If you change <code>c</code> to <code>0</code> after changing <code>x</code>, the value of <code>y</code> changes to match <code>x</code></p>
+</li></ol></div></div><div class="question" id="q4" slug="d7b4a397"><div class="description" id="d4"><p><strong>Question 4</strong>: The HCL <code>[a : b; c : d; 1 : e]</code> is functionally equivalent to</p>
+</div><div class="options" id="o4"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans4" value="25e3c3a3"></input> <p>the C expression <code>a ? b : (c ? d : e)</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="feb9e7b3"></input> <p>the Python expression <code>[a : b; c : d; 1 : e]</code> (i.e., it declates a Map data structure)</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="7ae36198"></input> <p>the C statements <code>a = b; c = d; 1 = e;</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="879e3a16"></input> <p>the C statements <code>b = a; d = c; e = 1;</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="a876b0b9"></input> <p>the C expression <code>a == b || c == d || 1 == e</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans4" value="d7b46f95"></input> <p>the C expression <code>a == b &amp;&amp; c == d &amp;&amp; 1 == e</code></p>
+</li></ol></div></div><a href="." style="text-align:center; display:block;">Return to main page</a>
+<center><a href="../">Return to course page</a></center>
+</body>
+</html>

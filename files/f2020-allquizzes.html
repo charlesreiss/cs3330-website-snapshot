@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>F2020 quizzes</title>
+    <style>
+        ol.options { margin-top:-0.5em; }
+ol.options p { margin: 0; padding: 0; }
+ol.options > li { list-style: upper-alpha; }
+body { background:#ccc; padding-top:1em; }
+.question { background: white; border-radius:1ex; padding:0ex 1ex; margin:2ex;  }
+.directions { background: #eee; padding:1ex 1ex; margin:2ex;  }
+.multiquestion { background: #eee; border-radius:1ex; padding:0.7ex 0.7ex; }
+.multiquestion + .multiquestion { margin-top:1em; }
+.submitting { background: #fe7; }
+.submitted { background: #dfd; }
+.disconnected { background: #f33; }
+textarea { background-color: inherit; }
+#clock { position:fixed; right:0px; top:0px; background:#ff7; padding-left:0.5ex; padding-bottom:0.5ex; border-bottom-left-radius:1ex; border-left: 1px solid black; border-bottom: 1px solid black;}
+.correct { background-color: #bfb; padding: 0ex 1ex; }
+.incorrect { background-color: #fbb; padding: 0ex 1ex; }
+.hist { color:#777; min-width: 2em; text-align:right; display:inline-block; }
+.katex .base { margin: 0.5ex auto; }
+
+img.preview { vertical-align: middle; max-height: 10em; box-shadow: 0 0 0.5ex 0.25ex grey; }
+
+ol.options li label { display: flex; align-items: center; }
+ol.options li label input { margin-right: 1ex; }
+ol.options li { padding: 0.5ex 0ex; }
+ol.options li::marker { color: rgba(0,0,0,0.5); }
+
+div.tinput { display: flex; align-items:center; }
+div.tinput textarea { flex-grow: 1; }
+div.tinput *:first-child { margin-right: 1ex; }
+
+.explanation { font-family: sans-serif; color: green; }
+
+
+table { border-collapse: collapse; width:100%; }
+thead tr:last-child { border-bottom: thin black solid; }
+th { text-align:left;  padding:0ex 1ex; }
+tbody tr:nth-child(2n+1) { background-color:#ddd; }
+td { padding:1ex; }
+
+.question th,td { padding: 0.25ex 1ex; }
+.question table { width: auto; margin:auto; }
+.question tbody tr:nth-child(2n+1) { background-color:#eee; }
+    </style>
+</head>
+<body>
+<h1 style='text-align:center'>quiz for week 1</h1><div class='directions'><p>Answer the following questions about lecture material from week 1.<!-- TODO: SF/ZF questions; if-to-asm questions --></p>
+</div><div class="multiquestion"><p>Suppose memory contains the following 8-bit bytes at the following addresses (each written in hexadecimal):</p>
+
+<table>
+<tr><th>address</th><th>value</th></tr>
+<tr><td>...</td><td>...</td></tr>
+<tr><td>0x0FD</td><td>0x11</td></tr>
+<tr><td>0x0FE</td><td>0x22</td></tr>
+<tr><td>0x0FF</td><td>0x33</td></tr>
+<tr><td>0x100</td><td>0x44</td></tr>
+<tr><td>0x101</td><td>0x55</td></tr>
+<tr><td>0x102</td><td>0x66</td></tr>
+<tr><td>0x103</td><td>0x77</td></tr>
+<tr><td>0x104</td><td>0x88</td></tr>
+<tr><td>0x105</td><td>0x99</td></tr>
+<tr><td>0x106</td><td>0x00</td></tr>
+<tr><td>0x107</td><td>0xA0</td></tr>
+<tr><td>0x108</td><td>0xAB</td></tr>
+<tr><td>0x109</td><td>0xBA</td></tr>
+<tr><td>0x10A</td><td>0xC0</td></tr>
+<tr><td>0x10B</td><td>0xD0</td></tr>
+<tr><td>...</td><td>...</td></tr>
+</table>
+<div class='question' id='q1' slug='dd09f208'><div class='description' id='d1'><strong>Question 1</strong> (2 points) (see above)
+<p>In little-endian, reading a four-byte (32-bit) value from address <code>0x105</code> yields what value?
+Write your answer as a hexadecimal number. If not enough information is given write "unknown".</p>
+</div><div class='tinput'><span>Answer:</span><input type='text' name='ans1' /></div></div><div class='question' id='q2' slug='cfa916aa'><div class='description' id='d2'><strong>Question 2</strong> (2 points) (see above)
+<p>With the above memory layout, running <code>movb 0x104, %al</code> what will the value of the 8-bit register <code>%al</code> be?
+Write your answer as a hexadecimal number. If not enough information is given write "unknown".</p>
+</div><div class='tinput'><span>Answer:</span><input type='text' name='ans2' /></div></div><div class='question' id='q3' slug='f6de16d4'><div class='description' id='d3'><strong>Question 3</strong> (2 points) (see above)
+<p>Consider the following assembly snippet:</p>
+
+<pre><code>movq $0x4, %rax
+movq $0x1, %rbx
+movl 0x100(%rax, %rbx, 2), %eax
+</code></pre>
+
+<p>When run with the above memory layout, what will the resulting value of the 32-bit register <code>%eax</code> be?
+Write your answer as a hexadecimal number. If not enough information is given write "unknown".</p>
+</div><div class='tinput'><span>Answer:</span><input type='text' name='ans3' /></div></div></div><div class='question' id='q4' slug='35168db5'><div class='description' id='d4'><strong>Question 4</strong> (3 points)
+<p>Consider the following AT&amp;T syntax assembly:</p>
+
+<pre><code>addq %rbx, %rbx
+addq %rax, %rbx
+movq (%rbx), %rax
+</code></pre>
+
+<p>Which of the following assembly snippets will result in the same
+final value of <code>%rax</code>? (Ignore changes to the value of <code>%rbx</code>.) <strong>Select all that apply.</strong></p>
+</div><ol class="options"><li><label><input type='checkbox' name='ans4' value='ec830b61' /><div><p><code>movq (%rbx, %rax, 2), %rax</code></p>
+</div></label></li><li><label><input type='checkbox' name='ans4' value='cf7ee4db' /><div><p><code>movq (%rax, %rbx, 2), %rax</code></p>
+</div></label></li><li><label><input type='checkbox' name='ans4' value='315dd94f' /><div><p><code>addq %rbx, %rbx</code><br><code>addq %rax, %rbx</code></p>
+</div></label></li><li><label><input type='checkbox' name='ans4' value='d960d091' /><div><p><code>addq %rbx, %rbx</code><br><code>movq (%rbx, %rax), %rax</code></p>
+</div></label></li><li><label><input type='checkbox' name='ans4' value='ae182555' /><div><p><code>addq %rbx, %rbx</code><br><code>movq (%rax, %rbx), %rax</code></p>
+</div></label></li><li><label><input type='checkbox' name='ans4' value='ea1036e3' /><div><p><code>addq %rbx, %rbx</code><br><code>addq %rax, (%rbx)</code></p>
+</div></label></li></ol></div><div class='question' id='q5' slug='ae3ed3ab'><div class='description' id='d5'><strong>Question 5</strong> (2 points)
+<p>Suppose the assembly label <code>array</code> is defined to be a constant 5-byte array as follows:</p>
+
+<pre><code>array:
+   .byte 3
+   .byte 4
+   .byte 5
+   .byte 6
+   .byte 7
+</code></pre>
+
+<p>and the linker chooses to locate this array at address <code>0x10000</code>.
+(Each <code>.byte</code> directive specifies the value of one byte of memory.)</p>
+
+<p>Then, if we run the assembly snippet:</p>
+
+<pre><code>    movq $1, %rax
+    addq $array, %rax
+    movb 1(%rax), %bl
+</code></pre>
+
+<p>What would the value of 8-bit register <code>%bl</code> be afterwards? You may assume memory around <code>array</code> is not
+modified before this snippet is run.</p>
+
+<p>Write your answer as a hexadecimal number. If not enough information is given write "unknown".</p>
+</div><div class='tinput'><span>Answer:</span><input type='text' name='ans5' /></div></div><h1 style='text-align:center'>quiz for week 2</h1><div class='directions'><p>Answer the following questions about lecture material from week 2.<!-- TODO:
+    compilation pipeline
+    pointer arithmetic
+    bitwise
+--></p>
+</div><div class='question' id='q1' slug='fdcd73c4'><div class='description' id='d1'><strong>Question 1</strong> (2 points)
+<p>Consider the following C function:</p>
+
+<pre><code>long foo(long a, long b) {
+    return a + b;
+}
+</code></pre>
+
+<p>Which of the following are correct translations (but perhaps unnecessairily complex)
+of this function to AT&amp;T syntax assembly (using the Linux x86-64 calling convention)?
+<strong>Select all that apply.</strong></p>
+</div><ol class="options"><li><label><input type='checkbox' name='ans1' value='cb801e48' /><div><p><code>foo: movq %rsi, %rax</code><br><code>addq %rdi, %rax</code><br><code>ret</code><br>&nbsp;</p>
+</div></label></li><li><label><input type='checkbox' name='ans1' value='b25c068e' /><div><p><code>foo: movq (%rsi, %rdi), %rax</code><br><code>leaq (%rax), %rax</code><br><code>ret</code><br>&nbsp;</p>
+</div></label></li><li><label><input type='checkbox' name='ans1' value='250bddd7' /><div><p><code>foo: leaq 1(%rsi, %rdi, 1), %rax</code><br><code>ret</code><br>&nbsp;</p>
+</div></label></li><li><label><input type='checkbox' name='ans1' value='38d95de3' /><div><p><code>foo: leaq 0(%rsi, %rdi), %rax</code><br><code>ret</code><br>&nbsp;</p>
+</div></label></li></ol></div><div class="multiquestion"><p>Consider the following C function:</p>
+
+<pre><code>long example(long a, long b) {
+    while (a &gt; b) { a = a - b; }
+    return a;
+}
+</code></pre>
+<div class='question' id='q2' slug='dcf7a875'><div class='description' id='d2'><strong>Question 2</strong> (2 points) (see above)
+<p>This function can be converted to x86-64 assembly (following Linux's x86-64 calling convention)
+like the following:</p>
+
+<pre><code>example:
+    cmpq %rsi, %rdi
+    ____ L_done
+    subq %rsi, %rdi
+    jmp example
+L_done:
+    movq %rdi, %rax
+    ret
+</code></pre>
+
+<p>What instruction goes in the blank (in the second instruction of the function before <code>L_done</code>)?</p>
+</div><ol class="options"><li><label><input type='radio' name='ans2' value='538878bd' /><div><p>jl</p>
+</div></label></li><li><label><input type='radio' name='ans2' value='8c590c72' /><div><p>jg</p>
+</div></label></li><li><label><input type='radio' name='ans2' value='78630cb4' /><div><p>jle</p>
+</div></label></li><li><label><input type='radio' name='ans2' value='ba26546f' /><div><p>jge</p>
+</div></label></li><li><label><input type='radio' name='ans2' value='b33aae5c' /><div><p>je</p>
+</div></label></li><li><label><input type='radio' name='ans2' value='46447e0c' /><div><p>jne</p>
+</div></label></li><li><label><input type='radio' name='ans2' value='1d16e3af' /><div><p>jmp</p>
+</div></label></li></ol></div><div class='question' id='q3' slug='7227c41d'><div class='description' id='d3'><strong>Question 3</strong> (2 points) (see above)
+<p>Assuming the assembly translation from the previous question is used,
+after this function returns, what will the value of the zero flag (ZF) will be?</p>
+</div><ol class="options"><li><label><input type='radio' name='ans3' value='4fad52d4' /><div><p>always <code>0</code></p>
+</div></label></li><li><label><input type='radio' name='ans3' value='a44474d3' /><div><p>always <code>1</code></p>
+</div></label></li><li><label><input type='radio' name='ans3' value='c4e027fb' /><div><p><code>1</code> if the return value is 0; otherwise <code>0</code></p>
+</div></label></li><li><label><input type='radio' name='ans3' value='5d945241' /><div><p><code>1</code> if <code>b</code> is 0, otherwise <code>0</code></p>
+</div></label></li><li><label><input type='radio' name='ans3' value='35d541a8' /><div><p><code>1</code> if the return value is equal to the argument <code>b</code>; otherwise <code>0</code></p>
+</div></label></li><li><label><input type='radio' name='ans3' value='39aab8f1' /><div><p><code>1</code> if the loop executed at least one time (the original value of <code>a</code> was greater than <code>b</code>); otherwise <code>0</code></p>
+</div></label></li><li><label><input type='radio' name='ans3' value='39bfbd6a' /><div><p><code>1</code> if the loop executed zero times; otherwise <code>0</code></p>
+</div></label></li><li><label><input type='radio' name='ans3' value='ca94092c' /><div><p>it depends on the arguments and/or return value, but not in a way described above</p>
+</div></label></li><li><label><input type='radio' name='ans3' value='07f59b8c' /><div><p>it depends on what the value of the zero flag (ZF) was before the function was called</p>
+</div></label></li></ol></div></div><div class="multiquestion"><p>Suppose we assemble the following into an object file:</p>
+
+<pre><code>.data
+.global array
+array:
+    .byte 1
+    .byte 2
+    .byte 3
+    .byte 4
+
+.text
+.global bar 
+bar:
+    cmpq $0, %rdi
+    je end_bar
+    movq $array, %rdi
+    call print_array
+end_bar:
+    movq $array, %rax
+    ret
+</code></pre>
+<div class='question' id='q4' slug='ff9da88e'><div class='description' id='d4'><strong>Question 4</strong> (2 points) (see above)
+<p>The corresponding object file's <strong>relocations</strong> table will reference which of the following
+(either by name or by identifying the location of the corresponding label)? <strong>Select all that apply.</strong></p>
+</div><ol class="options"><li><label><input type='checkbox' name='ans4' value='ea14efc7' /><div><p><code>array</code></p>
+</div></label></li><li><label><input type='checkbox' name='ans4' value='e752c534' /><div><p><code>bar</code></p>
+</div></label></li><li><label><input type='checkbox' name='ans4' value='12ad0863' /><div><p><code>print_array</code></p>
+</div></label></li></ol></div><div class='question' id='q5' slug='a41fa20b'><div class='description' id='d5'><strong>Question 5</strong> (2 points) (see above)
+<p>When using the resulting object file to produce an executable (using the static (non-dynamic) linking scheme
+we discussed in lecture), the linker will _______.
+<strong>Select all that apply.</strong></p>
+</div><ol class="options"><li><label><input type='checkbox' name='ans5' value='da8bc480' /><div><p>write the four bytes that are stored after the label <code>array</code> to the executable file</p>
+</div></label></li><li><label><input type='checkbox' name='ans5' value='d7aee070' /><div><p>find a symbol table entry for <code>print_array</code> in some other object file</p>
+</div></label></li><li><label><input type='checkbox' name='ans5' value='216f8f80' /><div><p>write the memory address (in some format) chosen for the <code>call print_array</code> instruction somewhere in the executable</p>
+</div></label></li><li><label><input type='checkbox' name='ans5' value='f0b9500a' /><div><p>write the memory address for <code>array</code> (in some format) in the resulting executable somewhere</p>
+</div></label></li></ol></div></div><div class="multiquestion"><p>Consider the following C function:</p>
+
+<pre><code>int *quux(int *p) {
+    int *r;
+    r = p + 2;
+    *r += 4;
+    return r;
+}
+</code></pre>
+<div class='question' id='q6' slug='eb52683d'><div class='description' id='d6'><strong>Question 6</strong> (2 points) (see above)
+<p>Suppose the function <code>quux</code> is run on a Linux x86-64 system where:</p>
+
+<ul>
+<li><code>int</code>s are 4 bytes,</li>
+<li><code>p</code> points to the first element of an array of 400 ints located at address <code>0x10000</code></li>
+<li>each of the 100 ints in the array initially has the value <code>7</code></li>
+</ul>
+
+<p>What will the value of the <strong>pointer</strong> <code>r</code> be just before the <code>quux</code> returns?
+Write your answer as a hexadecimal number.
+(Be sure to give the value of the pointer and not the value it points to.)</p>
+</div><div class='tinput'><span>Answer:</span><input type='text' name='ans6' /></div></div></div><h1 style='text-align:center'>quiz for week 3</h1><div class='directions'><p>Answer the following questions about lecture material from week 3<!--
+    bitwise?
+    ISA definition
+    CISC v RISC
+    Y86-64
+    wires/muxes
+    registers
+--></p>
+</div><div class="multiquestion"><p>Consider the following C function:</p>
+
+<pre><code>long example(long a) {
+    long last_a = a;
+    while (a != (a &gt;&gt; 40)) {
+        last_a = a;
+        a = a &gt;&gt; 40; 
+    }   
+    return last_a;
+}
+</code></pre>
+
+<p>Assume <code>&gt;&gt;</code> on integers is implemented using an arithmetic shift (copies the sign bit for leftmost bits of
+result) and <code>long</code>s are 64 bits, represented using two's complement.</p>
+<div class='question' id='q1' slug='7c695507'><div class='description' id='d1'><strong>Question 1</strong> (2 points) (see above)
+<p>The value of <code>example(1)</code> is <code>1</code>.
+Besides <code>1</code>, what is another value <code>K</code> such that <code>example(K)</code> is 1? (There are several possible answers.)
+Write your answer as a base-10 number.</p>
+</div><div class='tinput'><span>Answer:</span><input type='text' name='ans1' /></div></div><div class='question' id='q2' slug='27e2b6cc'><div class='description' id='d2'><strong>Question 2</strong> (2 points) (see above)
+<p>How many distinct return values can the above <code>example</code> function have? Write your answer as a base-10 number.</p>
+</div><div class='tinput'><span>Answer:</span><input type='text' name='ans2' /></div></div></div><div class='question' id='q3' slug='ca0f0b0a'><div class='description' id='d3'><strong>Question 3</strong> (2.5 points)
+<p>If <code>x</code> and <code>y</code> are 32-bit signed ints
+with values between -1000000 and 1000000
+ on a system that uses two's complement, which of the following C expressions are always true? <strong>Select all that apply.</strong></p>
+</div><ol class="options"><li><label><input type='checkbox' name='ans3' value='81dc4d86' /><div><p><code>(x &gt;= 0) || (((x &gt;&gt; 31) &amp; 1) == 1)</code></p>
+</div></label></li><li><label><input type='checkbox' name='ans3' value='e0a5479b' /><div><p><code>(x &amp; 0xFF) &lt;= (x &amp; 0xFFF)</code></p>
+</div></label></li><li><label><input type='checkbox' name='ans3' value='1ec4df18' /><div><p><code>((x + (y &amp; 0xFFFF)) &amp; 0xFFFF) == (((x &amp; 0xFFFF) + y) &amp; 0xFFFF)</code></p>
+</div></label></li><li><label><input type='checkbox' name='ans3' value='0f41b8c7' /><div><p><code>(((x | y) &amp; 0xFF) &gt;&gt; 8) == (((x &gt;&gt; 8) &amp; 0xFF) | ((y &gt;&gt; 8) &amp; 0xFF))</code></p>
+</div></label></li><li><label><input type='checkbox' name='ans3' value='f04dccc6' /><div><p><code>(((x &amp; 0xFFF) &gt;&gt; 8) ^ (y &amp; 0xFFF)) == ((((x &gt;&gt; 8) ^ y) &amp; 0xFF) | (y &amp; 0xF00))</code></p>
+</div></label></li></ol></div><div class='question' id='q4' slug='c7aca2ca'><div class='description' id='d4'><strong>Question 4</strong> (2 points)
+<p>Which of the following C expressions will, given an <em>unsigned</em> integer <code>x</code>, return the least significant
+4 bits of the integer with its bits reversed. For example, if <code>x</code> in binary was <code>11001000001101</code>,
+the result would be (in binary) <code>1011</code> (the reverse of <code>1101</code>).
+<strong>Select all that apply.</strong></p>
+</div><ol class="options"><li><label><input type='checkbox' name='ans4' value='de338a36' /><div><p><code>(((x &amp; 0x11) &lt;&lt; 3) | ((x &amp; 0x12) &lt;&lt; 1) | ((x &amp; 0x14) &gt;&gt; 1) | ((x &amp; 0x18) &gt;&gt; 3)) &amp; 0xF</code></p>
+</div></label></li><li><label><input type='checkbox' name='ans4' value='e423c89c' /><div><p><code>((x &lt;&lt; 1) &amp; 1) | ((x &lt;&lt; 2) &amp; 2) | ((x &gt;&gt; 1) &amp; 8) | ((x &gt;&gt; 2) &amp; 4)</code></p>
+</div></label></li><li><label><input type='checkbox' name='ans4' value='85215e49' /><div><p><code>((x &amp; 1) &lt;&lt; 3) | ((x &amp; 2) &lt;&lt; 1) | ((x &amp; 4) &gt;&gt; 1) | ((x &amp; 8) &gt;&gt; 3)</code></p>
+</div></label></li><li><label><input type='checkbox' name='ans4' value='5dadf51e' /><div><p><code>((x &lt;&lt; 3) &amp; 15) | ((x &lt;&lt; 1) &amp; 5) | ((x &gt;&gt; 1) &amp; 2) | ((x &gt;&gt; 3) &amp; 1)</code></p>
+</div></label></li></ol></div><div class='question' id='q5' slug='79f4a823'><div class='description' id='d5'><strong>Question 5</strong> (2.5 points)
+<p>Which of the following are examples of properties of an instruction set architecture (ISA) as
+opposed to properties of a particular microarchitecture?</p>
+</div><ol class="options"><li><label><input type='checkbox' name='ans5' value='03342947' /><div><p>the maximum value that can be held in a register accessible to assembly code</p>
+</div></label></li><li><label><input type='checkbox' name='ans5' value='17e4c1f0' /><div><p>what the result of performing an addition instruction that attempts to add 1 to the maximum possible integer value is</p>
+</div></label></li><li><label><input type='checkbox' name='ans5' value='b26a9bff' /><div><p>the maximum number of cycles a 64-bit division instruction can take to complete</p>
+</div></label></li><li><label><input type='checkbox' name='ans5' value='f9af9e67' /><div><p>whether a conditional jump that immediately follows a subtract instruction is based on the result of that subtraction or on a prior compare instruction</p>
+</div></label></li><li><label><input type='checkbox' name='ans5' value='95da7144' /><div><p>the maximum size of a constant in an immediate (constant value)-to-register move instruction</p>
+</div></label></li></ol></div><h1 style='text-align:center'>quiz for week 4</h1><div class='directions'><p>Answer the following questions about lecture material from week 4.</p>
+</div><div class='question' id='q1' slug='88b5c2ab'><div class='description' id='d1'><strong>Question 1</strong> (2 points)
+<p>Which of the following are likely attributes of processors following the RISC (reduced instruction set computer)
+design philosophy when compared to processors following the CISC (complex instruction set computer) design
+philosophy?  <strong>Select all that apply.</strong></p>
+</div><ol class="options"><li><label><input type='checkbox' name='ans1' value='c2bb967a' /><div><p>permitting efficient implementation with a register file with fewer registers</p>
+</div></label></li><li><label><input type='checkbox' name='ans1' value='7e612da8' /><div><p>providing more instructions that perform both computation and a memory access</p>
+</div></label></li><li><label><input type='checkbox' name='ans1' value='c581f62f' /><div><p>implementing fewer instructions overall</p>
+</div></label></li><li><label><input type='checkbox' name='ans1' value='c56b2ba4' /><div><p>providing variants of instructions encoded by placing a special "prefix" byte value before original instruction's normal machine code</p>
+</div></label></li></ol></div><div class='question' id='q2' slug='c9108d4b'><div class='description' id='d2'><strong>Question 2</strong> (2 points)
+<p>Which of the following are <strong><em>valid</em></strong> Y86-64 code? <strong>Select all that apply.</strong></p>
+</div><ol class="options"><li><label><input type='checkbox' name='ans2' value='5f6ceff3' /><div><p><code>rmmovq %rax, 10(%rax, 4)</code></p>
+</div></label></li><li><label><input type='checkbox' name='ans2' value='d4b76db5' /><div><p><code>addl %eax, %ebx</code></p>
+</div></label></li><li><label><input type='checkbox' name='ans2' value='521ba440' /><div><p><code>irmovq $10, %rsp</code></p>
+</div></label></li><li><label><input type='checkbox' name='ans2' value='f351aec3' /><div><p><code>subq %r8, %r9</code></p>
+</div></label></li></ol></div><div class='question' id='q3' slug='0d25afcb'><div class='description' id='d3'><strong>Question 3</strong> (2 points)
+<p>Consider the following Y86-64 machine code, written as a sequence of bytes in hexadecimal:</p>
+
+<pre><code> 50 76 74 00 00 00 00 00 00 80 60 12 61 84 00 00 00 00 00 00 00
+</code></pre>
+
+<p>If we translate this to assembly (assuming the first instruction starts at the first byte)
+then the <strong>first two</strong> instructions would be:</p>
+</div><ol class="options"><li><label><input type='radio' name='ans3' value='18a10628' /><div><p><code>mrmovq</code> and <code>addq</code></p>
+</div></label></li><li><label><input type='radio' name='ans3' value='3e34c284' /><div><p><code>mrmovq</code> and <code>jmp</code></p>
+</div></label></li><li><label><input type='radio' name='ans3' value='dbeb8762' /><div><p><code>mrmovq</code> and <code>jg</code></p>
+</div></label></li><li><label><input type='radio' name='ans3' value='ea28ad2d' /><div><p><code>mrmovq</code> and <code>jne</code></p>
+</div></label></li><li><label><input type='radio' name='ans3' value='4a303a14' /><div><p><code>mrmovq</code> and <code>call</code></p>
+</div></label></li><li><label><input type='radio' name='ans3' value='6bcf91be' /><div><p><code>irmovq</code> and <code>addq</code></p>
+</div></label></li><li><label><input type='radio' name='ans3' value='db1b6a47' /><div><p><code>mrmovq</code> and <code>pushq</code></p>
+</div></label></li><li><label><input type='radio' name='ans3' value='583b047d' /><div><p>none of the above</p>
+</div></label></li></ol></div><div class='question' id='q4' slug='7ddef53a'><div class='description' id='d4'><strong>Question 4</strong> (2 points)
+<p>Consider the following Y86-64 machine code, written as a sequence of bytes in hexadecimal:</p>
+
+<pre><code>30 f1 78 56 34 12 00 00 00 00 10
+</code></pre>
+
+<p>Write Y86-64 assembly for the <em>first</em> instruction in this machine code.</p>
+</div><div class='tinput'><span>Answer:</span><input type='text' name='ans4' /></div></div><div class='question' id='q5' slug='37fabaf6'><div class='description' id='d5'><strong>Question 5</strong> (2 points)
+<p>Consider the following HCLRS code snippet where <code>...</code> represents some omitted code:</p>
+
+<pre><code>register xY {
+    foo : 64 = ...;
+    bar : 64 = ...;
+}
+...
+x_foo = Y_foo + Y_bar;
+x_bar = Y_bar - Y_foo;
+</code></pre>
+
+<p>During cycle 10, <code>Y_foo</code> has the value <code>500</code> and <code>Y_bar</code> has the value <code>300</code>.
+What is the value of <code>Y_foo</code> during cycle <strong>12</strong>? (Write your answer as a base-10 number, like <code>123</code>.)</p>
+
+<p>Assume that cycles are seperated by a rising edge of the clock signal.</p>
+</div><div class='tinput'><span>Answer:</span><input type='text' name='ans5' /></div></div><div class='question' id='q6' slug='74df739f'><div class='description' id='d6'><strong>Question 6</strong> (2 points)
+<p>Using the kind of registers we described in lecture and in section 4.2.5 of our textbook,
+suppose a register's output is <code>42</code> and its
+value input is also <code>42</code> and the clock signal is high. Then the following happens in this order:</p>
+
+<ol start="2">
+<li>the clock signal falls (becoming low)</li>
+<li>the register's value input changes to <code>44</code></li>
+<li>the register's value input changes to <code>45</code></li>
+<li>the clock signal rises (becoming high again)</li>
+<li>the register's value input changes to <code>46</code></li>
+<li>the clock signal falls (becoming low)</li>
+<li>the register's value input changes to <code>47</code></li>
+</ol>
+
+<p>What will the value of the register's output be after this occurs? If not enough information is given
+to answer write <code>unknown</code> and explain in the comment field.</p>
+</div><div class='tinput'><span>Answer:</span><input type='text' name='ans6' /></div></div><h1 style='text-align:center'>quiz for week 5</h1><div class='directions'><p>Answer the following questions about lecture material from week 5.</p>
+</div><div class='question' id='q1' slug='15f247fe'><div class='description' id='d1'><strong>Question 1</strong> (2 points)
+<p>Consider the following HCLRS code snippet:</p>
+
+<pre><code>wire x : 64;
+wire y : 64;
+x = [
+    y == 4 : 4;
+    (y &amp; 1) == 0 : 3;
+    y &gt; 10 : 2;
+    1 : 1;
+];
+</code></pre>
+
+<p>If <code>y</code> is <code>100</code> what is the value of <code>x</code>?</p>
+</div><div class='tinput'><span>Answer:</span><input type='text' name='ans1' /></div></div><div class='question' id='q2' slug='a32bd572'><div class='description' id='d2'><strong>Question 2</strong> (2 points)
+<p>Using the instruction memory design we discussed in lecture designed for use in implementing
+the Y86-64 instruction set, the size of the output of the instruction memory ____.</p>
+</div><ol class="options"><li><label><input type='radio' name='ans2' value='34c24028' /><div><p>is always 80 bits</p>
+</div></label></li><li><label><input type='radio' name='ans2' value='eaf8c99a' /><div><p>is always 64 bits</p>
+</div></label></li><li><label><input type='radio' name='ans2' value='a83d77c0' /><div><p>is always 16 bits</p>
+</div></label></li><li><label><input type='radio' name='ans2' value='15622297' /><div><p>depends on the icode value located at the input address</p>
+</div></label></li><li><label><input type='radio' name='ans2' value='81939461' /><div><p>depends on the input to the "PC" register</p>
+</div></label></li><li><label><input type='radio' name='ans2' value='518d3d20' /><div><p>depends on the computed next instruction address (what our textbook calls <code>valP</code>)</p>
+</div></label></li></ol></div><div class='question' id='q3' slug='627b38b1'><div class='description' id='d3'><strong>Question 3</strong> (2 points)
+<p>Consider the following HCLRS code snippet:</p>
+
+<pre><code>reg_srcA = 8;
+reg_dstE = 0;
+reg_inputE = reg_outputA;
+</code></pre>
+
+<p>If this were part of an HCLRS processor which does not have any other code using the register file
+inputs and outputs, then</p>
+</div><ol class="options"><li><label><input type='radio' name='ans3' value='0fd1f9ce' /><div><p>the value of <code>%r8</code> would be copied to <code>%rax</code> during every cycle</p>
+</div></label></li><li><label><input type='radio' name='ans3' value='b21ea152' /><div><p>the value of <code>%rax</code> would be copied to <code>%r8</code> during every cycle</p>
+</div></label></li><li><label><input type='radio' name='ans3' value='eb6c28f8' /><div><p>the value <code>0</code> would be written to <code>%rax</code> during every cycle</p>
+</div></label></li><li><label><input type='radio' name='ans3' value='347b31e2' /><div><p>the value <code>0</code> would be written to <code>%r8</code> during every cycle</p>
+</div></label></li><li><label><input type='radio' name='ans3' value='fede2683' /><div><p>the value <code>8</code> would be written to <code>%rax</code> during every cycle</p>
+</div></label></li><li><label><input type='radio' name='ans3' value='18ec5d1e' /><div><p>the value <code>8</code> would be written to <code>%r8</code> during every cycle</p>
+</div></label></li><li><label><input type='radio' name='ans3' value='c3d4e09a' /><div><p>the value <code>0</code> would be written to both <code>%r8</code> and <code>%rax</code> during every cycle</p>
+</div></label></li><li><label><input type='radio' name='ans3' value='dcdc3807' /><div><p>the value of registers would not change</p>
+</div></label></li><li><label><input type='radio' name='ans3' value='e32b952c' /><div><p>none of the above</p>
+</div></label></li></ol></div><div class="multiquestion"><p>Rather than having <code>call</code> and <code>ret</code> instructions that push and pop values from the stack,
+many instruction sets instead store the return adddress in a register (which, if necessary, programs
+can save on the stack).</p>
+
+<p>For example, RISC V provides a <code>jal REGISTER, TARGET_LABEL</code> ("jump and link") instruction to replace
+the functionality of <code>call</code> and a <code>jr REGISTER</code> ("jump to register") to replace the functionality
+of return. Like <code>call</code>, <code>jal REGSITER, TARGET_LABEL</code> stores the return address and then jumps to
+<code>TARGET_LABEL</code>, but it stores it in <code>REGISTER</code>, rather than on the stack. (If necessary, the
+function can use another instruction to push the return address onto the stack.)
+<code>jr REGISTER</code> takes a value from a register and sets the PC to the value.</p>
+<div class='question' id='q4' slug='d7b4a397'><div class='description' id='d4'><strong>Question 4</strong> (2 points) (see above)
+<p>Suppose we added the <code>jal</code> instruction described above to the single-cycle Y86-64 procesor design we
+described in lecture (and which is described in our textbook).
+(By "single-cycle processor", we mean a processor that executes one cycle per reigster.)
+To avoid adding inputs to MUXes or additional MUXes (or similar circuitry) to
+control the 4-bit register number inputs to the register file
+(<code>reg_srcA</code>, <code>reg_srcB</code>, <code>reg_dstE</code>, and <code>reg_dstM</code> in HCLRS), which of
+the below encodings would be best?</p>
+
+<p>(In each of the encodings, values of each byte are provided with most significant bits written first (left-most).)</p>
+</div><ol class="options"><li><label><input type='radio' name='ans4' value='25e3c3a3' /><div><p><code>[4 bit icode][4 bit destination register]</code> (1st byte) then <code>[64-bit target address]</code></p>
+</div></label></li><li><label><input type='radio' name='ans4' value='feb9e7b3' /><div><p><code>[4 bit icode][4 bits unused]</code> (1st byte)  then <code>[4 bit unused][4 bit destination register]</code> (2nd byte) then <code>[64-bit target address]</code></p>
+</div></label></li><li><label><input type='radio' name='ans4' value='7ae36198' /><div><p><code>[4 bit icode][4 bits unused]</code> (1st byte) then <code>[64-bit target address]</code> (2nd through 9th byte) then <code>[4 bit destination register][4 bits unused]</code> (10th byte)</p>
+</div></label></li><li><label><input type='radio' name='ans4' value='879e3a16' /><div><p><code>[4 bit icode][4 bit condition code info]</code> (1st byte) then <code>[64-bit target address]</code> (2nd through 9th byte)</p>
+</div></label></li></ol></div><div class='question' id='q5' slug='2ce87381'><div class='description' id='d5'><strong>Question 5</strong> (2 points) (see above)
+<p>Suppose we added the <code>jal</code> instruction descrbied above to the single-cycle processor design we described in lecture
+(and which is described in our textbook).
+While this instruction is executing the input to the PC register would most likely be equal to</p>
+</div><ol class="options"><li><label><input type='radio' name='ans5' value='c7e98e18' /><div><p>part of the output of the instruction memory</p>
+</div></label></li><li><label><input type='radio' name='ans5' value='6c492254' /><div><p>the result of a calcuation performed using one of the outputs of the register file</p>
+</div></label></li><li><label><input type='radio' name='ans5' value='540798fb' /><div><p>one of the outputs of the register file</p>
+</div></label></li><li><label><input type='radio' name='ans5' value='6f77a1ca' /><div><p>the output of the data memory</p>
+</div></label></li><li><label><input type='radio' name='ans5' value='28eda262' /><div><p>none of the above</p>
+</div></label></li></ol></div></div><div class='question' id='q6' slug='eda2530f'><div class='description' id='d6'><strong>Question 6</strong> (2 points)
+<p>In the single-cycle Y86-64 processor design we discussed in lecture, which of the following 
+operations may overlap in time with the addition of registers' values for an <code>add</code> instruction?
+<strong>Select all that apply.</strong></p>
+</div><ol class="options"><li><label><input type='checkbox' name='ans6' value='2d1f8670' /><div><p>computing the next instruction's address (but not necessairily storing it in a register yet)</p>
+</div></label></li><li><label><input type='checkbox' name='ans6' value='8ce56ea8' /><div><p>writing a value to the data memory</p>
+</div></label></li><li><label><input type='checkbox' name='ans6' value='2541edc7' /><div><p>the clock signal rising</p>
+</div></label></li><li><label><input type='checkbox' name='ans6' value='a8247d6d' /><div><p>reading a register's value from the register file</p>
+</div></label></li></ol></div><h1 style='text-align:center'>quiz for week 6</h1><div class='directions'><p>Answer the following questions about lecture material and lab from week 6.<!-- FIXME: questions about SEQ --></p>
+</div><div class='question' id='q1' slug='983743c9'><div class='description' id='d1'><strong>Question 1</strong> (2 points)
+<p>In lab to implement condition codes, we suggested declaring condition code registers using</p>
+
+<pre><code>register cC {
+    SF:1 = 0;
+    ZF:1 = 1;
+}
+</code></pre>
+
+<p>and then using</p>
+
+<pre><code>stall_C = (icode != OPQ);
+</code></pre>
+
+<p>to keep the condition code registers
+from changing when the instruction was not an OPq instruction. We noted that, in HCLRS,
+"Register banks like <code>cC</code> have a special input <code>stall_C</code> which, if 1, causes the
+registers to ignore inputs and keep their current value." (Each register bank has its own
+stall signal, this one is <code>stall_C</code>, since the condition code registers were declared using
+<code>register cC</code>.)</p>
+
+<p>If register banks did not provide this <code>stall</code> signal, we could have implemented the functionality
+using a case expression (MUX) when setting <code>c_SF</code> and <code>c_ZF</code>. What would the corresponding code
+for setting <code>c_ZF</code> look like?</p>
+</div><ol class="options"><li><label><input type='radio' name='ans1' value='a015f052' /><div><p><code>c_ZF = [ icode == OPQ : valE == 0; 1 : 0; ];</code></p>
+</div></label></li><li><label><input type='radio' name='ans1' value='6b415ec3' /><div><p><code>c_ZF = [ icode == OPQ : valE == 0; 1 : 1; ];</code></p>
+</div></label></li><li><label><input type='radio' name='ans1' value='4cd05e37' /><div><p><code>c_ZF = [ icode == OPQ : valE == 0; 1 : c_ZF; ];</code></p>
+</div></label></li><li><label><input type='radio' name='ans1' value='1e8ba76c' /><div><p><code>c_ZF = [ icode == OPQ : valE == 0; 1 : C_ZF; ];</code></p>
+</div></label></li><li><label><input type='radio' name='ans1' value='b7b071c6' /><div><p><code>c_ZF = [ icode == OPQ : valE == 0; 1 : !C_ZF; ];</code></p>
+</div></label></li><li><label><input type='radio' name='ans1' value='8e34a22c' /><div><p><code>c_ZF = [ icode == OPQ : valE == 0; 1 : !c_ZF; ];</code></p>
+</div></label></li><li><label><input type='radio' name='ans1' value='435eb541' /><div><p><code>c_ZF = [ icode == OPQ : valE == 0; 1 : valE != 0; ];</code></p>
+</div></label></li><li><label><input type='radio' name='ans1' value='60419c39' /><div><p>none of the above</p>
+</div></label></li></ol></div><div class="multiquestion"><p>Consider the following diagram of the single-cycle processor data path from lecture:</p>
+
+<p><img src="https://www.cs.virginia.edu/~cr4bd/3330/F2020-quiz06-circuit.png"></p>
+
+<p>Note that in this version of the processor design, the second input to the ALU
+(which our textbook calls <code>aluB</code>) is <code>0</code> or the second output of the register
+file (<code>reg_outputB</code> in HCL).</p>
+
+<p>Suppose we wanted to implement a new instruction <code>ixorq</code> on this processor, which
+would xor a register's value with a constant and store the result in a register. For example</p>
+
+<pre><code>ixorq $0x1234, %rax
+</code></pre>
+
+<p>would take the value of <code>%rax</code>, xor it with <code>0x1234</code> and store the result in <code>%rax</code>. In
+machine code, the instruction would have the same layout (placement of fields like <code>icode</code>
+and <code>rA</code> and <code>valC</code>) as <code>irmovq.</code></p>
+<div class='question' id='q2' slug='3594991c'><div class='description' id='d2'><strong>Question 2</strong> (2 points) (see above)
+<p>When this <code>ixorq</code> instruction is executing the MUX that controls the <code>dstM</code> regsiter file
+input should ____.</p>
+</div><ol class="options"><li><label><input type='radio' name='ans2' value='8e57c1c7' /><div><p>select the top input (<code>rA</code>)</p>
+</div></label></li><li><label><input type='radio' name='ans2' value='fce96543' /><div><p>select the second input (<code>0xF</code>, also known as <code>REG_NONE</code>)</p>
+</div></label></li><li><label><input type='radio' name='ans2' value='a875576a' /><div><p>select any input; it won't affect the instruction's operation</p>
+</div></label></li><li><label><input type='radio' name='ans2' value='0b97a14b' /><div><p>select a new <code>rB</code> input that the MUX needs to be modified to support in order to implement the <code>ixorq</code> instruction</p>
+</div></label></li></ol></div><div class='question' id='q3' slug='fc187497'><div class='description' id='d3'><strong>Question 3</strong> (2 points) (see above)
+<p>When this <code>ixorq</code> instruction is executing the MUX that controls the <code>aluB</code> ALU input
+should ____.</p>
+</div><ol class="options"><li><label><input type='radio' name='ans3' value='996a1b92' /><div><p>select the top input (<code>reg_outputB</code>)</p>
+</div></label></li><li><label><input type='radio' name='ans3' value='953d005c' /><div><p>select the second input (<code>0</code>)</p>
+</div></label></li><li><label><input type='radio' name='ans3' value='a6186d28' /><div><p>select any input; it won't affect the instruction's operation</p>
+</div></label></li></ol></div></div><div class='question' id='q4' slug='42959e29'><div class='description' id='d4'><strong>Question 4</strong> (2 points)
+<p>Consider a three-stage pipelined processor
+The operations of the stages of this processor, including register delays for
+any required pipeline registers, take:</p>
+
+<ul>
+<li>200 ps (first stage)</li>
+<li>250 ps (second stage)</li>
+<li>300 ps (third stage)</li>
+</ul>
+
+<p>What is the best possible cycle time of this processor? Write your answer as a base-10 number of picoseconds.</p>
+</div><div class='tinput'><span>Answer:</span><input type='text' name='ans4' /></div></div><div class='question' id='q5' slug='2f5c52ed'><div class='description' id='d5'><strong>Question 5</strong> (2 points)
+<p>Consider a three-stage pipelined processor has a cycle time of 500 picoseconds.
+Suppose this processor runs 5 instructions in the following order: A (completes first), B, C, D, and E (completes last).
+What is the time between when the instruction <strong>A</strong> starts its
+first stage and when instruction <strong>E</strong> starts its <em>third</em> stage? If multiple amounts of time
+are possible, write the minimum time.
+Write your answer as a base-10 number of picoseconds.</p>
+</div><div class='tinput'><span>Answer:</span><input type='text' name='ans5' /></div></div><div class='question' id='q6' slug='2ed69990'><div class='description' id='d6'><strong>Question 6</strong> (2 points)
+<p>Suppose a processor designer took a three-stage pipelined processor design with a cycle time of
+800 ps and turned it into a six-stage processor pipelined design that implemented the same ISA.
+Both the three-stage and six-stage processors were designed to achieve about the best 
+cycle times possible (despite the constraints that lead to diminishing returns as one tries to add
+pipeline stages to a processor).
+Which of the following would be the most likely cycle time for the six-stage processor design?</p>
+</div><ol class="options"><li><label><input type='radio' name='ans6' value='91bbd709' /><div><p>1700 ps</p>
+</div></label></li><li><label><input type='radio' name='ans6' value='caf29393' /><div><p>1600 ps</p>
+</div></label></li><li><label><input type='radio' name='ans6' value='4f57637e' /><div><p>1500 ps</p>
+</div></label></li><li><label><input type='radio' name='ans6' value='b6dfbde8' /><div><p>800 ps</p>
+</div></label></li><li><label><input type='radio' name='ans6' value='b63a12c0' /><div><p>500 ps</p>
+</div></label></li><li><label><input type='radio' name='ans6' value='e12d15b5' /><div><p>400 ps</p>
+</div></label></li><li><label><input type='radio' name='ans6' value='afe3bb65' /><div><p>300 ps</p>
+</div></label></li></ol></div><h1 style='text-align:center'>quiz for week 7</h1><div class='directions'><p>Answer the following questions about lecture material from week 7.<!--
+    topics:
+        hazards
+        forwarding
+        branch prediction
+--></p>
+</div><div class='question' id='q1' slug='9005a42b'><div class='description' id='d1'><strong>Question 1</strong> (2 points)
+<p>Suppose we have a six-stage pipelined processor with 500 ps cycle time.</p>
+
+<p>Running a particular benchmark program which executes 1 billion (10 to the 9th power) instructions in a simulator, we determine that 5% of its instructions require exactly one cycle of stalling and 10% require exactly two cycles of stalling and no instructions would require more than two cycles of stalling.</p>
+
+<p>(For the purposes of this question, a cycle of stalling means one bubble (hardware-generated nop) inserted in the pipeline rather than advancing an instruction. Assume we attribute each stall to exactly one instruction.)</p>
+
+<p>Assume these stalls are the only reasons why the processor would not complete one program instruction
+every cycle.</p>
+
+<p>To the nearest millisecond, how long (in milliseconds) will the benchmark program take to run? Write your answer
+as a base-10 number of milliseconds.</p>
+</div><div class='tinput'><span>Answer:</span><input type='text' name='ans1' /></div></div><div class="multiquestion"><p>For the following two questions, consider executing the following assembly snippet:</p>
+
+<pre><code>addq %rax, %rbx
+subq %rbx, %rdx
+xorq %rbx, %rcx
+rrmovq %rdx, %rcx
+addq %rbx, %rcx
+</code></pre>
+<div class='question' id='q2' slug='2594cbbc'><div class='description' id='d2'><strong>Question 2</strong> (2 points) (see above)
+<p>Suppose the assembly snippet is executing on the five-stage pipelined processor we described in lecture,
+but instead of using forwarding, it uses <strong>only</strong> stalling to resolve data hazards (and no forwarding).
+If the first <code>addq</code> instruction is fetched in cycle 0, then during what cycle will the final <code>addq</code>
+instruction run its writeback stage?</p>
+</div><div class='tinput'><span>Answer:</span><input type='text' name='ans2' /></div></div><div class='question' id='q3' slug='725e91c3'><div class='description' id='d3'><strong>Question 3</strong> (3 points) (see above)
+<p>Suppose the assembly snippet is executing on the five-stage pipelined processor we described in lecture that:</p>
+
+<ul>
+<li>uses forwarding to resolve data hazards to the extent possible without dramatically increasing the cycle time</li>
+</ul>
+
+<p>Which of the following forwarding operations must occur
+to avoid the most stalling possible? <strong>Select all that apply.</strong></p>
+</div><ol class="options"><li><label><input type='checkbox' name='ans3' value='cb45d92d' /><div><p><code>%rbx</code> will be forwarded from the first addq to the subq</p>
+</div></label></li><li><label><input type='checkbox' name='ans3' value='60448189' /><div><p><code>%rbx</code> will be forwarded from the first addq to the xorq</p>
+</div></label></li><li><label><input type='checkbox' name='ans3' value='b55362e7' /><div><p><code>%rbx</code> will be forwarded from the subq to the xorq</p>
+</div></label></li><li><label><input type='checkbox' name='ans3' value='52b7eb60' /><div><p><code>%rdx</code> will be forwarded from the subq to the rrmovq</p>
+</div></label></li><li><label><input type='checkbox' name='ans3' value='3b229e61' /><div><p><code>%rcx</code> will be forwarded from the xorq to the rrmovq</p>
+</div></label></li><li><label><input type='checkbox' name='ans3' value='af0b8b78' /><div><p><code>%rcx</code> will be forwarded from the xorq to the addq</p>
+</div></label></li></ol></div></div><div class="multiquestion"><p>For the following question, consider executing the following assembly snippet:</p>
+
+<pre><code>addq %rax, %rbx 
+mrmovq 8(%rbx), %rcx
+xorq %rcx, %rdx
+rmmovq %rdx, 16(%rbx)
+</code></pre>
+<div class='question' id='q4' slug='af2a41d3'><div class='description' id='d4'><strong>Question 4</strong> (2 points) (see above)
+<p>Suppose the assembly snippet above were executed on a six-stage pipelined processor with the following stages:</p>
+
+<ul>
+<li>Fetch</li>
+<li>Decode</li>
+<li>Execute</li>
+<li>Memory 1</li>
+<li>Memory 2</li>
+<li>Writeback</li>
+</ul>
+
+<p>This processor acts like the processor we discussed in lecture and implements all forwarding
+possible (that wouldn't dramatically increase cycle times).</p>
+
+<p>For the purpose of forwarding, when the stages are not split, we generally assume:</p>
+
+<ul>
+<li>a value needed for a computation or storage access can only be used by a stage if it's computed or retrieved in the previous cycle</li>
+</ul>
+
+<p>Similarly, for the split memory stages, assume:</p>
+
+<ul>
+<li>for instructions that read from the data memory, the address to read must be computed
+in the cycle before the Memory 1 stage runs, and</li>
+<li>the result of any memory read is only available to be used (e.g. after being forwarded) by other instructions in
+the cycle after the Memory 2 stage runs</li>
+</ul>
+
+<p>Given this processor, if the <code>addq</code> performs its fetch stage during cycle 0, then
+during what cycle number will the <code>rmmovq</code> instruction finish its writeback stage?</p>
+</div><div class='tinput'><span>Answer:</span><input type='text' name='ans4' /></div></div></div><div class='question' id='q5' slug='fb5b2b4c'><div class='description' id='d5'><strong>Question 5</strong> (2.5 points)
+<p>Consider the following assembly snippet:
+(where <code>...</code> represents irrelevant
+instructions):</p>
+
+<pre><code>    addq %rax, %rcx
+    subq %rcx, %rdx
+    je foo
+    xorq %rcx, %rdx
+    ...
+    ...
+    ...
+foo:
+    irmovq $10, %rax /* A */
+    irmovq $20, %rbx /* B */
+    ...
+</code></pre>
+
+<p>where the <code>je</code> is <strong>not</strong> taken.</p>
+
+<p>Suppose that we are executing the assembly snippet on
+a five-stage pipelined processor based on the design in lecture that:</p>
+
+<ul>
+<li>uses forwarding to resolve data hazards to the extent possible without substantially increasing the cycle time, and</li>
+<li>speculates that all conditional jumps will be taken, like we described in lecture, so the instructions labeled A and B will be fetched in the two cycles after the <code>je</code> is fetched and then squashed (discarded)</li>
+<li>when a conditional jump is not taken like the processor guessed, fetches the corrected instruction during the memory stage of the conditional jump instruction (the cycle after determining what address to fetch in the conditional jump's execute stage)</li>
+</ul>
+
+<p>Which of the following is true about what happens when the above assembly executes? <strong>Select all that apply.</strong></p>
+</div><ol class="options"><li><label><input type='checkbox' name='ans5' value='aecea2d0' /><div><p>when the <code>addq</code>'s memory stage runs, the <code>subq</code>'s execute stage is running</p>
+</div></label></li><li><label><input type='checkbox' name='ans5' value='1eee6caf' /><div><p>when the <code>xorq</code>'s fetch stage runs, the <code>subq</code>'s writeback stage has not yet completed</p>
+</div></label></li><li><label><input type='checkbox' name='ans5' value='ebebec48' /><div><p>the value of <code>%rdx</code> will be forwarded from <code>subq</code> to <code>xorq</code></p>
+</div></label></li><li><label><input type='checkbox' name='ans5' value='3f7746ce' /><div><p>the value of <code>%rcx</code> will be forwared from <code>addq</code> to <code>subq</code></p>
+</div></label></li><li><label><input type='checkbox' name='ans5' value='af2d8bbe' /><div><p>the value of <code>%rcx</code> will be forwared from <code>addq</code> to <code>xorq</code></p>
+</div></label></li></ol></div><h1 style='text-align:center'>quiz for week 8</h1><div class='directions'><p>Answer the following questions about lecture material from week 8.</p>
+</div><div class="multiquestion"><p>Suppose we are implementing a five-stage processor with a similar design to the one discussed in lecture,
+but sometimes we need to stall for one cycle because the output of the data memory needs an extra
+cycle to be retrieved.</p>
+
+<p>Suppose the instruction triggering the stall is in the memory stage during cycle number 0,
+and needs to stay in the memory stage until cycle number 1 to complete the memory read.
+(For the purposes of this question, we say an instruction is in a stage when its values
+are being output from the corresponding pipeline registers.)</p>
+
+<p>Complete in the following statements about how the pipeline registers should behave.</p>
+<div class='question' id='q1' slug='17b1d4fb'><div class='description' id='d1'><strong>Question 1</strong> (0.5 points) (see above)
+<p>During cycle number 1, the pipeline registers between fetch and decode</p>
+</div><ol class="options"><li><label><input type='radio' name='ans1' value='3bd39136' /><div><p>should output the same values they were outputting during cycle number 0</p>
+</div></label></li><li><label><input type='radio' name='ans1' value='53e56391' /><div><p>should output the values for a nop</p>
+</div></label></li><li><label><input type='radio' name='ans1' value='f56ab38b' /><div><p>should output values corresponding to the instruction that was fetched during cycle 0</p>
+</div></label></li></ol></div><div class='question' id='q2' slug='8c434715'><div class='description' id='d2'><strong>Question 2</strong> (0.5 points) (see above)
+<p>During cycle number 1, the pipeline registers between decode and execute</p>
+</div><ol class="options"><li><label><input type='radio' name='ans2' value='fc4f003f' /><div><p>should output the same values they were outputting during cycle number 0</p>
+</div></label></li><li><label><input type='radio' name='ans2' value='21747a43' /><div><p>should output the values for a nop</p>
+</div></label></li><li><label><input type='radio' name='ans2' value='2ca56a19' /><div><p>should output values corresponding to the instruction that was in the decode stage in cycle 0</p>
+</div></label></li></ol></div><div class='question' id='q3' slug='794e2004'><div class='description' id='d3'><strong>Question 3</strong> (0.5 points) (see above)
+<p>During cycle number 1, the pipeline registers between execute and memory</p>
+</div><ol class="options"><li><label><input type='radio' name='ans3' value='4fd3f892' /><div><p>should output the same values they were outputting during cycle number 0</p>
+</div></label></li><li><label><input type='radio' name='ans3' value='042d2db6' /><div><p>should output the values for a nop</p>
+</div></label></li><li><label><input type='radio' name='ans3' value='a40ceda7' /><div><p>should output values corresponding to the instruction that was in the execute stage in cycle 0</p>
+</div></label></li></ol></div><div class='question' id='q4' slug='d0ab853d'><div class='description' id='d4'><strong>Question 4</strong> (0.5 points) (see above)
+<p>During cycle number 1, the pipeline registers between memory and writeback</p>
+</div><ol class="options"><li><label><input type='radio' name='ans4' value='8ac7435d' /><div><p>should output the same values they were outputting during cycle number 0</p>
+</div></label></li><li><label><input type='radio' name='ans4' value='82636a0e' /><div><p>should output the values for a nop</p>
+</div></label></li><li><label><input type='radio' name='ans4' value='3f122b49' /><div><p>should output values corresponding to the instruction that was in the memory stage in cycle 0</p>
+</div></label></li></ol></div></div><div class="multiquestion"><p>For the following two questions, 
+consider a 4-block direct-mapped cache with 4 byte cache blocks.
+For each of the following two questions, assume the cache's contents are as follows:</p>
+
+<table>
+<tr><td>index (in base 2)</td><td>valid bit</td><td>tag (in base 2)</td><td>data (hexadecimal, list of bytes, lowest address left-most)</td>
+<tr><td>00</td><td>1</td><td>001001</td><td>23 56 78 9A</td></tr>
+<tr><td>01</td><td>1</td><td>001001</td><td>AA BB CC DD</td></tr>
+<tr><td>10</td><td>1</td><td>000011</td><td>01 02 03 04</td></tr>
+<tr><td>11</td><td>0</td><td>000000</td><td>00 00 00 00</td></tr>
+</table>
+
+<p>For the following two questions,
+write down what the result of reading one byte from the specified addresses will be
+(assuming the cache has the contents listed above when the access occurs):</p>
+
+<ul>
+<li>if the result will be a cache hit, write the <strong>value</strong> that will be read in hexadecimal (with or without a leading <code>0x</code>)</li>
+<li>if the result will be a cache miss, write the word <code>miss</code>.</li>
+</ul>
+
+<p>(Note that addresses may have leading zeroes which are not written.)</p>
+<div class='question' id='q5' slug='182246a1'><div class='description' id='d5'><strong>Question 5</strong> (see above)
+<p>0x91</p>
+</div><div class='tinput'><span>Answer:</span><input type='text' name='ans5' /></div></div><div class='question' id='q6' slug='699337ab'><div class='description' id='d6'><strong>Question 6</strong> (see above)
+<p>0x3B</p>
+</div><div class='tinput'><span>Answer:</span><input type='text' name='ans6' /></div></div></div><div class="multiquestion"><p>For the following two questions, 
+consider a 4-block 2-way set associtiative-mapped cache with 4 byte cache blocks whose contents are as follows:</p>
+
+<table>
+<tr><td>index (in base 2)</td><td>valid bit (way 0)</td><td>tag (in base 2) (way 0)</td><td>data (hexadecimal, list of bytes, lowest address left-most) (way 0)</td><td>valid bit (way 1)</td><td>tag (way 1)</td><td>data (way 1)</td>
+<tr><td>0</td><td>1</td><td>0010010</td><td>23 56 78 9A</td><td>1</td><td>0010011</td><td>AA BB CC DD</td></tr>
+<tr><td>1</td><td>1</td><td>0000110</td><td>01 02 03 04</td><td>1</td><td>0000011</td><td>71 82 93 F3</td></tr>
+</table>
+
+<p>For the following two questions,
+write down what the result of reading one byte from each of the specified address will be
+(assuming the cache has the contents listed above when the access occurs):</p>
+
+<ul>
+<li>if the result will be a cache hit, write the <strong>value</strong> that will be read in hexadecimal (with or without a leading <code>0x</code>)</li>
+<li>if the result will be a cache miss, write the word <code>miss</code>.</li>
+</ul>
+
+<p>(Note that addresses may have leading zeroes which are not written.)</p>
+<div class='question' id='q7' slug='9c7bdc13'><div class='description' id='d7'><strong>Question 7</strong> (see above)
+<p>0x91</p>
+</div><div class='tinput'><span>Answer:</span><input type='text' name='ans7' /></div></div><div class='question' id='q8' slug='634966b1'><div class='description' id='d8'><strong>Question 8</strong> (see above)
+<p>0x3B</p>
+</div><div class='tinput'><span>Answer:</span><input type='text' name='ans8' /></div></div></div><div class='question' id='q9' slug='1683a817'><div class='description' id='d9'><strong>Question 9</strong> (2 points)
+<p>Consider a direct-mapped cache which
+contains 256KB of data (1KB = 1024 bytes) and uses 256 byte blocks.
+When there is a cache miss for address <code>0x12345</code>, this cache will copy an entire
+256-byte block from memory into the cache. What is the lowest address of
+a byte in this block? (Write your answer in hexadecimal.)</p>
+</div><div class='tinput'><span>Answer:</span><input type='text' name='ans9' /></div></div><h1 style='text-align:center'>quiz for week 9</h1><div class='directions'><p>Answer the following questions about lecture material from week 9.</p>
+</div><div class='question' id='q1' slug='88ad8d52'><div class='description' id='d1'><strong>Question 1</strong> (2 points)
+<p>Consider a 64KB direct-mapped cache with 32 byte blocks. (1KB = 1024 bytes)</p>
+
+<p>In this cache, the byte at address 0x12345 would (if present in the cache) be stored in the same <strong>set</strong> as the byte at address ____ would be stored (if present in the cache).
+<strong>Select all that apply.</strong></p>
+</div><ol class="options"><li><label><input type='checkbox' name='ans1' value='1452a90d' /><div><p><code>0x12346</code></p>
+</div></label></li><li><label><input type='checkbox' name='ans1' value='66143a78' /><div><p><code>0x22345</code></p>
+</div></label></li><li><label><input type='checkbox' name='ans1' value='30df9c30' /><div><p><code>0x13345</code></p>
+</div></label></li><li><label><input type='checkbox' name='ans1' value='a8ca7ddd' /><div><p><code>0x12335</code></p>
+</div></label></li></ol></div><div class='question' id='q2' slug='94862b16'><div class='description' id='d2'><strong>Question 2</strong> (2 points)
+<p>Consider a 8KB 2-way set associtiave cache with an LRU replacement policy and 64-byte blocks. (1KB = 1024 bytes.)</p>
+
+<p>Suppose the cache is initially empty (all valid bits set to <code>0</code>), then the program
+acceses 1 byte from each of the following addresses in
+the following order:</p>
+
+<ul>
+<li><code>0x10005</code></li>
+<li><code>0x40000</code></li>
+<li><code>0x12400</code></li>
+<li><code>0x10001</code></li>
+<li><code>0x33320</code></li>
+</ul>
+
+<p>Immediately after the accesses described above, give an example of an address which, if
+read using this cache, would cause something to be evicted from the cache:</p>
+</div><div class='tinput'><span>Answer:</span><input type='text' name='ans2' /></div></div><div class="multiquestion"><p>Consider a two-set direct-mapped cache with 8B blocks and a write-allocate and writeback policy.</p>
+
+<p>Suppose the cache is initially empty (all blocks invalid) and we perform the following accesses of single bytes:</p>
+
+<ul>
+<li>read from <code>0x104</code></li>
+<li>write to <code>0x101</code></li>
+<li>write to <code>0x102</code></li>
+<li>write to <code>0x108</code></li>
+<li>read from <code>0x109</code></li>
+<li>read from <code>0x10f</code></li>
+<li>read from <code>0x110</code></li>
+<li>read from <code>0x118</code></li>
+<li>write to <code>0x119</code></li>
+</ul>
+<div class='question' id='q3' slug='68b7e95e'><div class='description' id='d3'><strong>Question 3</strong> (see above)
+<p>Will the read from <code>0x109</code> be a hit?</p>
+</div><ol class="options"><li><label><input type='radio' name='ans3' value='b2d71801' /><div><p>yes</p>
+</div></label></li><li><label><input type='radio' name='ans3' value='4bbfd249' /><div><p>no</p>
+</div></label></li></ol></div><div class='question' id='q4' slug='687204ef'><div class='description' id='d4'><strong>Question 4</strong> (see above)
+<p>Will the read from <code>0x10f</code> be a hit?</p>
+</div><ol class="options"><li><label><input type='radio' name='ans4' value='632f668d' /><div><p>yes</p>
+</div></label></li><li><label><input type='radio' name='ans4' value='2b15a9b4' /><div><p>no</p>
+</div></label></li></ol></div><div class='question' id='q5' slug='d1ad7ee5'><div class='description' id='d5'><strong>Question 5</strong> (2 points) (see above)
+<p>Which of these reads from the access pattern above will trigger a write to memory (or the next level of cache)? <strong>Select all that apply</strong></p>
+</div><ol class="options"><li><label><input type='checkbox' name='ans5' value='fd42f6cf' /><div><p>read from <code>0x109</code></p>
+</div></label></li><li><label><input type='checkbox' name='ans5' value='415e4313' /><div><p>read from <code>0x10f</code></p>
+</div></label></li><li><label><input type='checkbox' name='ans5' value='7c7f2c1f' /><div><p>read from <code>0x110</code></p>
+</div></label></li><li><label><input type='checkbox' name='ans5' value='7b6adf1b' /><div><p>read from <code>0x118</code></p>
+</div></label></li></ol></div></div><div class='question' id='q6' slug='0bc04b99'><div class='description' id='d6'><strong>Question 6</strong> (2 points)
+<p>Suppose we have a system with:</p>
+
+<ul>
+<li>a 2-set direct-mapped cache with 8 byte cache blocks</li>
+<li>4-byte <code>int</code>s (so each cache block can store 2 ints)</li>
+</ul>
+
+<p>and run the following code:</p>
+
+<pre><code>int array[9];
+...
+int count1 = 0, count2 = 0, count3 = 0;
+count1 += array[0];
+count1 += array[3];
+count1 += array[6];
+count2 += array[1];
+count2 += array[4];
+count2 += array[7];
+count3 += array[2];
+count3 += array[5];
+count3 += array[8];
+</code></pre>
+
+<p>Assuming that:</p>
+
+<ul>
+<li><code>array[0]</code> is assigned an address at the beginning of a cache block</li>
+<li>the assembly the compiler generates for the above code does not reorder or omit data cache accesses</li>
+<li>only accesses to <code>array</code> use the data cache, and</li>
+<li>the cache is initially empty</li>
+</ul>
+
+<p>how many data cache misses should we expect?</p>
+
+<p>(Note that unlike the examples in lecture,
+the 9 accesses here are not evenly distributed across cache sets.)</p>
+</div><div class='tinput'><span>Answer:</span><input type='text' name='ans6' /></div></div>no quiz named <h1 style='text-align:center'>quiz for week 10</h1><div class='directions'><p>Answer the following questions about lecture material from week 10.</p>
+</div><div class="multiquestion"><p>Consider the following 2 versions of C code:</p>
+
+<pre><code>/* Version 1 */
+for (int i = 0; i &lt; N; ++i) {
+    for (int j = i; j &lt; N; ++j) {
+        C[j] += A[i*N+j] * B[j];
+    }
+}
+
+/* Version 2 */
+for (int j = 0; j &lt; N; ++j) {
+    for (int i = j; i &lt; N; ++i) {
+        C[j] += A[i*N+j] * B[j];
+    }
+}
+</code></pre>
+<div class='question' id='q1' slug='22192a6d'><div class='description' id='d1'><strong>Question 1</strong> (see above)
+<p>Which version has better temporal locality in accesses to <code>C</code>?</p>
+</div><ol class="options"><li><label><input type='radio' name='ans1' value='2112ef27' /><div><p>version 1</p>
+</div></label></li><li><label><input type='radio' name='ans1' value='18cffee7' /><div><p>version 2</p>
+</div></label></li><li><label><input type='radio' name='ans1' value='9772aab0' /><div><p>they are about the same</p>
+</div></label></li></ol></div><div class='question' id='q2' slug='210753a7'><div class='description' id='d2'><strong>Question 2</strong> (see above)
+<p>Which version has better spatial locality in accesses to <code>A</code>?</p>
+</div><ol class="options"><li><label><input type='radio' name='ans2' value='339918a7' /><div><p>version 1</p>
+</div></label></li><li><label><input type='radio' name='ans2' value='278d35e7' /><div><p>version 2</p>
+</div></label></li><li><label><input type='radio' name='ans2' value='c492bc96' /><div><p>they are about the same</p>
+</div></label></li></ol></div><div class='question' id='q3' slug='14dc4231'><div class='description' id='d3'><strong>Question 3</strong> (2 points) (see above)
+<p>If <code>N</code> is 100000 and cache blocks can hold 8 elements of the array <code>B</code>,
+then we would expect approximately _____ cache misses for the accesses to <code>B</code>
+when running <strong>version 1</strong> of the code above.
+(Choose the closest answer.)</p>
+
+<p>Assume the cache is not large enough to hold 50000 elements of B (or A or C).</p>
+</div><ol class="options"><li><label><input type='radio' name='ans3' value='18fcf2d3' /><div><p>12 500</p>
+</div></label></li><li><label><input type='radio' name='ans3' value='4fb106c0' /><div><p>100 000</p>
+</div></label></li><li><label><input type='radio' name='ans3' value='64efe007' /><div><p>800 000</p>
+</div></label></li><li><label><input type='radio' name='ans3' value='0a77cb89' /><div><p>78 125 000</p>
+</div></label></li><li><label><input type='radio' name='ans3' value='71070864' /><div><p>625 000 000</p>
+</div></label></li><li><label><input type='radio' name='ans3' value='cf9dc200' /><div><p>5 000 000 000</p>
+</div></label></li></ol></div></div><div class='question' id='q4' slug='5d7aa518'><div class='description' id='d4'><strong>Question 4</strong> (2 points)
+<p>Consider the following assembly snippet:</p>
+
+<pre><code>addq %rax, %rbx
+mrmovq 8(%rbx), %rax
+subq %rbx, %rcx
+</code></pre>
+
+<p>In lecture, we discussed how an out-of-order processor may perform
+<em>register renaming</em> where it converts instructions from
+using <em>architectural registers</em> (the ones that appear in assembly)
+to <em>physical registers</em> (used internally in the processsor). When doing this,
+the processor ensures that each version of an architectural register's
+value uses a different physical register, which aids in resolving hazards.</p>
+
+<p>After an out-of-order processor performs register renaming
+on the above instructions as discussed in lecture, which of the following statements
+about the physical registers used by the renamed
+versions of the above instructions will be true?</p>
+</div><ol class="options"><li><label><input type='checkbox' name='ans4' value='42434416' /><div><p>for <code>%rbx</code>'s value, the renamed <code>addq</code> instruction will write the same physical register that <code>mrmovq</code> reads</p>
+</div></label></li><li><label><input type='checkbox' name='ans4' value='3a9ffc48' /><div><p>for <code>%rax</code>'s value, the renamed <code>mrmovq</code> instruction will write the same physical register that <code>addq</code> reads</p>
+</div></label></li><li><label><input type='checkbox' name='ans4' value='992dce64' /><div><p>for <code>%rbx</code>'s value, the renamed <code>subq</code> instruction will read the same physical register that <code>mrmovq</code> reads</p>
+</div></label></li></ol></div><h1 style='text-align:center'>quiz for week 11</h1><div class='directions'><p>Answer the following questions about lecture material from week 11.</p>
+</div><div class='question' id='q1' slug='8cb684b1'><div class='description' id='d1'><strong>Question 1</strong> (2 points)
+<p>Suppose an out-of-order processor has two execution units (that matter for this questions):</p>
+
+<ul>
+<li>a 1-cycle adder (that can perform one add per cycle)</li>
+<li>a 3-cycle pipelined multiplier (that can start one multiply per cycle, but finishes it two cycle later)</li>
+</ul>
+
+<p>Suppose on this processor
+the results of an addition or multiply can be used to start another addition or multiply
+in the cycle after the first addition or multiply completes.</p>
+
+<p>Consider the following C snippet:</p>
+
+<pre><code>a = b + c;
+d = e * f;
+h = a + d;
+i = a * d;
+</code></pre>
+
+<p>With the processor described above,
+what's the fastest time (in cycles) the above C snippet can execute?
+(Do not attempt to count for time doing instruction fetching, register renaming, etc. &mdash; just
+the time to finish the actual computation.)</p>
+</div><div class='tinput'><span>Answer:</span><input type='text' name='ans1' /></div></div><div class='question' id='q2' slug='f3963c99'><div class='description' id='d2'><strong>Question 2</strong> (2.5 points)
+<p>In lecture, we discussed the use of multiple accumulators to improve performance in addition to simple
+loop unrolling. Consider the following pair of unrolled loops with and without use of multiple
+accumulators:</p>
+
+<pre><code>/* loop, without multiple accumulators transformation */
+for (int i = 0; i &lt; N; i += 4) {
+    product = product * (a[i] * b[i]);
+    product = product * (a[i+1] * b[i+1]);
+    product = product * (a[i+2] * b[i+2]);
+    product = product * (a[i+3] * b[i+3]);
+}
+
+/* loop, with multiple accumulators transformation */
+for (int i = 0; i &lt; N; i += 4) {
+    product1 = product1 * (a[i] * b[i]);
+    product2 = product2 * (a[i+1] * b[i+1]);
+    product1 = product1 * (a[i+2] * b[i+2]);
+    product2 = product2 * (a[i+3] * b[i+3]);
+}
+product = product1 * product2;
+</code></pre>
+
+<p>Whether this transformation would be helpful depends on the execution units the processor has.</p>
+
+<p>Suppose
+the performance of the execution units that perform the multiplications
+(represented by a <code>*</code> operations
+in the C code above) is what determines the performance of the loop overall.
+To make it easier to reason about performance, assume
+the execution units that perform these multiplications are never involved in any of the address
+or index calculations needed by the loop above (so one only needs to consider how the
+multiplication instructions are dispatched and executed).</p>
+
+<p>Given which configuration(s) of execution units to perform the multiplications
+could the loop's performance benefit
+from the multiple accumulators optimization shown above? 
+<strong>Select all that apply.</strong></p>
+</div><ol class="options"><li><label><input type='checkbox' name='ans2' value='55cb9a17' /><div><p>one multipier which is not pipelined (does not accept new values to multiply until the current multiply is complete) and takes ten cycles to perform a multiplication</p>
+</div></label></li><li><label><input type='checkbox' name='ans2' value='ba6fe776' /><div><p>one multiplier which takes one cycle to produce results</p>
+</div></label></li><li><label><input type='checkbox' name='ans2' value='0ba4d654' /><div><p>ten multipliers, each of takes one cycle to produce results</p>
+</div></label></li><li><label><input type='checkbox' name='ans2' value='ec575537' /><div><p>one multiplier which is pipelined (accepts a new pair of values to multiply each cycle) and takes ten cycles to produce results</p>
+</div></label></li><li><label><input type='checkbox' name='ans2' value='27453b45' /><div><p>ten multipliers, each of which is pipelined (accepts a new pair of values to multiply each cycle) and takes ten cycles to produce results</p>
+</div></label></li></ol></div><div class='question' id='q3' slug='15a4cbce'><div class='description' id='d3'><strong>Question 3</strong> (2 points)
+<p>Which of the following optimizations are likely to significantly decrease the number of times an instruction
+that accesses the <strong>data cache</strong> runs? <strong>Select all that apply.</strong></p>
+</div><ol class="options"><li><label><input type='checkbox' name='ans3' value='fb01fb9b' /><div><p>moving a <code>strlen()</code> call from a loop condition to outside the loop</p>
+</div></label></li><li><label><input type='checkbox' name='ans3' value='57e4abc7' /><div><p>using vector instructions to implement a loop that computes an array of values (replacing normal non-vector insturctions)</p>
+</div></label></li><li><label><input type='checkbox' name='ans3' value='4c9a77c3' /><div><p>unrolling a for loop that iterates an index variable <code>i</code> from 0 to 10000000 by increments of 1</p>
+</div></label></li><li><label><input type='checkbox' name='ans3' value='2c58a00c' /><div><p>changing loop orders to improve locality</p>
+</div></label></li></ol></div><div class='question' id='q4' slug='da676c62'><div class='description' id='d4'><strong>Question 4</strong> (2 points)
+<p>Consider the following two C functions:</p>
+
+<pre><code>void all_pairs_products1(int N, int *A, int *result) {
+    for (int i = 0; i &lt; N; ++i) {
+        for (int j = 0; j &lt; N; ++j) {
+            result[i * N + j] = A[i] * A[j];
+        }
+    }
+}
+
+void all_pairs_products2(int N, int *A, int *result) {
+    for (int j = 0; j &lt; N; ++j) {
+        for (int i = 0; i &lt; N; ++i) {
+            result[i * N + j] = A[i] * A[j];
+        }
+    }
+}
+</code></pre>
+
+<p>(The two functions differ in their loop orders.)</p>
+
+<p>A compiler cannot generate identical for these two functions because in cases where
+<code>A</code> and <code>result</code> are pointers that refer to the same data (a problem we called "aliasing"),
+they can write different answers to the <code>result</code> array.</p>
+
+<p>Which of the following are examples of calls to <code>all_pairs_products1</code> which could result
+in different values in the array <code>array</code> than if the same call were made to <code>all_pairs_products2</code> instead?
+<strong>Select all that apply.</strong></p>
+</div><ol class="options"><li><label><input type='checkbox' name='ans4' value='6c50b8f2' /><div><p><code>all_pairs_products1(1024, &amp;array[0], &amp;array[0])</code></p>
+</div></label></li><li><label><input type='checkbox' name='ans4' value='2571a3de' /><div><p><code>all_pairs_products1(1024, &amp;array[0], &amp;array[1024])</code></p>
+</div></label></li><li><label><input type='checkbox' name='ans4' value='4ef99bff' /><div><p><code>all_pairs_products1(1024, &amp;array[1024], &amp;array[0])</code></p>
+</div></label></li><li><label><input type='checkbox' name='ans4' value='b7eb4a0d' /><div><p><code>all_pairs_products1(1024, &amp;array[1024], &amp;array[1024])</code></p>
+</div></label></li></ol></div><h1 style='text-align:center'>quiz for week 12</h1><div class='directions'><p>Answer the following questions about lecture material from week 12.</p>
+</div><div class='question' id='q1' slug='20b4b514'><div class='description' id='d1'><strong>Question 1</strong> (2 points)
+<p>In lecture we discussed <em>vector instructions</em> (also known as SIMD instructions) where a single
+instruction can perform an operation on every pair of values in two <em>vectors</em>, which are 
+typically fixed-sized array stored in registers.</p>
+
+<p>Using vector instructions similar to those used in the lab, 
+which of the following code snippets is simplest to transform into a version
+that makes effective use of vector instructions?</p>
+
+<pre><code>/* loop A */
+for (int i = 0; i &lt; N; ++i) {
+    for (int j = 0; j &lt; N; ++j) {
+        A[j*N + i] += A[i*N + j];
+    }
+}
+
+/* loop B */
+for (int i = 0; i &lt; N; ++i) {
+    for (int j = 0; j &lt; N; ++j) {
+        A[i*N + j] += B[j] * C[(i+1)*N + j];
+    }
+}
+
+/* loop C */
+for (int i = 2; i &lt; N; ++i) {
+    A[i] *= (A[i-1] + A[i-2]);
+}
+</code></pre>
+
+<p>(Assume <code>A</code>, <code>B</code>, and <code>C</code> are independent arrays.)</p>
+</div><ol class="options"><li><label><input type='radio' name='ans1' value='bc38f9dd' /><div><p>loop A</p>
+</div></label></li><li><label><input type='radio' name='ans1' value='99d936cf' /><div><p>loop B</p>
+</div></label></li><li><label><input type='radio' name='ans1' value='42b8542a' /><div><p>loop C</p>
+</div></label></li></ol></div><div class='question' id='q2' slug='97f3d5cd'><div class='description' id='d2'><strong>Question 2</strong> (2 points)
+<p>Suppose a program A makes a system call requesting to "sleep" for 2 seconds. During those 2 seconds
+the operating system runs a program B, then it switches back to program A.</p>
+
+<p>When the operating system later switches back to program A, the first instruction it runs is most likely:</p>
+</div><ol class="options"><li><label><input type='radio' name='ans2' value='38cfe3a1' /><div><p>the instruction that triggered the system call</p>
+</div></label></li><li><label><input type='radio' name='ans2' value='f2f57608' /><div><p>the instruction immediately after the instruction that triggered the system call</p>
+</div></label></li><li><label><input type='radio' name='ans2' value='b06e3f31' /><div><p>the first instruction in program A's main function</p>
+</div></label></li><li><label><input type='radio' name='ans2' value='96c37b84' /><div><p>the first instruction in the function in program A that triggered the "sleep" system call</p>
+</div></label></li><li><label><input type='radio' name='ans2' value='d6068050' /><div><p>the return instruction for the function in program A that triggered the "sleep" system call</p>
+</div></label></li></ol></div><div class='question' id='q3' slug='320e1483'><div class='description' id='d3'><strong>Question 3</strong> (2 points)
+<p>In lecture, we discussed the idea of an exception table, which is used as part of handling exceptions.
+Which of the following statements about the exception table <em>are true</em>?</p>
+</div><ol class="options"><li><label><input type='checkbox' name='ans3' value='7174b5a9' /><div><p>it is read by the processor when an exception happens</p>
+</div></label></li><li><label><input type='checkbox' name='ans3' value='b5098c51' /><div><p>when an exception happens, it will contain the program counter of the currently running program from just before the exception occurred</p>
+</div></label></li><li><label><input type='checkbox' name='ans3' value='c5e17d59' /><div><p>it will often contain the address of some operating system machine code</p>
+</div></label></li><li><label><input type='checkbox' name='ans3' value='709caf2f' /><div><p>it is typically stored in memory that can be written to by both programs and the operating system</p>
+</div></label></li></ol></div><div class='question' id='q4' slug='6fcfd2b6'><div class='description' id='d4'><strong>Question 4</strong> (2 points)
+<p>Suppose a system has 15-bit virtual addresses, 13-bit physical addresses, and page tables with a total of 32
+entries.
+What is the size of pages on this system (in bytes)?</p>
+</div><div class='tinput'><span>Answer:</span><input type='text' name='ans4' /></div></div><div class="multiquestion"><p>For the following questions,
+consider a system with 20-bit virtual addresses where virtual addresses are divided into a
+16-bit page offset and a 4-bit virtual page number. (For example,
+virtual address <code>0x12345</code> has virtual page number <code>0x1</code> and page offset <code>0x2345</code>.)
+Suppose the contents of the page table of this system are:</p>
+
+<table>
+<tr><td>virtual page number</td><td>valid</td><td>physical page number</td></tr>
+<tr><td>0x0</td><td>0</td><td>0x00</td></tr>
+<tr><td>0x1</td><td>1</td><td>0x15</td></tr>
+<tr><td>0x2</td><td>1</td><td>0x14</td></tr>
+<tr><td>0x3</td><td>1</td><td>0x20</td></tr>
+<tr><td>0x4</td><td>1</td><td>0x05</td></tr>
+<tr><td>0x5</td><td>1</td><td>0x06</td></tr>
+<tr><td>0x6</td><td>1</td><td>0x09</td></tr>
+<tr><td>0x7</td><td>0</td><td>0x00</td></tr>
+<tr><td>0x8</td><td>0</td><td>0x00</td></tr>
+<tr><td>0x9</td><td>1</td><td>0x13</td></tr>
+<tr><td>0xA</td><td>1</td><td>0x14</td></tr>
+<tr><td>0xB</td><td>1</td><td>0x30</td></tr>
+<tr><td>0xC</td><td>1</td><td>0x31</td></tr>
+<tr><td>0xD</td><td>1</td><td>0x32</td></tr>
+<tr><td>0xE</td><td>1</td><td>0x33</td></tr>
+<tr><td>0xF</td><td>1</td><td>0x34</td></tr>
+</table>
+<div class='question' id='q5' slug='6f525f75'><div class='description' id='d5'><strong>Question 5</strong> (see above)
+<p>Based on the page table above,
+when accessing the virtual address 0x30001, what physical address will be accessed?
+Write your answer as a hexadecimal number. If a fault (an exception) would occur, write
+"fault".</p>
+</div><div class='tinput'><span>Answer:</span><input type='text' name='ans5' /></div></div><div class='question' id='q6' slug='da5fc9b8'><div class='description' id='d6'><strong>Question 6</strong> (see above)
+<p>Based on the page table above,
+when accessing the virtual address 0x5467F, what physical address will be accessed?
+Write your answer as a hexadecimal number. If a fault (an exception) would occur, write
+"fault".</p>
+</div><div class='tinput'><span>Answer:</span><input type='text' name='ans6' /></div></div></div><h1 style='text-align:center'>quiz for week 13</h1><div class='directions'><p>Answer the following questions about lecture material from week 13.</p>
+</div><div class="multiquestion"><p>Suppose a system has:</p>
+
+<ul>
+<li>20-bit virtual addresses</li>
+<li>1024 byte pages</li>
+<li>24-bit physical addresses</li>
+<li>4 byte page table enties</li>
+<li>a page table base pointer set to physical (byte) address 0x1000</li>
+<li>a single-level page table structure</li>
+</ul>
+<div class='question' id='q1' slug='d2e907d6'><div class='description' id='d1'><strong>Question 1</strong> (2 points) (see above)
+<p>Based on the above information,
+what is the address at which the page table entry for the virtual address <code>0x1000</code> is stored?
+(Note that page table entries are larger than one byte.)
+Write your answer as a hexadecimal number.</p>
+</div><div class='tinput'><span>Answer:</span><input type='text' name='ans1' /></div></div><div class='question' id='q2' slug='c5f366b2'><div class='description' id='d2'><strong>Question 2</strong> (2 points) (see above)
+<p>How large are page tables on this system (in bytes)?</p>
+</div><div class='tinput'><span>Answer:</span><input type='text' name='ans2' /></div></div></div><div class="multiquestion"><p>Suppose a system has:</p>
+
+<ul>
+<li>42-bit virtual addresses (maximum value <code>0x3FF FFFF FFFF</code>), with a 30-bit virtual page number and a 12-bit page offset</li>
+<li>30-bit physical addresses (maximum value <code>0x3FFF FFFF</code>), with an 18-bit physical page number and a 12-bit page offset</li>
+<li>three-level page tables, where 10 bits of the virtual page number are used for a lookup at each level</li>
+<li>page table entries are four bytes</li>
+</ul>
+<div class='question' id='q3' slug='61b3455a'><div class='description' id='d3'><strong>Question 3</strong> (2 points) (see above)
+<p>When looking up the virtual address <code>0x012 3456 789A</code>, if the page
+table base pointer contains the physical byte address <code>0x44 000</code>,
+then what is the physical address of the first-level page table entry for <code>0x012 3456 789A</code>?
+(Note that page table entries are larger than one byte.)
+Write your answer as a hexadecimal number.</p>
+</div><div class='tinput'><span>Answer:</span><input type='text' name='ans3' /></div></div><div class='question' id='q4' slug='15e53c60'><div class='description' id='d4'><strong>Question 4</strong> (2 points) (see above)
+<p>Suppose that when looking up page table entries for the virtual adddresss <code>0x012 3456 789A</code>:</p>
+
+<ul>
+<li>the page table entry for the first-level was valid and contained physical page number <code>0x99</code>,</li>
+<li>the page table entry for the second-level was valid and contained physical page number <code>0xA4</code>, and</li>
+<li>the page table entry for the third-level was valid and contained physical page number <code>0xC3</code></li>
+</ul>
+
+<p>Based on this information, when a program attempts to read data from virtual address
+<code>0x012 3456 789A</code>, at what physical address will that data be found?
+Write your answer as a hexadecimal number. If not
+enough information is provided, write "unknown" and explain what information is missing in the comments.</p>
+</div><div class='tinput'><span>Answer:</span><input type='text' name='ans4' /></div></div><div class='question' id='q5' slug='1bd17250'><div class='description' id='d5'><strong>Question 5</strong> (2 points) (see above)
+<p>If this system had a 64-entry, 8-way TLB, that TLB would use 3 index bits. How many tag
+bits would it use?</p>
+</div><div class='tinput'><span>Answer:</span><input type='text' name='ans5' /></div></div></div>no quiz named 14no quiz named 15no quiz named 16

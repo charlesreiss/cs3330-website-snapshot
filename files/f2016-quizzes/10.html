@@ -1,0 +1,69 @@
+﻿<html>
+<head>
+    <title>Quiz Viewer</title>
+    <style>
+        ol.options { margin-top:-1em; }
+        ol.options li p { display: inline; }
+        ol.options li { list-style: upper-alpha; }
+        body { background:#ccc; padding-top:1em; }
+        .question { background: white; border-radius:1ex; padding:0ex 1ex; margin:2ex;  }
+        .directions { background: #eee; padding:1ex 1ex; margin:2ex;  }
+        .multiquestion { background: #eee; border-radius:1ex; padding:0.7ex 0.7ex; }
+        .multiquestion + .multiquestion { margin-top:1em; }
+        .submitting { background: #fe7; }
+        .submitted { background: #dfd; }
+        textarea { background-color: inherit; }
+        #clock { position:fixed; right:0px; top:0px; background:#ff7; padding-left:0.5ex; padding-bottom:0.5ex; border-bottom-left-radius:1ex; border-left: 1px solid black; border-bottom: 1px solid black;}
+        .correct { background-color: #bfb; padding: 0ex 1ex; }
+        .incorrect { background-color: #fbb; padding: 0ex 1ex; }
+        .hist { color:#777; min-width: 2em; text-align:right; display:inline-block; }
+    </style>
+<script>function onload() {}</script></head>
+<body onload="onload()">
+    <center><a href="../">Return to course page</a></center><div class="multiquestion"><p>Consider making pies: for each, you have to make the crust, make the filling, and bake the combination.</p>
+<div class="question" id="q1" slug="22192a6d"><div class="description" id="d1"><p><strong>Question 1</strong>: (see above) Which of the following is an example of pipelining the pie making process?</p>
+</div><div class="options" id="o1"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans1" value="2112ef27"></input> <p>Have one cook make crusts, another make filling in the crusts, and a third bake the filled crusts</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="18cffee7"></input> <p>Have one cook make the crust at the same time another cook makes the filling</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans1" value="9772aab0"></input> <p>Have three cooks, each making pies independently and in parallel</p>
+</li></ol></div></div><div class="question" id="q2" slug="210753a7"><div class="description" id="d2"><p><strong>Question 2</strong>: (see above) Nonuniform partitioning occurs if</p>
+</div><div class="options" id="o2"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans2" value="339918a7"></input> <p>It takes a lot longer to make a crust than to bake a pie</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="278d35e7"></input> <p>You have more cooks working on crusts than on baking</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="c492bc96"></input> <p>You have to make some big pies and some small ones</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="3c7501d2"></input> <p>You make way more filling than you need</p>
+</li></ol></div></div></div><div class="question" id="q3" slug="14dc4231"><div class="description" id="d3"><p><strong>Question 3</strong> (0 points): Which of the following is an example of the diminishing returns of deep pipelines?</p>
+</div><div class="options" id="o3"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans3" value="18fcf2d3"></input> <p>an assembly line operator spends more time picking up and putting down parts than assembling them</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="4fb106c0"></input> <p>a cook spends more time waiting for the oven than actually working</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="64efe007"></input> <p>a software engineer has broken code into such small functions that the computer spends more time on the call/return overhead than actually computing</p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="0a77cb89"></input> <p>a teaching assistant is spends more time managing the queue and locating students than teaching them</p>
+</li></ol></div></div><div class="multiquestion"><p>Consider an instruction <em>X</em> with the listed dependencies on preceding instructions.</p>
+<div class="question" id="q4" slug="5d7aa518"><div class="description" id="d4"><p><strong>Question 4</strong>: (see above) If <em>X</em> has a <strong>data dependency</strong> on preceding instructions than those preceding instructions could change<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o4"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans4" value="42434416"></input> <p>whether <em>X</em> is executed at all</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans4" value="3a9ffc48"></input> <p>what instruction is executed after <em>X</em></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans4" value="992dce64"></input> <p>what value <em>X</em> computes</p>
+</li></ol></div></div><div class="question" id="q5" slug="30945a22"><div class="description" id="d5"><p><strong>Question 5</strong>: (see above) If <em>X</em> has a <strong>control dependency</strong> on preceding instructions than those preceding instructions could change<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o5"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans5" value="8d510e00"></input> <p>whether <em>X</em> is executed at all</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans5" value="d77f85c3"></input> <p>what instruction is executed after <em>X</em></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans5" value="e34343f7"></input> <p>what value <em>X</em> computes</p>
+</li></ol></div></div></div><a href="." style="text-align:center; display:block;">Return to main page</a>
+<center><a href="../">Return to course page</a></center>
+</body>
+</html>

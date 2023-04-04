@@ -1,0 +1,187 @@
+﻿<html>
+<head>
+    <title>Quiz Viewer</title>
+    <style>
+        ol.options { margin-top:-1em; }
+        ol.options li p { display: inline; }
+        ol.options li { list-style: upper-alpha; }
+        body { background:#ccc; padding-top:1em; }
+        .question { background: white; border-radius:1ex; padding:0ex 1ex; margin:2ex;  }
+        .directions { background: #eee; padding:1ex 1ex; margin:2ex;  }
+        .multiquestion { background: #eee; border-radius:1ex; padding:0.7ex 0.7ex; }
+        .multiquestion + .multiquestion { margin-top:1em; }
+        .submitting { background: #fe7; }
+        .submitted { background: #dfd; }
+        textarea { background-color: inherit; }
+        #clock { position:fixed; right:0px; top:0px; background:#ff7; padding-left:0.5ex; padding-bottom:0.5ex; border-bottom-left-radius:1ex; border-left: 1px solid black; border-bottom: 1px solid black;}
+        .correct { background-color: #bfb; padding: 0ex 1ex; }
+        .incorrect { background-color: #fbb; padding: 0ex 1ex; }
+        .hist { color:#777; min-width: 2em; text-align:right; display:inline-block; }
+    </style>
+<script>function onload() {}</script></head>
+<body onload="onload()">
+    <center><a href="../">Return to course page</a></center><div class="directions"><p>This quiz selects topics from across 4.5; some questions refer to particular sections, which should be the same in the 2nd and 3rd editions.<style>table:not(.blank) { border-collapse:collapse; } table:not(.blank) td { border:solid thin black; padding:0ex 1ex; }</style></p>
+</div><div class="multiquestion"><p>There is an aside in section 4.5.3 about <code>m_stat</code> vs <code>M_stat</code>, ending with the phrase <q>Understanding this naming convention is critical to understanding the operation of our pipelined processor</q>.</p>
+<div class="question" id="q1" slug="20b4b514"><div class="description" id="d1"><p><strong>Question 1</strong> (0 points): (see above) Suppose that <strong>during the execute phase</strong> we are computing a value based on two other values.
+Which of the following sets of values would indicate we are doing something wrong?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o1"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans1" value="bc38f9dd"></input> <p>Using <code>e_corge</code> and <code>E_gralpy</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans1" value="99d936cf"></input> <p>Using <code>e_corge</code> and <code>e_gralpy</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans1" value="42b8542a"></input> <p>Using <code>E_corge</code> and <code>E_gralpy</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans1" value="cedbf94a"></input> <p>Using <code>d_corge</code> and <code>d_gralpy</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans1" value="03880df7"></input> <p>Using <code>D_corge</code> and <code>D_gralpy</code></p>
+</li></ol></div></div><div class="question" id="q2" slug="97f3d5cd"><div class="description" id="d2"><p><strong>Question 2</strong> (0 points): (see above) It is always the case that if the book mentions a wire named</p>
+</div><div class="options" id="o2"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans2" value="38cfe3a1"></input> <p><code>E_corge</code> then there is also a wire named <code>e_corge</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="f2f57608"></input> <p><code>E_corge</code> then there is also a wire named <code>d_corge</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="b06e3f31"></input> <p><code>E_corge</code> then there is also a wire named <code>m_corge</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="96c37b84"></input> <p><code>e_corge</code> then there is also a wire named <code>E_corge</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="d6068050"></input> <p><code>e_corge</code> then there is also a wire named <code>D_corge</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans2" value="63c609c0"></input> <p><code>e_corge</code> then there is also a wire named <code>M_corge</code></p>
+</li></ol></div></div></div><div class="question" id="q3" slug="320e1483"><div class="description" id="d3"><p><strong>Question 3</strong>: Consider the following pipeline diagram</p>
+
+<table>
+<thead>
+<tr>
+  <th></th>
+  <th>1</th>
+  <th>2</th>
+  <th>3</th>
+  <th>4</th>
+  <th>5</th>
+  <th>6</th>
+  <th>7</th>
+  <th>8</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>addq %rax,%rbx</td>
+  <td>F</td>
+  <td>D</td>
+  <td>E</td>
+  <td>M</td>
+  <td>W</td>
+  <td></td>
+  <td></td>
+  <td></td>
+</tr>
+<tr>
+  <td>xorq %rcx,%rdx</td>
+  <td></td>
+  <td>F</td>
+  <td>D</td>
+  <td>E</td>
+  <td>M</td>
+  <td>W</td>
+  <td></td>
+  <td></td>
+</tr>
+<tr>
+  <td>subq %rsi,%rdi</td>
+  <td></td>
+  <td></td>
+  <td>F</td>
+  <td>D</td>
+  <td>E</td>
+  <td>M</td>
+  <td>W</td>
+  <td></td>
+</tr>
+<tr>
+  <td>andq %rsp,%rbp</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>F</td>
+  <td>D</td>
+  <td>E</td>
+  <td>M</td>
+  <td>W</td>
+</tr>
+</tbody>
+</table>
+
+<p>When <code>subq</code> is in the execute stage, what is in the memory stage?</p>
+</div><div class="options" id="o3"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans3" value="7174b5a9"></input> <p><code>addq</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="b5098c51"></input> <p><code>xorq</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="c5e17d59"></input> <p><code>subq</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="709caf2f"></input> <p><code>andq</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="0fc88b72"></input> <p>none of the above</p>
+</li></ol></div></div><div class="question" id="q4" slug="6fcfd2b6"><div class="description" id="d4"><p><strong>Question 4</strong>: Consider the following incomplete pipeline diagram, including some stalling due to a data dependency between <code>addq</code> and <code>xorq</code></p>
+
+<table>
+<thead>
+<tr>
+  <th></th>
+  <th>1</th>
+  <th>2</th>
+  <th>3</th>
+  <th>4</th>
+  <th>5</th>
+  <th>6</th>
+  <th>7</th>
+  <th>8</th>
+  <th>9</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>addq %rax,%rbx</td>
+  <td>F</td>
+  <td>D</td>
+  <td>E</td>
+  <td>M</td>
+  <td>W</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+</tr>
+<tr>
+  <td>xorq %rbx,%rcx</td>
+  <td></td>
+  <td>F</td>
+  <td>D</td>
+  <td>D</td>
+  <td>D</td>
+  <td>D</td>
+  <td>E</td>
+  <td>M</td>
+  <td>W</td>
+</tr>
+<tr>
+  <td>subq %rsi,%rdi</td>
+  <td></td>
+  <td></td>
+  <td>F</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+</tr>
+</tbody>
+</table>
+
+<p>Given that <code>subq</code> was in fetch during cycle 3 and that it has no dependency on the preceding instructions, during what cycle would <code>subq</code> be in the memory stage?  Answer as a normal base-10 number.</p>
+</div><div class="options" id="o4">Answer: <input disabled="disabled" type="text" name="ans4"/></div></div><a href="." style="text-align:center; display:block;">Return to main page</a>
+<center><a href="../">Return to course page</a></center>
+</body>
+</html>

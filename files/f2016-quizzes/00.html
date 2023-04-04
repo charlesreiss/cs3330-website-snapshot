@@ -1,0 +1,65 @@
+﻿<html>
+<head>
+    <title>Quiz Viewer</title>
+    <style>
+        ol.options { margin-top:-1em; }
+        ol.options li p { display: inline; }
+        ol.options li { list-style: upper-alpha; }
+        body { background:#ccc; padding-top:1em; }
+        .question { background: white; border-radius:1ex; padding:0ex 1ex; margin:2ex;  }
+        .directions { background: #eee; padding:1ex 1ex; margin:2ex;  }
+        .multiquestion { background: #eee; border-radius:1ex; padding:0.7ex 0.7ex; }
+        .multiquestion + .multiquestion { margin-top:1em; }
+        .submitting { background: #fe7; }
+        .submitted { background: #dfd; }
+        textarea { background-color: inherit; }
+        #clock { position:fixed; right:0px; top:0px; background:#ff7; padding-left:0.5ex; padding-bottom:0.5ex; border-bottom-left-radius:1ex; border-left: 1px solid black; border-bottom: 1px solid black;}
+        .correct { background-color: #bfb; padding: 0ex 1ex; }
+        .incorrect { background-color: #fbb; padding: 0ex 1ex; }
+        .hist { color:#777; min-width: 2em; text-align:right; display:inline-block; }
+    </style>
+<script>function onload() {}</script></head>
+<body onload="onload()">
+    <center><a href="../">Return to course page</a></center><div class="directions"><p>Unlike most quizzes, you may work together, browse the web, run code, etc. when doing this quiz.</p>
+</div><div class="question" id="q1" slug="f76e7022"><div class="description" id="d1"><p><strong>Question 1</strong>: Which of the following C++ elements are also in C?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o1"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans1" value="78f9f46b"></input> <p><code>new</code> and <code>delete</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans1" value="493f39ae"></input> <p>pointers with <code>&amp;</code> and <code>*</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans1" value="4e25eb64"></input> <p><code>a-&gt;b</code> as shorthand for <code>(*a).b</code></p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans1" value="cb60ba59"></input> <p>pass-by-reference with <code>&amp;</code></p>
+</li></ol></div></div><div class="question" id="q2" slug="0f33c24c"><div class="description" id="d2"><p><strong>Question 2</strong>: There are many flavors of C.  Some of our tool-chains will expect strict ANSI-compliant C.
+You can get this version by running <code>gcc -ansi -pedantic-errors</code> or <code>clang -ansi -pedantic-errors</code>.
+How does this standard differ from C++?<br />
+<strong>Select all that apply</strong></p>
+</div><div class="options" id="o2"><ol class="options">
+<li><input disabled="disabled" type="checkbox" name="ans2" value="564e2be3"></input> <p><code>/* */</code> is not a comment in ANSI C</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans2" value="27bd2422"></input> <p><code>//</code> is not a comment in ANSI C</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans2" value="40b85140"></input> <p><code>int a, b=3;</code> does not compile in ANSI C</p>
+</li>
+<li><input disabled="disabled" type="checkbox" name="ans2" value="1ffeee36"></input> <p><code>for(int i = 0; i &lt; 5; i += 1) {}</code> does not compile in ANSI C</p>
+</li></ol></div></div><div class="question" id="q3" slug="45589452"><div class="description" id="d3"><p><strong>Question 3</strong>: Consider the following code</p>
+
+<pre><code>int x[4];
+int *y = &amp;x[0];
+</code></pre>
+
+<p>Which one of the following expressions has different semantics for <code>x</code> than it does for <code>y</code>?</p>
+</div><div class="options" id="o3"><ol class="options">
+<li><input disabled="disabled" type="radio" name="ans3" value="31b977ce"></input> <p><code>_[2]</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="a390a475"></input> <p><code>sizeof(_)</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="b2c3edd1"></input> <p><code>_ + 2</code></p>
+</li>
+<li><input disabled="disabled" type="radio" name="ans3" value="0ba58d8b"></input> <p><code>*_</code></p>
+</li></ol></div></div><div class="question" id="q4" slug="5b6c23c0"><div class="description" id="d4"><p><strong>Question 4</strong>: How many <code>int</code>s fit inside <code>x</code> if <code>x</code> is declared as <code>int *x = malloc(8);</code>?  Answer as an integer (in the usual base-10 notation).</p>
+</div><div class="options" id="o4">Answer: <input disabled="disabled" type="text" name="ans4"/></div></div><a href="." style="text-align:center; display:block;">Return to main page</a>
+<center><a href="../">Return to course page</a></center>
+</body>
+</html>

@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+        ol.options { margin-top:-0.5em; }
+ol.options p { margin: 0; padding: 0; }
+ol.options > li { list-style: upper-alpha; }
+body { background:#ccc; padding-top:1em; }
+.question { background: white; border-radius:1ex; padding:0ex 1ex; margin:2ex;  }
+.directions { background: #eee; padding:1ex 1ex; margin:2ex;  }
+.multiquestion { background: #eee; border-radius:1ex; padding:0.7ex 0.7ex; }
+.multiquestion + .multiquestion { margin-top:1em; }
+.submitting { background: #fe7; }
+.submitted { background: #dfd; }
+.disconnected { background: #f33; }
+textarea { background-color: inherit; }
+#clock { position:fixed; right:0px; top:0px; background:#ff7; padding-left:0.5ex; padding-bottom:0.5ex; border-bottom-left-radius:1ex; border-left: 1px solid black; border-bottom: 1px solid black;}
+.correct { background-color: #bfb; padding: 0ex 1ex; }
+.incorrect { background-color: #fbb; padding: 0ex 1ex; }
+.hist { color:#777; min-width: 2em; text-align:right; display:inline-block; }
+.katex .base { margin: 0.5ex auto; }
+
+img.preview { vertical-align: middle; max-height: 10em; box-shadow: 0 0 0.5ex 0.25ex grey; }
+
+ol.options li label { display: flex; align-items: center; }
+ol.options li label input { margin-right: 1ex; }
+ol.options li { padding: 0.5ex 0ex; }
+ol.options li::marker { color: rgba(0,0,0,0.5); }
+
+div.tinput { display: flex; align-items:center; }
+div.tinput textarea { flex-grow: 1; }
+div.tinput *:first-child { margin-right: 1ex; }
+
+.explanation { font-family: sans-serif; color: green; }
+
+
+table { border-collapse: collapse; width:100%; }
+thead tr:last-child { border-bottom: thin black solid; }
+th { text-align:left;  padding:0ex 1ex; }
+tbody tr:nth-child(2n+1) { background-color:#ddd; }
+td { padding:1ex; }
+
+.question th,td { padding: 0.25ex 1ex; }
+.question table { width: auto; margin:auto; }
+.question tbody tr:nth-child(2n+1) { background-color:#eee; }
+    </style>
+</head>
+<body>
+<h1 style='text-align:center'>final exam</h1><div class='directions'><p>Answer each of the following questions. This exam is open-book and open-notes, but you may use only resources that were created before this exam was released (at noon eastern time on 10 December 2020). You may not collaborate with other students.</p>
+
+<p>Please <b>show your work</b> for questions in the comment field were applicable so we are able to give you partial credit.</p>
+
+<p>If you think a question is ambiguous or unclear, please make your best guess about what was meant and explain what you did in the comments field for the question. We are unlikely to be able to answer your inquiries during the exam time.</p>
+
+<!--
+topics:
+    assembly
+    compilation pipeline
+    C pointer arith
+    bitwise
+    Y86
+    SEQ
+    PIPE
+        latency/throughput
+        forwarding
+        branch prediction
+        squashing/stalling
+    caches
+        direct-mapped
+        set-associative
+        replacement
+        AMAT
+    cache perf
+        counting misses
+    optimization
+        inlining
+        loop unrolling
+        OOO model
+        reassoc/multiple accumulators
+        aliasing
+        SIMD
+    exceptions
+        processes / time multiplexing
+        kernel mode
+    virtual memory
+        address splitting
+        page tables, single and multi-level
+        TLBs
+-->
+</div><div class="multiquestion"><p>For the following questions, consider this assembly snippet:</p>
+
+<pre><code>    movq $0, %rax               /* line 1 */
+    movl $0x12345678, %r9d      /* line 2 */
+start_loop:                     /* line 3 */
+    movl 0(%rbx,%rax,8), %r8d   /* line 4 */
+    xorl %r9d, %r8d             /* line 5 */
+    movl %r8d, 0(%rbx,%rax,8)   /* line 6 */
+    addq $1, %rax               /* line 7 */
+    cmpq $100, %rax             /* line 8 */
+    jne start_loop              /* line 9 */
+</code></pre>
+<div class='question' id='q1' slug='e9a62c4d'><div class='description' id='d1'><strong>Question 1</strong> (12 pt; mean 7.25) (see above)
+<p>Assuming:</p>
+
+<ul>
+<li><code>%rbx</code> represents an <code>int*</code> (pointer to int) named <code>array</code></li>
+<li><code>%rax</code> represents a <code>long</code> named <code>i</code></li>
+</ul>
+
+<p>write C code or pseudocode using a <code>while</code> or <code>for</code> loop that is equivalent to the assembly loop:</p>
+</div><div class='tinput'><span>Answer:</span><textarea name='ans1' ></textarea></div>Key: <tt></tt><div class='explanation'><p><code>for (long i = 0; i &lt; 100; ++i) array[i*2] ^= 0x12345678;</code></p>
+</div></div><div class='question' id='q2' slug='bb84c278'><div class='description' id='d2'><strong>Question 2</strong> (4 pt; mean 3.23) (see above)
+<p>Which of the following transformations of the above loop would result in an unrolled loop
+which writes the same values to memory but executes fewer instructions?
+<strong>Select all that apply.</strong></p>
+</div><ol class="options"><li><label><div style='flex-basis: 2.8em; text-align:right; flex-grow:0; flex-shrink:0;'>67%</div><div style='flex-basis: 1.5em; text-align:right; flex-grow:0; flex-shrink:0; color:green;'>⊤</div><input type='checkbox' name='ans2' value='05d7e361' /><div><p>placing a duplicate of lines 4-7 (inclusive) after line 7</p>
+</div></label></li><li><label><div style='flex-basis: 2.8em; text-align:right; flex-grow:0; flex-shrink:0;'>14%</div><div style='flex-basis: 1.5em; text-align:right; flex-grow:0; flex-shrink:0; color:green;'></div><input type='checkbox' name='ans2' value='403b3b36' /><div><p>placing a duplicate of lines 4-6 (inclusive) after line 6 and replacing the <code>1</code> in line 7 with a <code>2</code></p>
+</div></label></li><li><label><div style='flex-basis: 2.8em; text-align:right; flex-grow:0; flex-shrink:0;'>85%</div><div style='flex-basis: 1.5em; text-align:right; flex-grow:0; flex-shrink:0; color:green;'>⊤</div><input type='checkbox' name='ans2' value='71fc6e61' /><div><p>placing a duplicate of lines 4-6 (inclusive) with <code>0</code> replaced with <code>8</code> after line 6 and replacing the <code>1</code> in line 7 with <code>2</code></p>
+</div></label></li><li><label><div style='flex-basis: 2.8em; text-align:right; flex-grow:0; flex-shrink:0;'>16%</div><div style='flex-basis: 1.5em; text-align:right; flex-grow:0; flex-shrink:0; color:green;'></div><input type='checkbox' name='ans2' value='2415cc18' /><div><p>placing a duplicate of line 4 with <code>0</code> replaced with <code>8</code> after line 4, placing a duplicate of line 5 after line 5, placing a duplicate of line 6 with <code>0</code> replaced with <code>8</code> after line 6, and replacing the <code>1</code> in line 7 with <code>2</code></p>
+</div></label></li></ol></div><div class='question' id='q3' slug='11c9b8cd'><div class='description' id='d3'><strong>Question 3</strong> (4 pt; mean 3.22) (see above)
+<p>Which of the following changes would not change what values the loop writes to memory?
+<strong>Select all that apply.</strong></p>
+</div><ol class="options"><li><label><div style='flex-basis: 2.8em; text-align:right; flex-grow:0; flex-shrink:0;'>12%</div><div style='flex-basis: 1.5em; text-align:right; flex-grow:0; flex-shrink:0; color:green;'></div><input type='checkbox' name='ans3' value='4bc8b7eb' /><div><p>replacing line 9 with <code>jg start_loop</code></p>
+</div></label></li><li><label><div style='flex-basis: 2.8em; text-align:right; flex-grow:0; flex-shrink:0;'>86%</div><div style='flex-basis: 1.5em; text-align:right; flex-grow:0; flex-shrink:0; color:green;'>⊤</div><input type='checkbox' name='ans3' value='8a791fba' /><div><p>replacing line 9 with <code>jl start_loop</code></p>
+</div></label></li><li><label><div style='flex-basis: 2.8em; text-align:right; flex-grow:0; flex-shrink:0;'>67%</div><div style='flex-basis: 1.5em; text-align:right; flex-grow:0; flex-shrink:0; color:green;'>⊤</div><input type='checkbox' name='ans3' value='c271f02d' /><div><p>replacing line 8 with two lines: <code>movq $100, %r10</code>; <code>xorq %rax, %r10</code></p>
+</div></label></li><li><label><div style='flex-basis: 2.8em; text-align:right; flex-grow:0; flex-shrink:0;'>80%</div><div style='flex-basis: 1.5em; text-align:right; flex-grow:0; flex-shrink:0; color:green;'>⊤</div><input type='checkbox' name='ans3' value='264f851e' /><div><p>replacing line 8 with two lines: <code>movq $100, %r10</code>; <code>subq %rax, %r10</code></p>
+</div></label></li></ol></div><div class='question' id='q4' slug='b8607a17'><div class='description' id='d4'><strong>Question 4</strong> (3 pt; mean 2.26) (see above)
+<p>When line 9 executes for the second time, the values of <code>SF</code> and <code>ZF</code> will be:</p>
+</div><ol class="options"><li><label><div style='flex-basis: 2.8em; text-align:right; flex-grow:0; flex-shrink:0;'>75%</div><div style='flex-basis: 1.5em; text-align:right; flex-grow:0; flex-shrink:0; color:green;'>⊤</div><input type='radio' name='ans4' value='df34f2ed' /><div><p>SF = 1, ZF = 0</p>
+</div></label></li><li><label><div style='flex-basis: 2.8em; text-align:right; flex-grow:0; flex-shrink:0;'>8%</div><div style='flex-basis: 1.5em; text-align:right; flex-grow:0; flex-shrink:0; color:green;'> </div><input type='radio' name='ans4' value='b78c1c7a' /><div><p>SF = 0, ZF = 1</p>
+</div></label></li><li><label><div style='flex-basis: 2.8em; text-align:right; flex-grow:0; flex-shrink:0;'>14%</div><div style='flex-basis: 1.5em; text-align:right; flex-grow:0; flex-shrink:0; color:green;'> </div><input type='radio' name='ans4' value='a98a880c' /><div><p>SF = 0, ZF = 0</p>
+</div></label></li><li><label><div style='flex-basis: 2.8em; text-align:right; flex-grow:0; flex-shrink:0;'>0%</div><div style='flex-basis: 1.5em; text-align:right; flex-grow:0; flex-shrink:0; color:green;'> </div><input type='radio' name='ans4' value='518b5ff9' /><div><p>something else / it depends (explain in comments)</p>
+</div></label></li></ol></div></div><div class='question' id='q5' slug='f347cc90'><div class='description' id='d5'><strong>Question 5</strong> (4 pt; mean 3.03)
+<p>Suppose we were generating an object file for the following Y86-64 snippet
+with a relocation table and symbol table to permit linking the object file along
+with other object files to generate an executable:</p>
+
+<pre><code>example_function3:
+    irmovq $100, %rsi
+    call example_function1
+    rrmovq %rax, %rsi
+    call example_function2
+    ret
+</code></pre>
+
+<p>Relocation table entries in the resulting object file would likely contain
+a symbol (or label) name and a location in the machine code.
+Which of the following would be likely <em>relocation table</em> entries in 
+the resulting object file? <strong>Select all that apply.</strong></p>
+</div><ol class="options"><li><label><div style='flex-basis: 2.8em; text-align:right; flex-grow:0; flex-shrink:0;'>30%</div><div style='flex-basis: 1.5em; text-align:right; flex-grow:0; flex-shrink:0; color:green;'></div><input type='checkbox' name='ans5' value='45b60f24' /><div><p>an entry for <code>example_function1</code> specifying the first byte of the first <code>call</code> instruction</p>
+</div></label></li><li><label><div style='flex-basis: 2.8em; text-align:right; flex-grow:0; flex-shrink:0;'>75%</div><div style='flex-basis: 1.5em; text-align:right; flex-grow:0; flex-shrink:0; color:green;'>⊤</div><input type='checkbox' name='ans5' value='a73d579d' /><div><p>an entry for <code>example_function1</code> specifying the second byte of the first <code>call</code> instruction</p>
+</div></label></li><li><label><div style='flex-basis: 2.8em; text-align:right; flex-grow:0; flex-shrink:0;'>26%</div><div style='flex-basis: 1.5em; text-align:right; flex-grow:0; flex-shrink:0; color:green;'></div><input type='checkbox' name='ans5' value='6443100b' /><div><p>an entry for <code>example_function3</code> specifying the first byte of the <code>irmovq</code> instruction</p>
+</div></label></li><li><label><div style='flex-basis: 2.8em; text-align:right; flex-grow:0; flex-shrink:0;'>17%</div><div style='flex-basis: 1.5em; text-align:right; flex-grow:0; flex-shrink:0; color:green;'></div><input type='checkbox' name='ans5' value='b6a7281f' /><div><p>an entry for <code>example_function3</code> specifying the third byte of the <code>irmovq</code> instruction</p>
+</div></label></li></ol></div><div class="multiquestion"><p>For the following questions, consider a six-stage pipelined Y86-64
+processor implementation that uses the following
+stages:</p>
+
+<ul>
+<li>fetch</li>
+<li>decode</li>
+<li>execute part 1</li>
+<li>execute part 2</li>
+<li>memory</li>
+<li>writeback</li>
+</ul>
+
+<p>Everything but the execute stages work as in the five-stage pipelined processor we implemented
+(including branch prediction that predicts all branches as taken and forwarding). For the execute
+stages:</p>
+
+<ul>
+<li>the results of any arithmetic is not available until the execute part 2 stage. Consequently,
+if the execute stages compute a value that value cannot be used for another computation, memory access, etc.
+until the cycle after the execute part 2 stage that computes the value.</li>
+<li>whether or not any conditional jump is taken is determined in the execute part 1 stage. If the conditional jump was mispredicted, the correct instruction is fetched udring the conditional jump's execute part 2 stage.</li>
+</ul>
+<div class='question' id='q6' slug='814a0518'><div class='description' id='d6'><strong>Question 6</strong> (4 pt; mean 2.2) (see above)
+<p>Consider the following assembly snippet executing on the procesor described above</p>
+
+<pre><code>addq %rcx, %rdx             /* line 1 */
+xorq %rcx, %rdx             /* line 2 */
+mrmovq 8(%rdx), %rax        /* line 3 */
+rmmovq %rbx, 16(%rax)       /* line 4 */
+subq %rax, %rbx             /* line 5 */
+</code></pre>
+
+<p>If the <code>addq</code> instruction on line 1 runs its fetch stage during cycle number 0, then during what cycle number
+will the <code>subq</code> instruction on line 5 run its writeback stage?</p>
+</div><div class='tinput'><span>Answer:</span><input type='text' name='ans6' /></div>Key: <tt>13</tt><div class='explanation'><pre>.                           0  1  2  3   4  5</pre>
+
+<pre>addq %rcx, %rdx             F  D  E1 E2  M  W  6  7</pre>
+
+<pre>xorq %rcx, %rdx                F  x  D   E1 E2 M  W  8  9</pre>
+
+<pre>mrmovq 8(%rdx), %rax                 F   x  D  E1 E2 M  W  10 11 12</pre>
+
+<pre>rmmovq %rbx, 16(%rax)                       F  x  x  D  E1 E2 M  W  13</pre>
+
+<pre> subq %rax, %rbx                                      F  D  E1 E2 M  W</pre>
+</div></div><div class='question' id='q7' slug='8c814e5a'><div class='description' id='d7'><strong>Question 7</strong> (4 pt; mean 2.05) (see above)
+<p>Consider the following assembly snippet executing on the procesor described above</p>
+
+<pre><code>    xorq %r8, %r9               /* line 1 */
+    je after                    /* line 2 */
+    mrmovq 8(%r10), %r11        /* line 3 */
+after:
+    rmmovq %r12, 16(%r13)       /* line 4 */
+    subq %rax, %rbx             /* line 5 */
+</code></pre>
+
+<p>Suppose <code>%r8</code> is initially 15 and <code>%r9</code> is initially 20.
+If the the <code>xorq</code> instruction on line 1 runs its fetch stage during cycle number 0, then during what cycle number
+will the <code>subq</code> instruction on line 5 run its writeback stage?</p>
+</div><div class='tinput'><span>Answer:</span><input type='text' name='ans7' /></div>Key: <tt>11</tt><div class='explanation'><pre>.                           0  1 2  3  4  5</pre>
+
+<pre>xorq %r8, %r9               F  D E1 E2 M  W  6 </pre>
+
+<pre>je after                       F D  E1 E2 M  W  7  8  9</pre>
+
+<pre>mrmovq 8(%r10), %r11                   F  D  E1 E2 M  W</pre>
+
+<pre>after:                                                   10</pre>
+
+<pre>rmmovq %r12, 16(%r13)            F  D     F  D  E1 E2 M  W  11</pre>
+
+<pre>subq %rax, %rbx                     F        F  D  E1 E2 M  W</pre>
+</div></div><div class='question' id='q8' slug='1a71f9c0'><div class='description' id='d8'><strong>Question 8</strong> (6 pt; mean 5.01) (see above)
+<p>Consider the following assembly snippet executing on the processor described above:</p>
+
+<pre><code>addq %r8, %r9              /* line 1 */
+addq %r9, %r8              /* line 2 */
+nop                        /* line 3 */
+nop                        /* line 4 */
+nop                        /* line 5 */
+mrmovq 8(%r8), %r10        /* line 6 */
+subq %r9, %r10             /* line 7 */
+</code></pre>
+
+<p>Which of the following forwarding must occur to execute the above correctly (with minimum stalling)?</p>
+</div><ol class="options"><li><label><div style='flex-basis: 2.8em; text-align:right; flex-grow:0; flex-shrink:0;'>13%</div><div style='flex-basis: 1.5em; text-align:right; flex-grow:0; flex-shrink:0; color:green;'></div><input type='checkbox' name='ans8' value='37b7ede4' /><div><p>the value of <code>%r8</code> from the <code>addq</code> in line 1 to the <code>addq</code> in line 2</p>
+</div></label></li><li><label><div style='flex-basis: 2.8em; text-align:right; flex-grow:0; flex-shrink:0;'>86%</div><div style='flex-basis: 1.5em; text-align:right; flex-grow:0; flex-shrink:0; color:green;'>⊤</div><input type='checkbox' name='ans8' value='0179c81a' /><div><p>the value of <code>%r9</code> from the <code>addq</code> in line 1 to the <code>addq</code> in line 2</p>
+</div></label></li><li><label><div style='flex-basis: 2.8em; text-align:right; flex-grow:0; flex-shrink:0;'>14%</div><div style='flex-basis: 1.5em; text-align:right; flex-grow:0; flex-shrink:0; color:green;'></div><input type='checkbox' name='ans8' value='f4991dbd' /><div><p>the value of <code>%r9</code> from the <code>addq</code> in line 1 to the <code>subq</code> in line 7</p>
+</div></label></li><li><label><div style='flex-basis: 2.8em; text-align:right; flex-grow:0; flex-shrink:0;'>68%</div><div style='flex-basis: 1.5em; text-align:right; flex-grow:0; flex-shrink:0; color:green;'>⊤</div><input type='checkbox' name='ans8' value='cbb56829' /><div><p>the value of <code>%r8</code> from the <code>addq</code> in line 2 to the <code>mrmovq</code> in line 6</p>
+</div></label></li><li><label><div style='flex-basis: 2.8em; text-align:right; flex-grow:0; flex-shrink:0;'>9%</div><div style='flex-basis: 1.5em; text-align:right; flex-grow:0; flex-shrink:0; color:green;'></div><input type='checkbox' name='ans8' value='d338a82c' /><div><p>the value of <code>%r8</code> from the <code>addq</code> in line 2 to the <code>subq</code> in line 7</p>
+</div></label></li><li><label><div style='flex-basis: 2.8em; text-align:right; flex-grow:0; flex-shrink:0;'>83%</div><div style='flex-basis: 1.5em; text-align:right; flex-grow:0; flex-shrink:0; color:green;'>⊤</div><input type='checkbox' name='ans8' value='de270bd2' /><div><p>the value of <code>%r10</code> from the <code>rmovq</code> in line 6 to the <code>subq</code> in line 7</p>
+
+<!--
+    other questions:
+        adding new instruction
+        which MUX signal
+        ...
+-->
+</div></label></li></ol></div></div><div class="multiquestion"><p>For the following questions, consider the process of adding a <code>pcaddq REG1</code> instruction
+that would jump to <code>valP</code> plus the value of REG1. For example, given the assembly snippet:</p>
+
+<pre><code>pcaddq %rax
+nop
+</code></pre>
+
+<p>if the <code>nop</code> instruction was stored at address <code>0x1000</code> and <code>%rax</code> had the value <code>0x24</code>, then
+the next instruction executed would be <code>0x1024</code>.</p>
+<div class='question' id='q9' slug='6eaa8654'><div class='description' id='d9'><strong>Question 9</strong> (4 pt; mean 2.71) (see above)
+<p>Which of the following encoding would be possible and most appropriate for avoiding adding additional inputs to
+MUXes or additional MUXes to the single-cycle Y86-64 procesor design we discussed in lecture?</p>
+
+<p>(In each of the encodings , values of each byte are provided with the most significant bits written first (left-most).)</p>
+</div><ol class="options"><li><label><div style='flex-basis: 2.8em; text-align:right; flex-grow:0; flex-shrink:0;'>5%</div><div style='flex-basis: 1.5em; text-align:right; flex-grow:0; flex-shrink:0; color:green;'> </div><input type='radio' name='ans9' value='354e7a04' /><div><p><code>[4-bit icode][4 bit register nubmer]</code></p>
+</div></label></li><li><label><div style='flex-basis: 2.8em; text-align:right; flex-grow:0; flex-shrink:0;'>67%</div><div style='flex-basis: 1.5em; text-align:right; flex-grow:0; flex-shrink:0; color:green;'>⊤</div><input type='radio' name='ans9' value='50210fd3' /><div><p><code>[4 bit icode][4 unused bits]</code> (1st byte) then <code>[4-bit register number][4 unused bits]</code></p>
+</div></label></li><li><label><div style='flex-basis: 2.8em; text-align:right; flex-grow:0; flex-shrink:0;'>7%</div><div style='flex-basis: 1.5em; text-align:right; flex-grow:0; flex-shrink:0; color:green;'> </div><input type='radio' name='ans9' value='cdaad9e2' /><div><p><code>[4 bit icode][4 bit register number]</code> (1st byte) then 8 bytes of zeroes</p>
+</div></label></li><li><label><div style='flex-basis: 2.8em; text-align:right; flex-grow:0; flex-shrink:0;'>10%</div><div style='flex-basis: 1.5em; text-align:right; flex-grow:0; flex-shrink:0; color:green;'> </div><input type='radio' name='ans9' value='2b174933' /><div><p><code>[4 bit icode][4 bit condition code]</code> (1st byte) then <code>[4 unused bits][4 unused bits]</code> then <code>[64-bit register value]</code></p>
+</div></label></li><li><label><div style='flex-basis: 2.8em; text-align:right; flex-grow:0; flex-shrink:0;'>7%</div><div style='flex-basis: 1.5em; text-align:right; flex-grow:0; flex-shrink:0; color:green;'> </div><input type='radio' name='ans9' value='4a964ea6' /><div><p>none of the above are possible; they are all missing information that must be present in the instruction's machine code</p>
+</div></label></li></ol></div><div class='question' id='q10' slug='aa4b4db0'><div class='description' id='d10'><strong>Question 10</strong> (3 pt; mean 2) (see above)
+<p>When this instruction is executing, the data memory will</p>
+</div><ol class="options"><li><label><div style='flex-basis: 2.8em; text-align:right; flex-grow:0; flex-shrink:0;'>67%</div><div style='flex-basis: 1.5em; text-align:right; flex-grow:0; flex-shrink:0; color:green;'>⊤</div><input type='radio' name='ans10' value='c00104b5' /><div><p>not need to do anything</p>
+</div></label></li><li><label><div style='flex-basis: 2.8em; text-align:right; flex-grow:0; flex-shrink:0;'>24%</div><div style='flex-basis: 1.5em; text-align:right; flex-grow:0; flex-shrink:0; color:green;'> </div><input type='radio' name='ans10' value='84c203c0' /><div><p>perform a read</p>
+</div></label></li><li><label><div style='flex-basis: 2.8em; text-align:right; flex-grow:0; flex-shrink:0;'>6%</div><div style='flex-basis: 1.5em; text-align:right; flex-grow:0; flex-shrink:0; color:green;'> </div><input type='radio' name='ans10' value='bf57c4de' /><div><p>perform a write</p>
+</div></label></li></ol></div><div class='question' id='q11' slug='618ebc96'><div class='description' id='d11'><strong>Question 11</strong> (3 pt; mean 1.57) (see above)
+<p>When this instruction is executing, one of the register file's destination register number inputs (<code>reg_dstE</code>
+and <code>reg_dstM</code>) will be <code>REG_NONE</code> (the constant <code>0xF</code>) and the other will be:</p>
+</div><ol class="options"><li><label><div style='flex-basis: 2.8em; text-align:right; flex-grow:0; flex-shrink:0;'>52%</div><div style='flex-basis: 1.5em; text-align:right; flex-grow:0; flex-shrink:0; color:green;'>⊤</div><input type='radio' name='ans11' value='6daf73f6' /><div><p>also <code>REG_NONE</code> (<code>0xF</code>)</p>
+</div></label></li><li><label><div style='flex-basis: 2.8em; text-align:right; flex-grow:0; flex-shrink:0;'>7%</div><div style='flex-basis: 1.5em; text-align:right; flex-grow:0; flex-shrink:0; color:green;'> </div><input type='radio' name='ans11' value='aa90a7e5' /><div><p>equal to a constant value that is not REG_NONE</p>
+</div></label></li><li><label><div style='flex-basis: 2.8em; text-align:right; flex-grow:0; flex-shrink:0;'>8%</div><div style='flex-basis: 1.5em; text-align:right; flex-grow:0; flex-shrink:0; color:green;'> </div><input type='radio' name='ans11' value='a88cae34' /><div><p>equal to part of the output of the instruction memory</p>
+</div></label></li><li><label><div style='flex-basis: 2.8em; text-align:right; flex-grow:0; flex-shrink:0;'>13%</div><div style='flex-basis: 1.5em; text-align:right; flex-grow:0; flex-shrink:0; color:green;'> </div><input type='radio' name='ans11' value='06796f7a' /><div><p>equal to the output of the ALU (or part of the output of the ALU)</p>
+</div></label></li><li><label><div style='flex-basis: 2.8em; text-align:right; flex-grow:0; flex-shrink:0;'>5%</div><div style='flex-basis: 1.5em; text-align:right; flex-grow:0; flex-shrink:0; color:green;'> </div><input type='radio' name='ans11' value='71c19936' /><div><p>equal to the value of the program counter (or part of the value of the program counter)</p>
+</div></label></li><li><label><div style='flex-basis: 2.8em; text-align:right; flex-grow:0; flex-shrink:0;'>8%</div><div style='flex-basis: 1.5em; text-align:right; flex-grow:0; flex-shrink:0; color:green;'> </div><input type='radio' name='ans11' value='c6d052f2' /><div><p>equal to the result of adding a constant to the value of the program counter</p>
+</div></label></li><li><label><div style='flex-basis: 2.8em; text-align:right; flex-grow:0; flex-shrink:0;'>1%</div><div style='flex-basis: 1.5em; text-align:right; flex-grow:0; flex-shrink:0; color:green;'> </div><input type='radio' name='ans11' value='358834fb' /><div><p>none of the above (explain in comments)</p>
+</div></label></li></ol></div></div><div class='question' id='q12' slug='5490a17d'><div class='description' id='d12'><strong>Question 12</strong> (4 pt; mean 2.44)
+<p>Suppose a five-stage pipelined processor has a cycle time of 800 ps. When running
+a particular benchmark program, 10% of the instructions require exactly one cycle of stalling
+to resolve hazards and 5% of the instructions require exactly two cycles of stalling to
+resolve hazards, and no instructions require any more cycles of stalling.
+By changing to a six-stage design, one can reduce the cycle time but 15% (instead of 10%) of the instructions
+in the benchmark program would require exactly one cycle of stalling (and 5% would still require exactly
+two cycles of stalling).
+For this change to make the benchmark program run at least as fast as on the five-stage processor,
+about what is the minimum cycle time it should have? Write your answer as a base-10 number of picoseconds, rounded
+to the nearest picosecond. You may assume the benchmark program has a very large number of instructions
+(so, for example,
+the amount of time spent waiting for the first instructions of the benchmark to finish is negligible).</p>
+</div><div class='tinput'><span>Answer:</span><input type='text' name='ans12' /></div>Key: <tt>768</tt><div class='explanation'><p>1.20 cycles per instruction with 5 cycle implies 960 ps/instruction; 1.25 cycles per instruction with 6 cycle implies 1.25x ps/instruction = 960, solve for x = 768</p>
+</div></div><div class="multiquestion"><p>Consider a system with:</p>
+
+<ul>
+<li>an 4-way set associative, 64KB L1 (level 1) data cache with 32B cache blocks that uses physical addresses</li>
+<li>a 8-way set associative, 1MB L2 (level 2) cache shared between instructions and data with 32B cache blocks that uses physical addresses</li>
+<li>a 12-way set associative TLB which can hold up to 48 page table entries</li>
+<li>all caches use a replacement policy that approximates LRU</li>
+<li>8KB pages</li>
+<li>8 byte page table entries</li>
+<li>a 3-level page table structure, where a page table at any level are one page in size</li>
+</ul>
+
+<p>(For this questions KB = 1024 bytes, and B = 1 byte.)</p>
+
+<p>The following questions consider the operation of reading a 4-byte little endian value from the virtual address <code>0x12345678</code> on this
+system. (Note that some leading zeroes of the virtual address might not be written.)
+For each of the questions, assume the corresponding physical (byte) address is <code>0xABCDD678</code>.</p>
+<div class='question' id='q13' slug='6733e2f3'><div class='description' id='d13'><strong>Question 13</strong> (3 pt; mean 1.63) (see above)
+<p>What is the size of virtual addresses on this system in bits?</p>
+</div><div class='tinput'><span>Answer:</span><input type='text' name='ans13' /></div>Key: <tt>43</tt><div class='explanation'><p>8KB page tables/8 byte PTEs = 1024 entries per page table --> 10-bit VPN parts; since 3 levels, virtual paeg numbers are 30 bits in total. Since pages are 8KB page offsets are 13 bits. Virtual addresses are composed from a virtual pgae number and page offset, so that's 30 + 13 = 43 bits</p>
+</div></div><div class='question' id='q14' slug='a2bf5f38'><div class='description' id='d14'><strong>Question 14</strong> (4 pt; mean 2.08) (see above)
+<p>If accessing the value requires a TLB lookup, what set index of the TLB will be accessed?</p>
+</div><div class='tinput'><span>Answer:</span><input type='text' name='ans14' /></div>Key: <tt>2</tt><div class='explanation'><p><code>(0x12345678 &gt;&gt; 13) &amp; 0x3</code> (2 TLB index bits)</p>
+</div></div><div class='question' id='q15' slug='cb635feb'><div class='description' id='d15'><strong>Question 15</strong> (4 pt; mean 1.7) (see above)
+<p>If accessing the value requires a page table lookup and the third-level page table
+(that is, the last one used in the multi-level lookup)
+used in that lookup starts at physical (byte) address <code>0x400000</code>, what would the physical address of the
+corresponding (third-level) page table entry be? (Write your answer as a hexadecimal number.)</p>
+</div><div class='tinput'><span>Answer:</span><input type='text' name='ans15' /></div>Key: <tt>0x400d10</tt><div class='explanation'><p>0x12345678 has VPN 0x91a2. The 10 least significant bits of this are 0x1A2. We multiply that times the PTE size (8 bytes) to get the offset in bytes in the page table to get 0xD10.</p>
+</div></div><div class='question' id='q16' slug='a3a313d9'><div class='description' id='d16'><strong>Question 16</strong> (4 pt; mean 1.42) (see above)
+<p>If accessing the value requires a page table lookup and the third-level page table
+(that is, the last one used in the multi-level lookup)
+used in that lookup starts at physical (byte) address <code>0x400000</code>, then what physical page number was
+in the <em>second-level</em> page table entry accessed as part of this lookup?
+(Write your answer as a hexadecimal number.)</p>
+</div><div class='tinput'><span>Answer:</span><input type='text' name='ans16' /></div>Key: <tt>0x200</tt><div class='explanation'><p>physical address 0x400000 has PPN 0x200 (= <code>0x400000 &gt;&gt; 13</code>, the page offset size) and page offset 0x0</p>
+</div></div><div class='question' id='q17' slug='ba23d5e5'><div class='description' id='d17'><strong>Question 17</strong> (4 pt; mean 1.49) (see above)
+<p>If accessing the value results in a hit in the L1 data cache, and the data in the
+corresponding block in the L1 data cache
+is (written as hexadecimal, lowest address first):</p>
+
+<pre><code>01 23 45 67 02 34 56 78
+03 34 56 78 04 56 78 9A
+04 56 78 9A 05 67 89 AB
+06 78 9A BC 07 89 AB CD
+</code></pre>
+
+<p>then what 4-byte value will be read? Assume values
+are read in little endian and write your answer as a hexadecimal number.
+(Like a hexadecimal constant in C or Python, your hexadecimal number should have the one's place
+written right-most.)</p>
+</div><div class='tinput'><span>Answer:</span><input type='text' name='ans17' /></div>Key: <tt>0xBC9A7806</tt><div class='explanation'><p>cache block ranges from physical addresses 0xABCDD660 through 0xABCDD680, and it's bytes 24-28 of it (the offset bits of the physical address are <code>0xABCDD678 &amp; 0x1F == 24</code>)</p>
+</div></div><div class='question' id='q18' slug='ff09076a'><div class='description' id='d18'><strong>Question 18</strong> (12 pt; mean 4.41) (see above)
+<p>Write a C function
+<code>int couldHaveBeenEvicted(unsigned long p)</code> that takes in a physical address <code>p</code>,
+and returns true if and only if the value at <code>p</code> could be evicted from the L2 cache as a result
+of an accessing the value at physical address <code>0xABCDD678</code>.
+(Since we're asking whether whether it <em>could have</em> been
+evicted, you can assume the value at <code>p</code> is part of the least recently used block in the set, or
+any other assumptions that would make eviction more likely.)
+Your C function must not use standard library functions
+(but you can definite temporary variables, use all the C arithmetic and bitwise operators, etc.)</p>
+</div><div class='tinput'><span>Answer:</span><textarea name='ans18' ></textarea></div>Key: <tt></tt><div class='explanation'><p>assuming an inclusive L2 cache: <code>int ref_index = (0xABCDD678 &gt;&gt; 5) &amp; 0xFFF; int index = (p &gt;&gt; 5) &amp; 0xFFF; int ref_tag = (0xABCDD678 &gt;&gt; 5) &gt;&gt; 12; int tag = p &gt;&gt; (5+12); return index == ref_index &amp;&amp; tag != ref_tag;</code> (for an exclusive cache, omit the tag check; we didn't expect you to know about exclusive caches, but accepted both answers)</p>
+</div></div></div><div class='question' id='q19' slug='7accfaac'><div class='description' id='d19'><strong>Question 19</strong> (4 pt; mean 1.3)
+<p>Suppose a system:</p>
+
+<ul>
+<li>has 32-bit virtual addresses</li>
+<li>uses 12-bit page offsets (implying 4096 byte pages)</li>
+<li>uses two-level page tables with 1024 entries in tables at each level (so 10 bits of the VPN are used for lookups at each level)</li>
+</ul>
+
+<p>If a program's page tables are setup so that the only valid pages are the ones with virtual page number
+0x00001, 0x00002, 0x00003, 0xFFDC0, 0xFF0C1, 0xFF0C2, 0xFF0C3, and 0xFFFFF (all hexadecimal page numbers),
+then what is the minimum of number of <em>second-level</em> page tables used to do this?
+(Count only <em>second-level</em> page tables; do not count the first-level page table.)</p>
+</div><div class='tinput'><span>Answer:</span><input type='text' name='ans19' /></div>Key: <tt>3</tt><div class='explanation'><p>second-level page table for 0x00000-0x003FF and for 0xFF000-0xFF3FF and for 0xFFC00-0xFFFF</p>
+</div></div><div class="multiquestion"><p>For the following questions, consider a 64KB, 4-way set associative cache with 128-byte blocks,
+a random replacement policy, and write-back, write-allocate policy on a system
+with 64-bit physical addresses. (1KB = 1024 bytes)</p>
+<div class='question' id='q20' slug='faa28729'><div class='description' id='d20'><strong>Question 20</strong> (5 pt; mean 3.62) (see above)
+<p>Suppose the following 1-byte accesses occur in this cache in the given order, and the cache is empty
+before these accesses occur:</p>
+
+<ul>
+<li>reading address 0x00157E</li>
+<li>writing address 0x00157F</li>
+<li>reading address 0x001000</li>
+<li>writing address 0x001001</li>
+<li>writing address 0x001002</li>
+<li>reading address 0x101000</li>
+<li>reading address 0x201000</li>
+<li>reading address 0x301000</li>
+<li>reading address 0x401000</li>
+</ul>
+
+<p>(Note that not all leading zeros of addresses are written out.)</p>
+
+<p>Which of the following statements are true about the results of this access pattern?</p>
+</div><ol class="options"><li><label><div style='flex-basis: 2.8em; text-align:right; flex-grow:0; flex-shrink:0;'>77%</div><div style='flex-basis: 1.5em; text-align:right; flex-grow:0; flex-shrink:0; color:green;'>⊤</div><input type='checkbox' name='ans20' value='f5751a07' /><div><p>there was a cache hit when writing to address <code>0x00157F</code></p>
+</div></label></li><li><label><div style='flex-basis: 2.8em; text-align:right; flex-grow:0; flex-shrink:0;'>77%</div><div style='flex-basis: 1.5em; text-align:right; flex-grow:0; flex-shrink:0; color:green;'>⊤</div><input type='checkbox' name='ans20' value='855240f5' /><div><p>the value of address <code>0x00157F</code> may be stored in the cache afterwards</p>
+</div></label></li><li><label><div style='flex-basis: 2.8em; text-align:right; flex-grow:0; flex-shrink:0;'>21%</div><div style='flex-basis: 1.5em; text-align:right; flex-grow:0; flex-shrink:0; color:green;'></div><input type='checkbox' name='ans20' value='6d028ddf' /><div><p>the value of address <code>0x00157F</code> may have been written to the next level of cache or main memory</p>
+</div></label></li><li><label><div style='flex-basis: 2.8em; text-align:right; flex-grow:0; flex-shrink:0;'>67%</div><div style='flex-basis: 1.5em; text-align:right; flex-grow:0; flex-shrink:0; color:green;'>⊤</div><input type='checkbox' name='ans20' value='279feae8' /><div><p>the value of address <code>0x001000</code> may be stored in the cache afterwards</p>
+</div></label></li><li><label><div style='flex-basis: 2.8em; text-align:right; flex-grow:0; flex-shrink:0;'>62%</div><div style='flex-basis: 1.5em; text-align:right; flex-grow:0; flex-shrink:0; color:green;'>⊤</div><input type='checkbox' name='ans20' value='35725e56' /><div><p>the value of address <code>0x001000</code> may have been written to the next level of cache or main memory</p>
+</div></label></li></ol></div><div class='question' id='q21' slug='96ce7b72'><div class='description' id='d21'><strong>Question 21</strong> (6 pt; mean 1.83) (see above)
+<p>In addition to 64KB of storage for data, the cache needs storage for metadata.
+How much metadata storage, in bits, will it need? Write your answer as a base-10 number.
+Remember to show your work in the comments field.</p>
+</div><div class='tinput'><span>Answer:</span><input type='text' name='ans21' /></div>Key: <tt>26624</tt><div class='explanation'><p>7 offset bits, 7 index bits --> 50 tag bits; 64K/128 = 512 cache blocks * (1 valid bit + 1 dirty bit + 50 tag bits) = 26624 bits</p>
+</div></div></div><div class="multiquestion"><p>Consider the following C function:</p>
+
+<pre><code>void foo(int *result, int *vector1, int *vector2, int N) {
+    for (int i = 0; i &lt; N; ++i) {
+        int temp = vector1[i];
+        for (int j = 0; j &lt; N; ++j) {
+            result[j * N + i] = temp * vector2[j];
+        }
+    }
+}
+</code></pre>
+
+<p>For the following questions, assume:</p>
+
+<ul>
+<li>the code the compiler generates for this function only accesses the data cache for
+the reads/writes to <code>result</code>, <code>vector1</code>, and <code>vector2</code> shown, and does not reorder
+or omit or combine any reads or writes;</li>
+<li><code>result</code>, <code>vector1</code>, and <code>vector2</code> are pointers to non-overlapping arrays, and each of the pointers is a multiple of 16384 (that is, two to the 14th power)</li>
+<li><code>int</code>s are 4 bytes;</li>
+<li>1KB = 1024 bytes and 1B = 1 byte;</li>
+</ul>
+<div class='question' id='q22' slug='01dfccca'><div class='description' id='d22'><strong>Question 22</strong> (3 pt; mean 1.79) (see above)
+<p>Assuming a 16KB, 4-way data cache with 4B blocks,
+would a write-allocate or write-no-allocate policy be better for the function <code>foo</code> above?</p>
+</div><ol class="options"><li><label><div style='flex-basis: 2.8em; text-align:right; flex-grow:0; flex-shrink:0;'>24%</div><div style='flex-basis: 1.5em; text-align:right; flex-grow:0; flex-shrink:0; color:green;'> </div><input type='radio' name='ans22' value='24f017b8' /><div><p>write-allocate</p>
+</div></label></li><li><label><div style='flex-basis: 2.8em; text-align:right; flex-grow:0; flex-shrink:0;'>58%</div><div style='flex-basis: 1.5em; text-align:right; flex-grow:0; flex-shrink:0; color:green;'>⊤</div><input type='radio' name='ans22' value='24541562' /><div><p>write-no-allocate</p>
+</div></label></li><li><label><div style='flex-basis: 2.8em; text-align:right; flex-grow:0; flex-shrink:0;'>12%</div><div style='flex-basis: 1.5em; text-align:right; flex-grow:0; flex-shrink:0; color:green;'> </div><input type='radio' name='ans22' value='9d0f20e6' /><div><p>they would be approximately the same</p>
+</div></label></li></ol><div class='explanation'><p>Since we write 4 byte values (full cache blocks) and we write to a value once and never read from it, a write-allocate policy can only hurt performance: we may bring in cache blocks for <code>result</code> that could evict cached parts of <code>vector1</code> and <code>vector2</code> we want to read later.</p>
+</div></div><div class='question' id='q23' slug='c42d8304'><div class='description' id='d23'><strong>Question 23</strong> (8 pt; mean 4.09) (see above)
+<p>Assuming a 32KB, 8-way data cache with 8B blocks and a write-back, write-allocate policy,
+write code or pseudocode for a modified version of the function <code>foo</code> that has improved cache performance
+(fewer cache misses) but computes the same values.</p>
+</div><div class='tinput'><span>Answer:</span><textarea name='ans23' ></textarea></div>Key: <tt></tt><div class='explanation'><p>change loop order or cache blocking</p>
+
+<!--
+    FIXME: 
+    counting misses
+    multiple accumulators
+    exceptions
+-->
+</div></div></div><div class="multiquestion"><p>For the following questions, consider the following x86-64 assembly snippet:</p>
+
+<pre><code>movq $3, %rax
+imulq %r8, %rax
+imulq %r9, %rax
+imulq %r10, %rax
+addq %rax, %rcx
+movq $3, %rax
+imulq %r11, %rax
+addq %rax, %rcx
+</code></pre>
+
+<p><code>imulq REG1, REG2</code> multiplies the value of REG1 and REG2 together and stores the result in REG2.</p>
+
+<p>Suppose the above assembly snippet is run on an out-of-order processor with the following
+execution units:</p>
+
+<ul>
+<li>two single-cycle ALUs that can perform additions, and</li>
+<li>a pipelined multiplier that produces a result after four cycles (so if a pair of values to multiply is input during cycle 1, then a result will be produced in cycle 4 and available to use in other arithmetic during cycle 5)</li>
+</ul>
+<div class='question' id='q24' slug='4964b17d'><div class='description' id='d24'><strong>Question 24</strong> (8 pt; mean 4.14) (see above)
+<p>Compute the minimum number of cycles the processor described above would take to complete 
+the arithmetic in the assembly snippet above.
+Do not include time needed for fetching instructions, executing the <code>movq</code> instructions,
+forwarding values, or reading/writing registers.  <strong><em>Show your work in the comments field.</em></strong></p>
+</div><div class='tinput'><span>Answer:</span><input type='text' name='ans24' /></div>Key: <tt>14</tt><div class='explanation'><p>4 times 3 cycles for the <code>3*r8*r9*r10=raxV1</code> multiplication chain (which can happen in parallel with the <code>3*r11</code> computation) and an additional cycles for adding raxV1 to rcx and an additional cycle for adding that value to <code>3*r11</code></p>
+</div></div><div class='question' id='q25' slug='a8e84559'><div class='description' id='d25'><strong>Question 25</strong> (8 pt; mean 4.69) (see above)
+<p>Rewrite the above assembly snippet, using only <code>movq</code>, two-argument <code>imulq</code>, and <code>addq</code> instructions,
+to reduce the time required for arithmetic on the processor described above. Your rewritten assembly snippet
+must produce the same result in <code>%rcx</code>. (We do not care if other registers values end up being the same.)</p>
+</div><div class='tinput'><span>Answer:</span><textarea name='ans25' ></textarea></div>Key: <tt></tt><div class='explanation'><p>convert <code>((3*r8)*r9)*r10</code> to <code>(3*r8)*(r9*r10)</code> or similar. Or use repeated <code>addq</code>s to multiply by 3. Or factor out the multiply by 3 to do one less multiply</p>
+</div></div></div><div class='question' id='q26' slug='af57b40d'><div class='description' id='d26'><strong>Question 26</strong> (4 pt; mean 2.47)
+<p>We discussed how virtual memory can be used to allow physical memory to be used as a cache
+for slower storage like hard drives and solid state disks. When this happens and a program
+tries to access a value in virtual memory that is not loaded into physical memory, which
+of the following is likely to happen as a result of this access?
+<strong>Select all that apply.</strong></p>
+</div><ol class="options"><li><label><div style='flex-basis: 2.8em; text-align:right; flex-grow:0; flex-shrink:0;'>66%</div><div style='flex-basis: 1.5em; text-align:right; flex-grow:0; flex-shrink:0; color:green;'></div><input type='checkbox' name='ans26' value='553a2295' /><div><p>a system call will occur</p>
+</div></label></li><li><label><div style='flex-basis: 2.8em; text-align:right; flex-grow:0; flex-shrink:0;'>74%</div><div style='flex-basis: 1.5em; text-align:right; flex-grow:0; flex-shrink:0; color:green;'>⊤</div><input type='checkbox' name='ans26' value='d56344ef' /><div><p>some code that is part of the operating system will run</p>
+</div></label></li><li><label><div style='flex-basis: 2.8em; text-align:right; flex-grow:0; flex-shrink:0;'>27%</div><div style='flex-basis: 1.5em; text-align:right; flex-grow:0; flex-shrink:0; color:green;'></div><input type='checkbox' name='ans26' value='af81b3d4' /><div><p>after the value is loaded into physical memory, the program will restart execution from the beginning</p>
+</div></label></li><li><label><div style='flex-basis: 2.8em; text-align:right; flex-grow:0; flex-shrink:0;'>66%</div><div style='flex-basis: 1.5em; text-align:right; flex-grow:0; flex-shrink:0; color:green;'>⊤</div><input type='checkbox' name='ans26' value='24977e4c' /><div><p>the valid bit in the page table entry corresponding to the virtual address will change from 0 to 1</p>
+</div></label></li></ol></div><div class='question' id='q27' slug='010fe5dc'><div class='description' id='d27'><strong>Question 27</strong> (4 pt; mean 2.62)
+<p>The abstraction of <em>process</em> gives programs the illusion of a dedicated machine, including a dedicated
+processor and main memory, even though the underlying may be shared between processes.
+As part of implementing processes by sharing a single processor and its memory over time, the operating system will
+change which process is active on the processor. Which of the following is true about this procedure?</p>
+</div><ol class="options"><li><label><div style='flex-basis: 2.8em; text-align:right; flex-grow:0; flex-shrink:0;'>72%</div><div style='flex-basis: 1.5em; text-align:right; flex-grow:0; flex-shrink:0; color:green;'>⊤</div><input type='checkbox' name='ans27' value='ba0744f7' /><div><p>the operating system can cause a process running on the processor to stop running even if the code the process is running doesn't call the operating system</p>
+</div></label></li><li><label><div style='flex-basis: 2.8em; text-align:right; flex-grow:0; flex-shrink:0;'>78%</div><div style='flex-basis: 1.5em; text-align:right; flex-grow:0; flex-shrink:0; color:green;'>⊤</div><input type='checkbox' name='ans27' value='68ee59f3' /><div><p>the code in the operating system that switches which process is active is likely to be run in kernel mode</p>
+</div></label></li><li><label><div style='flex-basis: 2.8em; text-align:right; flex-grow:0; flex-shrink:0;'>43%</div><div style='flex-basis: 1.5em; text-align:right; flex-grow:0; flex-shrink:0; color:green;'></div><input type='checkbox' name='ans27' value='9d9bc2d1' /><div><p>on a processor with many extra physical registers (like most out-of-order processors), the operating system will save the registers of the previous process using these extra registers as it switches to the next process</p>
+</div></label></li><li><label><div style='flex-basis: 2.8em; text-align:right; flex-grow:0; flex-shrink:0;'>45%</div><div style='flex-basis: 1.5em; text-align:right; flex-grow:0; flex-shrink:0; color:green;'></div><input type='checkbox' name='ans27' value='e0df1454' /><div><p>if the two processes both use the same memory addresses in their machine code (e.g. for two different global variables), then, to prevent the programs from interfering with each other, the operating system will need to unload one process from memory (e.g. by copying some of its data to disk) and load the other as part of switching from one process to another.</p>
+</div></label></li></ol></div><div class='question' id='q28' slug='fb62b3de'><div class='description' id='d28'><strong>Question 28</strong> (4 pt; mean 2.52)
+<p>Suppose a system has:</p>
+
+<ul>
+<li>a 16KB 4-way set-associative L1 cache with 64-byte blocks and a 3-cycle hit time</li>
+<li>a 1MB 8-way set-associative L2 cache with 64-byte blocks and a 10-cycle hit time</li>
+<li>main memory with a 100-cycle access time</li>
+</ul>
+
+<p>and when a miss occurs in the L1 or L2 cache, the cache must wait until the hit time completes before it
+accesses the next level of cache or main memory (so the total access time on a miss is the sum of the hit time
+and the next-level access time).</p>
+
+<p>On a benchmark program the L1 cache experiences a 90% hit rate and the L2 cache experiences a 50% hit rate.
+What was the average memory access time experienced by the benchmark program
+in cycles? (Round your answer to the nearest tenth of a cycle. You may assume all the memory accesses
+in the benchmark program go through the L1 cache.)</p>
+</div><div class='tinput'><span>Answer:</span><input type='text' name='ans28' /></div>Key: <tt>9</tt></div><div class="multiquestion"><p>For the following questions, consider the following circuit:</p>
+
+<p><img src="/cs3330-fall2020/circuit2.png"></p>
+
+<p>Assume:</p>
+
+<ul>
+<li>all registers store 64-bit integer values</li>
+<li>all registers store a new value upon a rising edge of a common clock signal</li>
+<li>all adders perform 64-bit additions (and do not rely on any clock signal to determine when to do so)</li>
+<li>clock cycles are set long enough to avoid problems from values changing</li>
+</ul>
+<div class='question' id='q29' slug='38807613'><div class='description' id='d29'><strong>Question 29</strong> (4 pt; mean 2.49) (see above)
+<p>If the registers <code>X</code>, <code>Y</code>, and <code>Z</code> initially store <code>1</code>, then what value will <code>X</code> store after 2 rising edges of
+the clock signal?</p>
+</div><div class='tinput'><span>Answer:</span><input type='text' name='ans29' /></div>Key: <tt>7</tt></div><div class='question' id='q30' slug='a92b0bab'><div class='description' id='d30'><strong>Question 30</strong> (3 pt; mean 1.83) (see above)
+<p>Suppose the 64-bit registers have a 50 ps register delay and the adders take 500 ps to produce
+a stable result.
+What is the minimum cycle time for the circuit? Write your answer as a base-10 number of picoseconds.</p>
+</div><div class='tinput'><span>Answer:</span><input type='text' name='ans30' /></div>Key: <tt>1050</tt></div></div>
